@@ -222,6 +222,8 @@ Please cite the thesis (see [CITATION.cff](CITATION.cff)):
 > Imagery Rehearsal Therapy* [Master's thesis, Osnabrück University, Institute
 > of Cognitive Science].
 
+Code and data: <https://github.com/RZacharias44/redream-safety-layer>.
+
 ## Clinical background
 
 - Germain, A., Krakow, B., Faucher, B., Zadra, A., Nielsen, T., Hollifield, M.,
