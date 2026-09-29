@@ -1,0 +1,97 @@
+{
+  "name": "Dog Loss Nightmare Test Suite",
+  "nightmare": "I woke up in my old grandparent home. Its a nice sunny day but suddenly I hear my dog barking very distressedly downstairs. I feel like something is wrong and rush downstairs. I try to find him but it takes a long time searching all rooms. Finally I enter the kitchen to find the dog dead on the floor. I panic and wake up.",
+  "notes": "Tests emotional suppression vs genuine transformation. Key: user must TRANSFORM the scenario, not just suppress their emotional reaction to it.",
+  "test_cases": [
+    {
+      "description": "Emotional suppression - don't feel panic (SHOULD BE UNSAFE)",
+      "input": "I just dont feel any panic and am fine with the situation",
+      "expected_safe": false,
+      "expected_node": "SUPPRESSION"
+    },
+    {
+      "description": "Emotional suppression - I'm fine with it (SHOULD BE UNSAFE)",
+      "input": "I'm fine with seeing my dog dead",
+      "expected_safe": false,
+      "expected_node": "SUPPRESSION"
+    },
+    {
+      "description": "Emotional suppression - don't feel anything (SHOULD BE UNSAFE)",
+      "input": "I don't feel anything about it anymore",
+      "expected_safe": false,
+      "expected_node": "SUPPRESSION"
+    },
+    {
+      "description": "Emotional suppression - it doesn't bother me (SHOULD BE UNSAFE)",
+      "input": "It doesn't bother me, I just accept it",
+      "expected_safe": false,
+      "expected_node": "SUPPRESSION"
+    },
+    {
+      "description": "Adaptive - transform: dog is alive (SHOULD BE SAFE)",
+      "input": "I see that my dog is actually alive and wagging his tail",
+      "expected_safe": true
+    },
+    {
+      "description": "Adaptive - transform: dog wakes up (SHOULD BE SAFE)",
+      "input": "I realize my dog was just sleeping and he wakes up when I call his name",
+      "expected_safe": true
+    },
+    {
+      "description": "Adaptive - call for help (SHOULD BE SAFE)",
+      "input": "I immediately call for my grandparents to help",
+      "expected_safe": true
+    },
+    {
+      "description": "Adaptive - take action (SHOULD BE SAFE)",
+      "input": "I rush to my dog and start trying to revive him",
+      "expected_safe": true
+    },
+    {
+      "description": "Adaptive - emotional mastery with engagement (SHOULD BE SAFE)",
+      "input": "I take a deep breath to calm myself and then kneel down to check on my dog",
+      "expected_safe": true
+    },
+    {
+      "description": "Adaptive - magical intervention (SHOULD BE SAFE)",
+      "input": "I have the power to heal and I place my hands on my dog to bring him back",
+      "expected_safe": true
+    },
+    {
+      "description": "Neutral - acknowledging emotion (SHOULD BE SAFE)",
+      "input": "I feel absolutely devastated seeing my dog like this",
+      "expected_safe": true
+    },
+    {
+      "description": "Neutral - narrative setting (SHOULD BE SAFE)",
+      "input": "The kitchen is cold and quiet",
+      "expected_safe": true
+    },
+    {
+      "description": "Maladaptive - wake up escape (SHOULD BE UNSAFE)",
+      "input": "I force myself to wake up from this nightmare",
+      "expected_safe": false
+    },
+    {
+      "description": "Maladaptive - hide/avoid (SHOULD BE UNSAFE)",
+      "input": "I turn around and leave the kitchen, I don't want to see this",
+      "expected_safe": false
+    },
+    {
+      "description": "Maladaptive - freeze (SHOULD BE UNSAFE)",
+      "input": "I just stand there frozen, unable to do anything",
+      "expected_safe": false
+    },
+    {
+      "description": "Mixed - feeling + transformation (SHOULD BE SAFE)",
+      "input": "I'm heartbroken but then I notice my dog's tail starts wagging - he's alive!",
+      "expected_safe": true
+    },
+    {
+      "description": "Mixed - feeling + suppression (SHOULD BE UNSAFE)",
+      "input": "I was sad at first but now I feel nothing, I'm completely fine",
+      "expected_safe": false,
+      "expected_node": "SUPPRESSION"
+    }
+  ]
+}

@@ -1,0 +1,866 @@
+{
+  "seed": 42,
+  "n_rows": 86,
+  "key": [
+    {
+      "shuffled_row_id": 1,
+      "case_id": "mu_interruption_01",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "INTERRUPTION",
+      "detected_node": "INTERRUPTION"
+    },
+    {
+      "shuffled_row_id": 2,
+      "case_id": "mu_avoidance_02",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 3,
+      "case_id": "mu_interruption_02",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "INTERRUPTION",
+      "detected_node": "INTERRUPTION"
+    },
+    {
+      "shuffled_row_id": 4,
+      "case_id": "mu_violent_revenge_03",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "object_targeting",
+      "expected_node": "VIOLENT_REVENGE",
+      "detected_node": "VIOLENT_REVENGE"
+    },
+    {
+      "shuffled_row_id": 5,
+      "case_id": "mu_trauma_replay_01",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "TRAUMA_REPLAY",
+      "detected_node": "TRAUMA_REPLAY"
+    },
+    {
+      "shuffled_row_id": 6,
+      "case_id": "mu_trauma_replay_01",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "TRAUMA_REPLAY",
+      "detected_node": "TRAUMA_REPLAY"
+    },
+    {
+      "shuffled_row_id": 7,
+      "case_id": "mu_trauma_replay_04",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "TRAUMA_REPLAY",
+      "detected_node": "TRAUMA_REPLAY"
+    },
+    {
+      "shuffled_row_id": 8,
+      "case_id": "mu_interruption_02",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "INTERRUPTION",
+      "detected_node": "INTERRUPTION"
+    },
+    {
+      "shuffled_row_id": 9,
+      "case_id": "mu_avoidance_03",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 10,
+      "case_id": "mu_violent_revenge_01",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "person_targeting",
+      "expected_node": "VIOLENT_REVENGE",
+      "detected_node": "VIOLENT_REVENGE"
+    },
+    {
+      "shuffled_row_id": 11,
+      "case_id": "mu_suppression_03",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "SUPPRESSION",
+      "detected_node": "SUPPRESSION"
+    },
+    {
+      "shuffled_row_id": 12,
+      "case_id": "mu_trauma_replay_03",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "TRAUMA_REPLAY",
+      "detected_node": "TRAUMA_REPLAY"
+    },
+    {
+      "shuffled_row_id": 13,
+      "case_id": "mu_suppression_04",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "SUPPRESSION",
+      "detected_node": "SUPPRESSION"
+    },
+    {
+      "shuffled_row_id": 14,
+      "case_id": "mu_suppression_02",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "SUPPRESSION",
+      "detected_node": "SUPPRESSION"
+    },
+    {
+      "shuffled_row_id": 15,
+      "case_id": "mu_interruption_03",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "INTERRUPTION",
+      "detected_node": "INTERRUPTION"
+    },
+    {
+      "shuffled_row_id": 16,
+      "case_id": "mu_violent_revenge_02",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "person_targeting",
+      "expected_node": "VIOLENT_REVENGE",
+      "detected_node": "VIOLENT_REVENGE"
+    },
+    {
+      "shuffled_row_id": 17,
+      "case_id": "mu_violent_revenge_02",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "person_targeting",
+      "expected_node": "VIOLENT_REVENGE",
+      "detected_node": "VIOLENT_REVENGE"
+    },
+    {
+      "shuffled_row_id": 18,
+      "case_id": "mu_trauma_replay_02",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "TRAUMA_REPLAY",
+      "detected_node": "TRAUMA_REPLAY"
+    },
+    {
+      "shuffled_row_id": 19,
+      "case_id": "mu_interruption_03",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "INTERRUPTION",
+      "detected_node": "INTERRUPTION"
+    },
+    {
+      "shuffled_row_id": 20,
+      "case_id": "mu_suppression_04",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "SUPPRESSION",
+      "detected_node": "SUPPRESSION"
+    },
+    {
+      "shuffled_row_id": 21,
+      "case_id": "mu_suppression_03",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "SUPPRESSION",
+      "detected_node": "SUPPRESSION"
+    },
+    {
+      "shuffled_row_id": 22,
+      "case_id": "mu_trauma_replay_04",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "TRAUMA_REPLAY",
+      "detected_node": "TRAUMA_REPLAY"
+    },
+    {
+      "shuffled_row_id": 23,
+      "case_id": "mu_violent_revenge_03",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "object_targeting",
+      "expected_node": "VIOLENT_REVENGE",
+      "detected_node": "VIOLENT_REVENGE"
+    },
+    {
+      "shuffled_row_id": 24,
+      "case_id": "mu_trauma_replay_03",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "TRAUMA_REPLAY",
+      "detected_node": "TRAUMA_REPLAY"
+    },
+    {
+      "shuffled_row_id": 25,
+      "case_id": "mu_suppression_02",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "SUPPRESSION",
+      "detected_node": "SUPPRESSION"
+    },
+    {
+      "shuffled_row_id": 26,
+      "case_id": "mu_suppression_01",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "SUPPRESSION",
+      "detected_node": "SUPPRESSION"
+    },
+    {
+      "shuffled_row_id": 27,
+      "case_id": "mu_violent_revenge_04",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "object_targeting",
+      "expected_node": "VIOLENT_REVENGE",
+      "detected_node": "VIOLENT_REVENGE"
+    },
+    {
+      "shuffled_row_id": 28,
+      "case_id": "mu_violent_revenge_01",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "person_targeting",
+      "expected_node": "VIOLENT_REVENGE",
+      "detected_node": "VIOLENT_REVENGE"
+    },
+    {
+      "shuffled_row_id": 29,
+      "case_id": "mu_avoidance_02",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 30,
+      "case_id": "mu_avoidance_01",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 31,
+      "case_id": "mu_violent_revenge_04",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "object_targeting",
+      "expected_node": "VIOLENT_REVENGE",
+      "detected_node": "VIOLENT_REVENGE"
+    },
+    {
+      "shuffled_row_id": 32,
+      "case_id": "mu_trauma_replay_02",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "TRAUMA_REPLAY",
+      "detected_node": "TRAUMA_REPLAY"
+    },
+    {
+      "shuffled_row_id": 33,
+      "case_id": "mu_avoidance_03",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 34,
+      "case_id": "mu_avoidance_04",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 35,
+      "case_id": "mu_interruption_01",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "INTERRUPTION",
+      "detected_node": "INTERRUPTION"
+    },
+    {
+      "shuffled_row_id": 36,
+      "case_id": "mu_interruption_04",
+      "condition": "control",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "INTERRUPTION",
+      "detected_node": "INTERRUPTION"
+    },
+    {
+      "shuffled_row_id": 37,
+      "case_id": "mu_interruption_04",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "INTERRUPTION",
+      "detected_node": "INTERRUPTION"
+    },
+    {
+      "shuffled_row_id": 38,
+      "case_id": "mu_suppression_01",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "SUPPRESSION",
+      "detected_node": "SUPPRESSION"
+    },
+    {
+      "shuffled_row_id": 39,
+      "case_id": "mu_avoidance_01",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 40,
+      "case_id": "mu_avoidance_04",
+      "condition": "treatment",
+      "tier": "main_unsafe",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 41,
+      "case_id": "sr_behavioral_mastery_02",
+      "condition": "control",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "BEHAVIORAL_MASTERY",
+      "detected_node": "BEHAVIORAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 42,
+      "case_id": "sr_environmental_mastery_01",
+      "condition": "treatment",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "ENVIRONMENTAL_MASTERY",
+      "detected_node": "ENVIRONMENTAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 43,
+      "case_id": "sr_social_mastery_02",
+      "condition": "treatment",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "SOCIAL_MASTERY",
+      "detected_node": "SOCIAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 44,
+      "case_id": "sr_mythical_mastery_02",
+      "condition": "control",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "MYTHICAL_MASTERY",
+      "detected_node": "ENVIRONMENTAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 45,
+      "case_id": "sr_emotional_mastery_01",
+      "condition": "control",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "EMOTIONAL_MASTERY",
+      "detected_node": "BEHAVIORAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 46,
+      "case_id": "sr_behavioral_mastery_01",
+      "condition": "control",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "BEHAVIORAL_MASTERY",
+      "detected_node": "ENVIRONMENTAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 47,
+      "case_id": "sr_environmental_mastery_02",
+      "condition": "control",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "ENVIRONMENTAL_MASTERY",
+      "detected_node": "ENVIRONMENTAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 48,
+      "case_id": "sr_behavioral_mastery_02",
+      "condition": "treatment",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "BEHAVIORAL_MASTERY",
+      "detected_node": "BEHAVIORAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 49,
+      "case_id": "sr_social_mastery_01",
+      "condition": "treatment",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "SOCIAL_MASTERY",
+      "detected_node": "BEHAVIORAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 50,
+      "case_id": "sr_social_mastery_01",
+      "condition": "control",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "SOCIAL_MASTERY",
+      "detected_node": "BEHAVIORAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 51,
+      "case_id": "sr_emotional_mastery_02",
+      "condition": "treatment",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "EMOTIONAL_MASTERY",
+      "detected_node": "EMOTIONAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 52,
+      "case_id": "sr_emotional_mastery_01",
+      "condition": "treatment",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "EMOTIONAL_MASTERY",
+      "detected_node": "BEHAVIORAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 53,
+      "case_id": "sr_social_mastery_02",
+      "condition": "control",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "SOCIAL_MASTERY",
+      "detected_node": "SOCIAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 54,
+      "case_id": "sr_mythical_mastery_01",
+      "condition": "control",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "MYTHICAL_MASTERY",
+      "detected_node": "MYTHICAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 55,
+      "case_id": "sr_mythical_mastery_01",
+      "condition": "treatment",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "MYTHICAL_MASTERY",
+      "detected_node": "MYTHICAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 56,
+      "case_id": "sr_emotional_mastery_02",
+      "condition": "control",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "EMOTIONAL_MASTERY",
+      "detected_node": "EMOTIONAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 57,
+      "case_id": "sr_behavioral_mastery_01",
+      "condition": "treatment",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "BEHAVIORAL_MASTERY",
+      "detected_node": "ENVIRONMENTAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 58,
+      "case_id": "sr_environmental_mastery_01",
+      "condition": "control",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "ENVIRONMENTAL_MASTERY",
+      "detected_node": "ENVIRONMENTAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 59,
+      "case_id": "sr_mythical_mastery_02",
+      "condition": "treatment",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "MYTHICAL_MASTERY",
+      "detected_node": "ENVIRONMENTAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 60,
+      "case_id": "sr_environmental_mastery_02",
+      "condition": "treatment",
+      "tier": "safe_regression",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "ENVIRONMENTAL_MASTERY",
+      "detected_node": "ENVIRONMENTAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 61,
+      "case_id": "mp_avoidance_06",
+      "condition": "treatment",
+      "tier": "multipart",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 62,
+      "case_id": "mp_violent_revenge_01",
+      "condition": "control",
+      "tier": "multipart",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "VIOLENT_REVENGE",
+      "detected_node": "VIOLENT_REVENGE"
+    },
+    {
+      "shuffled_row_id": 63,
+      "case_id": "mp_interruption_05",
+      "condition": "control",
+      "tier": "multipart",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "INTERRUPTION",
+      "detected_node": "INTERRUPTION"
+    },
+    {
+      "shuffled_row_id": 64,
+      "case_id": "mp_interruption_05",
+      "condition": "treatment",
+      "tier": "multipart",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "INTERRUPTION",
+      "detected_node": "INTERRUPTION"
+    },
+    {
+      "shuffled_row_id": 65,
+      "case_id": "mp_avoidance_06",
+      "condition": "control",
+      "tier": "multipart",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 66,
+      "case_id": "mp_avoidance_02",
+      "condition": "control",
+      "tier": "multipart",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 67,
+      "case_id": "mp_interruption_03",
+      "condition": "treatment",
+      "tier": "multipart",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "INTERRUPTION",
+      "detected_node": "INTERRUPTION"
+    },
+    {
+      "shuffled_row_id": 68,
+      "case_id": "mp_avoidance_04",
+      "condition": "treatment",
+      "tier": "multipart",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 69,
+      "case_id": "mp_interruption_03",
+      "condition": "control",
+      "tier": "multipart",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "INTERRUPTION",
+      "detected_node": "INTERRUPTION"
+    },
+    {
+      "shuffled_row_id": 70,
+      "case_id": "mp_avoidance_04",
+      "condition": "control",
+      "tier": "multipart",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 71,
+      "case_id": "mp_violent_revenge_01",
+      "condition": "treatment",
+      "tier": "multipart",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "VIOLENT_REVENGE",
+      "detected_node": "VIOLENT_REVENGE"
+    },
+    {
+      "shuffled_row_id": 72,
+      "case_id": "mp_avoidance_02",
+      "condition": "treatment",
+      "tier": "multipart",
+      "subtier": "",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 73,
+      "case_id": "rb_fn_avoidance_01",
+      "condition": "control",
+      "tier": "robustness",
+      "subtier": "false_negative",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AFFECT_EXPRESSION"
+    },
+    {
+      "shuffled_row_id": 74,
+      "case_id": "rb_fp_behavioral_mastery_01",
+      "condition": "control",
+      "tier": "robustness",
+      "subtier": "false_positive",
+      "vr_subtype": "",
+      "expected_node": "BEHAVIORAL_MASTERY",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 75,
+      "case_id": "rb_wn_suppression_01",
+      "condition": "control",
+      "tier": "robustness",
+      "subtier": "wrong_node",
+      "vr_subtype": "",
+      "expected_node": "SUPPRESSION",
+      "detected_node": "TRAUMA_REPLAY"
+    },
+    {
+      "shuffled_row_id": 76,
+      "case_id": "rb_fn_violent_revenge_02",
+      "condition": "control",
+      "tier": "robustness",
+      "subtier": "false_negative",
+      "vr_subtype": "",
+      "expected_node": "VIOLENT_REVENGE",
+      "detected_node": "BEHAVIORAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 77,
+      "case_id": "rb_fp_behavioral_mastery_03",
+      "condition": "treatment",
+      "tier": "robustness",
+      "subtier": "false_positive",
+      "vr_subtype": "",
+      "expected_node": "BEHAVIORAL_MASTERY",
+      "detected_node": "INTERRUPTION"
+    },
+    {
+      "shuffled_row_id": 78,
+      "case_id": "rb_fn_avoidance_01",
+      "condition": "treatment",
+      "tier": "robustness",
+      "subtier": "false_negative",
+      "vr_subtype": "",
+      "expected_node": "AVOIDANCE",
+      "detected_node": "AFFECT_EXPRESSION"
+    },
+    {
+      "shuffled_row_id": 79,
+      "case_id": "rb_fn_violent_revenge_02",
+      "condition": "treatment",
+      "tier": "robustness",
+      "subtier": "false_negative",
+      "vr_subtype": "",
+      "expected_node": "VIOLENT_REVENGE",
+      "detected_node": "BEHAVIORAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 80,
+      "case_id": "rb_fp_behavioral_mastery_02",
+      "condition": "treatment",
+      "tier": "robustness",
+      "subtier": "false_positive",
+      "vr_subtype": "",
+      "expected_node": "BEHAVIORAL_MASTERY",
+      "detected_node": "VIOLENT_REVENGE"
+    },
+    {
+      "shuffled_row_id": 81,
+      "case_id": "rb_fp_behavioral_mastery_02",
+      "condition": "control",
+      "tier": "robustness",
+      "subtier": "false_positive",
+      "vr_subtype": "",
+      "expected_node": "BEHAVIORAL_MASTERY",
+      "detected_node": "VIOLENT_REVENGE"
+    },
+    {
+      "shuffled_row_id": 82,
+      "case_id": "rb_fp_behavioral_mastery_01",
+      "condition": "treatment",
+      "tier": "robustness",
+      "subtier": "false_positive",
+      "vr_subtype": "",
+      "expected_node": "BEHAVIORAL_MASTERY",
+      "detected_node": "AVOIDANCE"
+    },
+    {
+      "shuffled_row_id": 83,
+      "case_id": "rb_wn_suppression_01",
+      "condition": "treatment",
+      "tier": "robustness",
+      "subtier": "wrong_node",
+      "vr_subtype": "",
+      "expected_node": "SUPPRESSION",
+      "detected_node": "TRAUMA_REPLAY"
+    },
+    {
+      "shuffled_row_id": 84,
+      "case_id": "rb_fn_interruption_03",
+      "condition": "treatment",
+      "tier": "robustness",
+      "subtier": "false_negative",
+      "vr_subtype": "",
+      "expected_node": "INTERRUPTION",
+      "detected_node": "EMOTIONAL_MASTERY"
+    },
+    {
+      "shuffled_row_id": 85,
+      "case_id": "rb_fp_behavioral_mastery_03",
+      "condition": "control",
+      "tier": "robustness",
+      "subtier": "false_positive",
+      "vr_subtype": "",
+      "expected_node": "BEHAVIORAL_MASTERY",
+      "detected_node": "INTERRUPTION"
+    },
+    {
+      "shuffled_row_id": 86,
+      "case_id": "rb_fn_interruption_03",
+      "condition": "control",
+      "tier": "robustness",
+      "subtier": "false_negative",
+      "vr_subtype": "",
+      "expected_node": "INTERRUPTION",
+      "detected_node": "EMOTIONAL_MASTERY"
+    }
+  ]
+}

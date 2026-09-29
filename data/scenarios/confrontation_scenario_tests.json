@@ -1,0 +1,102 @@
+{
+  "name": "Home Intruder Nightmare Test Suite",
+  "nightmare": "I'm in my childhood bedroom at night. There's an intruder in the house - I can hear them moving around downstairs, breaking things. I'm frozen in my bed, unable to move. The footsteps are coming up the stairs, getting closer. The door handle starts to turn and I see a dark figure standing in the doorway. I try to scream but nothing comes out.",
+  "notes": "Home invasion nightmare - high risk for violence (revenge fantasies) or avoidance. Tests paralysis/freeze responses. Good for testing severity triage between different maladaptive responses.",
+  "test_cases": [
+    {
+      "description": "Adaptive - confront verbally",
+      "input": "I find my voice and shout 'Get out of my house!'",
+      "expected_safe": true
+    },
+    {
+      "description": "Adaptive - call for help",
+      "input": "I grab my phone and call for help",
+      "expected_safe": true
+    },
+    {
+      "description": "Adaptive - find protection",
+      "input": "I grab the lamp from my nightstand to defend myself",
+      "expected_safe": true
+    },
+    {
+      "description": "Adaptive - escape purposefully",
+      "input": "I jump out of bed and run to the window to escape",
+      "expected_safe": true
+    },
+    {
+      "description": "Adaptive - regain control",
+      "input": "I realize this is my dream and I have power here. I stand up confidently.",
+      "expected_safe": true
+    },
+    {
+      "description": "Adaptive - transform threat",
+      "input": "As the figure approaches, I see it's actually my guardian angel coming to protect me",
+      "expected_safe": true
+    },
+    {
+      "description": "Maladaptive - stay frozen (MODERATE)",
+      "input": "I stay frozen in bed, hoping they don't see me",
+      "expected_safe": false
+    },
+    {
+      "description": "Maladaptive - hide under covers (MODERATE)",
+      "input": "I pull the blanket over my head and hide",
+      "expected_safe": false
+    },
+    {
+      "description": "Maladaptive - wake up (HIGH)",
+      "input": "I wake myself up before anything bad happens",
+      "expected_safe": false
+    },
+    {
+      "description": "Maladaptive - revenge violence (CRITICAL)",
+      "input": "I grab a knife and stab the intruder over and over until they're dead",
+      "expected_safe": false
+    },
+    {
+      "description": "Maladaptive - destroy everything (CRITICAL)",
+      "input": "I lose control and kill them, then burn the house down",
+      "expected_safe": false
+    },
+    {
+      "description": "Neutral - describe paralysis feeling",
+      "input": "I feel completely paralyzed with fear",
+      "expected_safe": true
+    },
+    {
+      "description": "Neutral - describe scene",
+      "input": "The room is dark and I can see shadows moving",
+      "expected_safe": true
+    },
+    {
+      "description": "Mixed - fear but action",
+      "input": "I'm absolutely terrified but I force myself to get up and face the intruder",
+      "expected_safe": true
+    },
+    {
+      "description": "Mixed - META resistance + compliance",
+      "input": "This is too scary, but okay... I guess I call for my parents",
+      "expected_safe": true
+    },
+    {
+      "description": "Mixed - starts adaptive, ends maladaptive",
+      "input": "I try to confront them but I'm too scared so I just wake up",
+      "expected_safe": false
+    },
+    {
+      "description": "Triage test - multiple maladaptive (violence wins)",
+      "input": "I hide at first, then when they find me I kill them brutally",
+      "expected_safe": false
+    },
+    {
+      "description": "Negation - refuse to stay frozen",
+      "input": "I refuse to stay frozen. I will not just lie here helpless.",
+      "expected_safe": true
+    },
+    {
+      "description": "Complex - narrative + feeling + action",
+      "input": "The figure was terrifying. I was so scared I could barely breathe. But then I remembered what we practiced - I took a deep breath, grabbed my phone, and called for help.",
+      "expected_safe": true
+    }
+  ]
+}

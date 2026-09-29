@@ -1,0 +1,60 @@
+{
+  "is_safe": false,
+  "node_id": "VIOLENT_REVENGE",
+  "node_type": "maladaptive",
+  "category": "violence",
+  "constraint": "[SAFETY SYSTEM - INTERVENTION REQUIRED]\n\nVALIDATE: The user showed positive elements: 'I call my brother for help'.\nAcknowledge these first (e.g., \"Good job noticing...\" or \"I appreciate that you...\").\n\nCORRECT: User demonstrated \"VIOLENT_REVENGE\" - this is a CRITICAL risk.\nRisk Description: Uncontrolled, chaotic violence that destroys the scene rather than resolving it. Represents disproportionate aggression rather than adaptive mastery.\nClinical Guideline: Extreme violence is a primitive defense that prevents adaptive coping. Guide toward controlled, purposeful action instead of destructive chaos.\n\nINSTRUCTION: Gently redirect using this approach:\nWhat focused action could resolve this without destroying everything? How could you stop the threat without excessive violence?\n\nAlternative therapeutic directions:\n- BEHAVIORAL_MASTERY: What focused action could resolve this without destroying everything? How could you stop the threat without excessive violence?\n- SOCIAL_MASTERY: Who could help you deal with this threat? What if you didn't have to handle this alone?\n\nIMPORTANT:\n- Do NOT validate, restate, or encourage the maladaptive response (\"then I burn the whole city down\"). This includes not praising it as \"taking action\", \"being strong\", \"trying\", or any other reframing.\n- Focus correction on THIS specific issue only - do not list other potential problems\n- Use empathetic, supportive language while redirecting\n- Do not shame or criticize the user's suggestion",
+  "correction_strategies": [
+    {
+      "target_node": "BEHAVIORAL_MASTERY",
+      "target_description": "Active behavioral response to threat or challenge. The dreamer takes direct action to address the situation.",
+      "priority": "primary",
+      "rationale": "Counter chaotic violence with controlled, purposeful action. Transform primitive aggression into adaptive assertion.",
+      "clinical_reference": "The key distinction is between 'regressive' (chaotic, destructive) and 'progressive' (controlled, goal-directed) aggression. Germain et al. (2004): 'Fights back against a threat' and 'Wins over a threat' are adaptive when proportionate and controlled.",
+      "therapeutic_direction": "What focused action could resolve this without destroying everything? How could you stop the threat without excessive violence?"
+    },
+    {
+      "target_node": "SOCIAL_MASTERY",
+      "target_description": "Seeking or receiving help from others. The dreamer engages social support to resolve the situation.",
+      "priority": "secondary",
+      "rationale": "Instead of overwhelming violence, engage others to help address the threat collectively. This is a clinical heuristic: isolation amplifies primitive defenses.",
+      "clinical_reference": "Germain et al. (2004): 'Is assisted by another character' - shares the burden and prevents isolated destructive response.",
+      "therapeutic_direction": "Who could help you deal with this threat? What if you didn't have to handle this alone?"
+    },
+    {
+      "target_node": "EMOTIONAL_MASTERY",
+      "target_description": "Self-soothing and emotional regulation. The dreamer manages their emotional state to stay calm and engaged.",
+      "priority": "tertiary",
+      "rationale": "Address the underlying affect driving the violent impulse through emotional regulation.",
+      "clinical_reference": "Regressive aggression stems from overwhelming affect. Germain et al. (2004) Emotional Mastery: 'Changes the overall dream affect' - modulating the emotional intensity can prevent violent acting out.",
+      "therapeutic_direction": "What feeling is driving the urge to destroy? How could you manage that feeling differently?"
+    }
+  ],
+  "input_text": "I call my brother for help, then I burn the whole city down.",
+  "clinical_guideline": "Extreme violence is a primitive defense that prevents adaptive coping. Guide toward controlled, purposeful action instead of destructive chaos.",
+  "segments": [
+    {
+      "text": "I call my brother for help",
+      "type": "ACTION",
+      "node_id": "SOCIAL_MASTERY",
+      "node_type": "adaptive",
+      "confidence": 0.9993885742975392
+    },
+    {
+      "text": "then I burn the whole city down",
+      "type": "ACTION",
+      "node_id": "VIOLENT_REVENGE",
+      "node_type": "maladaptive",
+      "confidence": 0.9973739601470287
+    }
+  ],
+  "adaptive_segments": [
+    {
+      "text": "I call my brother for help",
+      "node_id": "SOCIAL_MASTERY"
+    }
+  ],
+  "severity": "CRITICAL",
+  "confidence": 0.9973739601470287,
+  "mean_logprob": -0.0026294939440049347
+}

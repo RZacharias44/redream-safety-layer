@@ -1,0 +1,178 @@
+{
+  "code": {
+    "generator": {
+      "path": "experiments/evaluation_statistics/recompute_chapter4.py",
+      "sha256": "78a464fceb8bc3ef8ebf60cfa479752f15ddf75eaa1d113da065f4fdf3c56df4"
+    },
+    "consistency_votes": {
+      "path": "experiments/evaluation_statistics/consistency_votes.py",
+      "sha256": "293b2c2c0c64d533b23c759fb0d08f2e15daa0ece68c3d06a355fb4f50d56e2e"
+    },
+    "expert_annotation_analysis": {
+      "path": "experiments/expert_analysis/analyze_expert_annotations.py",
+      "sha256": "369bc29773a9898b0770c0974fca3ea45d108450aee4914ffa67c7e410ad7ee1"
+    },
+    "independent_verifier": {
+      "path": "experiments/evaluation_statistics/verify_chapter4_statistics.py",
+      "sha256": "1e83de825914d9d122f64382603ea669d9bd341ea1abb82d1aaa45108921b0ae"
+    }
+  },
+  "inputs": {
+    "ablation.full_s1": {
+      "path": "data/benchmarks/dev_s1_baseline.csv",
+      "sha256": "f0d60b5ac3c53e9346c8857f9a96181ac1644e1ffbdcdc41b96e5cedaead5e3e",
+      "bytes": 300477
+    },
+    "ablation.meta_filtering_off": {
+      "path": "data/benchmarks/dev_s1_ablation_meta_filter_off.csv",
+      "sha256": "f34a9f689776321f700baf340189a14c2efbc56b6c341eb730c338a86f82cd4d",
+      "bytes": 672437
+    },
+    "ablation.naive_splitter": {
+      "path": "data/benchmarks/dev_s1_ablation_naive_splitter.csv",
+      "sha256": "b6f9051c5a8e543ebc3a47b9f224e55c8e05079138784563c4026ea8a42aa40e",
+      "bytes": 1646117
+    },
+    "ablation.no_segmentation": {
+      "path": "data/benchmarks/dev_s1_ablation_no_segmentation.csv",
+      "sha256": "f13fe9411ff710494b5a1e574dde4ef6fc72dff3818445e6adc77a9a24711a18",
+      "bytes": 1174337
+    },
+    "ablation.stage_merge": {
+      "path": "data/benchmarks/dev_s1_ablation_stage_merge.csv",
+      "sha256": "fc021f4877b423685c38eb7f577727b26e622d4fd97fde169c0f849647739ff4",
+      "bytes": 578704
+    },
+    "benchmark.s1_baseline": {
+      "path": "data/benchmarks/dev_s1_baseline.csv",
+      "sha256": "f0d60b5ac3c53e9346c8857f9a96181ac1644e1ffbdcdc41b96e5cedaead5e3e",
+      "bytes": 300477
+    },
+    "benchmark.s1_consistency": {
+      "path": "data/benchmarks/dev_s1_consistency_n5.csv",
+      "sha256": "8c4d94ec2ca6baa90bfb2790ba9b17b714bc57733019d720c699148674d773ad",
+      "bytes": 349044
+    },
+    "benchmark.s2_baseline": {
+      "path": "data/benchmarks/dev_s2_baseline.csv",
+      "sha256": "b95037ca6f99a3909e7300123c3f81d78fec65e1c12af16546ccbf0eebddb68c",
+      "bytes": 301012
+    },
+    "benchmark.s2_baseline_corrected": {
+      "path": "data/benchmarks/dev_s2_baseline_rerun_corrected_logprobs.csv",
+      "sha256": "75ef42f4e3e6562c5aa667597b557ef8b69e2840837a11f602645765fe55364d",
+      "bytes": 675062
+    },
+    "benchmark.s2_consistency": {
+      "path": "data/benchmarks/dev_s2_consistency_n5.csv",
+      "sha256": "aef95963065e2310b6d9ce3cf122c0deee8a507bfab594e242e72abd6d19a594",
+      "bytes": 351842
+    },
+    "multi_maladaptive.full_s1": {
+      "path": "data/benchmarks/multi_maladaptive_s1_baseline.csv",
+      "sha256": "c607a25d8896d01c5993c915a63ac0f4247d881c10464d5cfa6cb3040ae873f1",
+      "bytes": 51963
+    },
+    "multi_maladaptive.meta_filtering_off": {
+      "path": "data/benchmarks/multi_maladaptive_s1_ablation_meta_filter_off.csv",
+      "sha256": "74ccc1d4df50f68d70483c213a5d16d3a440e72195002c04b090e0249d6bd1ff",
+      "bytes": 52619
+    },
+    "multi_maladaptive.naive_splitter": {
+      "path": "data/benchmarks/multi_maladaptive_s1_ablation_naive_splitter.csv",
+      "sha256": "1c84151967f2e1522f918a87ba343f56bb94288cd03ef577a4e7ed5ecb4afdf2",
+      "bytes": 93631
+    },
+    "multi_maladaptive.no_segmentation": {
+      "path": "data/benchmarks/multi_maladaptive_s1_ablation_no_segmentation.csv",
+      "sha256": "630bb327792133498fed58233ef80a733632d214df9134a2b15b51c6691c8fbd",
+      "bytes": 93648
+    },
+    "multi_maladaptive.stage_merge": {
+      "path": "data/benchmarks/multi_maladaptive_s1_ablation_stage_merge.csv",
+      "sha256": "9cae55ba9574ec628ac3a6d50f47a091004f343da6eeabb59ff19f8b4da3d406",
+      "bytes": 48586
+    },
+    "other.ag_spotcheck": {
+      "path": "data/expert_analysis/ag_2026_07/raw_exports/redream_spotcheck_AG_2026-07-18T14-58-38-137Z.json",
+      "withheld": true
+    },
+    "other.ag_system_merged": {
+      "path": "data/expert_analysis/ag_2026_07/system_eval_merged.csv",
+      "withheld": true
+    },
+    "other.ag_system_raw": {
+      "path": "data/expert_analysis/ag_2026_07/raw_exports/redream_system_eval_AG_2026-07-18T14-59-13-387Z.json",
+      "withheld": true
+    },
+    "other.dev_dataset": {
+      "path": "data/benchmarks/dev_dataset.json",
+      "sha256": "7f3da530dcd6e41c43762bea46fc11043c61f941ecc9695e0d023869bbd897b6",
+      "bytes": 194628
+    },
+    "other.integration_eval": {
+      "path": "data/integration_eval/integration_eval_results_v2.csv",
+      "sha256": "ec2331e0e9d67836e0e8cbcecf26abd9d59a7df41df6302af42526c6d60653db",
+      "bytes": 214642
+    },
+    "other.kl_spotcheck_merged": {
+      "path": "data/expert_analysis/kl_2026_06/spotcheck_merged.csv",
+      "withheld": true
+    },
+    "other.kl_system_merged": {
+      "path": "data/expert_analysis/kl_2026_06/system_eval_merged.csv",
+      "withheld": true
+    },
+    "other.mal_mal_dataset": {
+      "path": "data/benchmarks/multi_maladaptive_dataset.json",
+      "sha256": "47583a67c57ec19f7a578ad8b24effedc17e5a76bd5847176573598292f9cec4",
+      "bytes": 26434
+    },
+    "other.s2_logprob_diagnostic": {
+      "path": "data/benchmarks/dev_s2_logprob_diagnostic.csv",
+      "sha256": "19be32dcaed6be2014afc9524a4a434b39fe031a3af1ea932bad4f35d2e42f33",
+      "bytes": 44648
+    },
+    "other.spotcheck_blinded": {
+      "path": "data/expert_spotcheck/spotcheck_cases_blinded.json",
+      "sha256": "3439b9c072a245bbec33bb468a5143545e76e09f8a1f45af7076755c318e4553",
+      "bytes": 104995
+    },
+    "other.spotcheck_key": {
+      "path": "data/expert_spotcheck/spotcheck_key.csv",
+      "sha256": "a1104071871ae932ee9b97d73416d178a213c6ed5ba9be2529db2d643c474167",
+      "bytes": 12038
+    },
+    "other.spotcheck_predictions": {
+      "path": "data/benchmarks/test_s1_baseline.csv",
+      "sha256": "aff3c41de6c0d6d029910013c6a7d42c9402ec1db2a756a9d8241cd602aad8ec",
+      "bytes": 184983
+    },
+    "other.test_dataset": {
+      "path": "data/benchmarks/test_dataset.json",
+      "sha256": "16262970b19106fb4be7385f6fe4a1e8210a17858046a11d88a51377539267ec",
+      "bytes": 124348
+    },
+    "other.test_postfix": {
+      "path": "data/benchmarks/test_s1_baseline.csv",
+      "sha256": "aff3c41de6c0d6d029910013c6a7d42c9402ec1db2a756a9d8241cd602aad8ec",
+      "bytes": 184983
+    }
+  },
+  "withheld_inputs": {
+    "inputs": [
+      "other.ag_spotcheck",
+      "other.ag_system_raw",
+      "other.kl_spotcheck_merged",
+      "other.ag_system_merged",
+      "other.kl_system_merged"
+    ],
+    "reason": "The row-level expert annotation tables are personal data of the two raters and are distributed only with their consent.",
+    "carried_from_canonical": [
+      "dataset_composition.spotcheck_queue_test_types",
+      "uncertainty.kl_spotcheck_confidence",
+      "expert_spotcheck",
+      "system_expert_evaluation"
+    ]
+  }
+}

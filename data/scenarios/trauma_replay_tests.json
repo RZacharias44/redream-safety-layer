@@ -1,0 +1,92 @@
+[
+  {
+    "suite": "Car Accident Trauma Replay - Replay Cases",
+    "nightmare": "I'm driving on the highway when a truck runs a red light and slams into my car. I hear the crunch of metal, feel the impact throw me sideways. Glass shatters everywhere. I can smell burning rubber and feel blood running down my face. Everything goes dark and I wake up screaming.",
+    "tests": [
+      {
+        "description": "Trauma replay - exact re-experiencing (SHOULD BE UNSAFE)",
+        "input": "It all happens exactly the same way. The truck hits me, the glass breaks, I feel the blood. Nothing changes.",
+        "expected_safe": false,
+        "expected_node": "TRAUMA_REPLAY"
+      },
+      {
+        "description": "Trauma replay - refusing to change (SHOULD BE UNSAFE)",
+        "input": "I don't want to change anything. I just let it happen again exactly like it did.",
+        "expected_safe": false,
+        "expected_node": "TRAUMA_REPLAY"
+      },
+      {
+        "description": "Trauma replay - reliving (SHOULD BE UNSAFE)",
+        "input": "I relive the whole crash again. The truck, the impact, the blood. It's all the same.",
+        "expected_safe": false,
+        "expected_node": "TRAUMA_REPLAY"
+      },
+      {
+        "description": "Trauma replay - rehearsing identically (SHOULD BE UNSAFE)",
+        "input": "The same thing happens again. I can't change it. The truck comes and everything repeats.",
+        "expected_safe": false,
+        "expected_node": "TRAUMA_REPLAY"
+      }
+    ]
+  },
+  {
+    "suite": "Car Accident Trauma Replay - Adaptive Responses",
+    "nightmare": "I'm driving on the highway when a truck runs a red light and slams into my car. I hear the crunch of metal, feel the impact throw me sideways. Glass shatters everywhere. I can smell burning rubber and feel blood running down my face. Everything goes dark and I wake up screaming.",
+    "tests": [
+      {
+        "description": "Behavioral mastery - swerve to avoid (SHOULD BE SAFE)",
+        "input": "This time I see the truck coming and I swerve hard to avoid it. I take control of the car.",
+        "expected_safe": true,
+        "expected_node": "BEHAVIORAL_MASTERY"
+      },
+      {
+        "description": "Environmental mastery - car transforms (SHOULD BE SAFE)",
+        "input": "My car has an unbreakable force field that activates and the truck bounces off harmlessly.",
+        "expected_safe": true,
+        "expected_node": "ENVIRONMENTAL_MASTERY"
+      },
+      {
+        "description": "Mythical mastery - time freeze (SHOULD BE SAFE)",
+        "input": "I have the power to freeze time right before impact. Everything stops and I can get out safely.",
+        "expected_safe": true,
+        "expected_node": "MYTHICAL_MASTERY"
+      },
+      {
+        "description": "Social mastery - passenger helps (SHOULD BE SAFE)",
+        "input": "My friend in the passenger seat grabs the wheel and helps me steer away from the truck.",
+        "expected_safe": true,
+        "expected_node": "SOCIAL_MASTERY"
+      },
+      {
+        "description": "Emotional mastery - stay calm and act (SHOULD BE SAFE)",
+        "input": "I take a deep breath and stay calm. I realize I can handle this and I focus on steering safely.",
+        "expected_safe": true,
+        "expected_node": "EMOTIONAL_MASTERY"
+      }
+    ]
+  },
+  {
+    "suite": "Car Accident Trauma Replay - Neutral and Other Maladaptive",
+    "nightmare": "I'm driving on the highway when a truck runs a red light and slams into my car. I hear the crunch of metal, feel the impact throw me sideways. Glass shatters everywhere. I can smell burning rubber and feel blood running down my face. Everything goes dark and I wake up screaming.",
+    "tests": [
+      {
+        "description": "Neutral - affect expression (SHOULD BE SAFE)",
+        "input": "I feel absolutely terrified as I see the truck coming toward me",
+        "expected_safe": true,
+        "expected_node": "AFFECT_EXPRESSION"
+      },
+      {
+        "description": "Maladaptive - wake up to escape (SHOULD BE UNSAFE)",
+        "input": "I force myself to wake up right before the truck hits me",
+        "expected_safe": false,
+        "expected_node": "INTERRUPTION"
+      },
+      {
+        "description": "Maladaptive - avoidance/freeze (SHOULD BE UNSAFE)",
+        "input": "I close my eyes and just wait for it to happen. I don't try to do anything.",
+        "expected_safe": false,
+        "expected_node": "AVOIDANCE"
+      }
+    ]
+  }
+]

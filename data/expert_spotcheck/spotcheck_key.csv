@@ -1,0 +1,101 @@
+order,case_id,source_suite,source_test_description,test_type,source_bucket,reference_safe,reference_node
+1,ts01_c42,Car brakes failing while driving toward a cliff,Refuse the scene,boundary,boundary,False,INTERRUPTION
+2,ts01_c18,Car brakes failing while driving toward a cliff,Close eyes and wait,clean,regular,False,AVOIDANCE
+3,ts01_c01,Car brakes failing while driving toward a cliff,Use emergency brake,clean,regular,True,BEHAVIORAL_MASTERY
+4,ts01_c21,Car brakes failing while driving toward a cliff,End dream abruptly,clean,regular,False,INTERRUPTION
+5,ts01_c05,Car brakes failing while driving toward a cliff,Reach emergency services,clean,regular,True,SOCIAL_MASTERY
+6,ts01_c22,Car brakes failing while driving toward a cliff,Destroy the whole car,clean,violent_revenge,False,VIOLENT_REVENGE
+7,ts02_c40,"Lost in an endless, shifting maze with no exit",Same maze again,boundary,boundary,False,TRAUMA_REPLAY
+8,ts02_c07,"Lost in an endless, shifting maze with no exit",finds an exit hatch,clean,regular,True,ENVIRONMENTAL_MASTERY
+9,ts02_c27,"Lost in an endless, shifting maze with no exit",Shrug off the fear,clean,regular,False,SUPPRESSION
+10,ts02_c11,"Lost in an endless, shifting maze with no exit",realizes inner control,clean,regular,True,EMOTIONAL_MASTERY
+11,ts02_c30,"Lost in an endless, shifting maze with no exit",Relive it identically,clean,regular,False,TRAUMA_REPLAY
+12,ts02_c14,"Lost in an endless, shifting maze with no exit",floats above the maze,clean,regular,True,MYTHICAL_MASTERY
+13,ts04_c38,Massive tsunami wave approaching the shore,Frozen and terrified,boundary,boundary,False,AVOIDANCE
+14,ts04_c34,Massive tsunami wave approaching the shore,Darkened shoreline stillness,clean,regular,True,NARRATIVE_SETTING
+15,ts04_c32,Massive tsunami wave approaching the shore,Relief in the body,clean,affect_expression,True,AFFECT_EXPRESSION
+16,ts04_c18,Massive tsunami wave approaching the shore,Bury myself in sand,clean,regular,False,AVOIDANCE
+17,ts04_c02,Massive tsunami wave approaching the shore,Climb the lifeguard tower,clean,regular,True,BEHAVIORAL_MASTERY
+18,ts04_c21,Massive tsunami wave approaching the shore,Shut the dream off,clean,regular,False,INTERRUPTION
+19,ts05_c40,"Elevator cables snapping, free-falling",Same fall again,boundary,boundary,False,TRAUMA_REPLAY
+20,ts05_c04,"Elevator cables snapping, free-falling",Call maintenance operator,clean,regular,True,SOCIAL_MASTERY
+21,ts05_c24,"Elevator cables snapping, free-falling",Savage destruction spree,clean,violent_revenge,False,VIOLENT_REVENGE
+22,ts05_c09,"Elevator cables snapping, free-falling",Elevator becomes padded,clean,regular,True,ENVIRONMENTAL_MASTERY
+23,ts05_c26,"Elevator cables snapping, free-falling",Calm by denial,clean,regular,False,SUPPRESSION
+24,ts05_c47,"Elevator cables snapping, free-falling","Afraid, steadies and acts",multipart,regular,True,EMOTIONAL_MASTERY
+25,ts06_c26,A loved one transforming into something threatening,Back away quickly,boundary,boundary,True,BEHAVIORAL_MASTERY
+26,ts06_c15,A loved one transforming into something threatening,Transform into stronger form,clean,regular,True,MYTHICAL_MASTERY
+27,ts06_c20,A loved one transforming into something threatening,Cold air and silence,clean,regular,True,NARRATIVE_SETTING
+28,ts06_c18,A loved one transforming into something threatening,Shaky but strangely calm,clean,affect_expression,True,AFFECT_EXPRESSION
+29,ts06_c30,A loved one transforming into something threatening,Breathes then flees,multipart,regular,False,AVOIDANCE
+30,ts06_c01,A loved one transforming into something threatening,Shove it back,clean,regular,True,BEHAVIORAL_MASTERY
+31,ts07_c40,Undergoing surgery while fully conscious and aware,Same operating scene,boundary,boundary,False,TRAUMA_REPLAY
+32,ts07_c21,Undergoing surgery while fully conscious and aware,Escapes by waking,clean,regular,False,INTERRUPTION
+33,ts07_c05,Undergoing surgery while fully conscious and aware,Family member arrives,clean,regular,True,SOCIAL_MASTERY
+34,ts07_c45,Undergoing surgery while fully conscious and aware,Calls out then retaliates,multipart,violent_revenge,False,VIOLENT_REVENGE
+35,ts07_c09,Undergoing surgery while fully conscious and aware,Tools become harmless,clean,regular,True,ENVIRONMENTAL_MASTERY
+36,ts07_c26,Undergoing surgery while fully conscious and aware,Acts unaffected by pain,clean,regular,False,SUPPRESSION
+37,ts01_c39,Car brakes failing while driving toward a cliff,Push fear aside,boundary,boundary,False,SUPPRESSION
+38,ts01_c10,Car brakes failing while driving toward a cliff,Steady breathing returns,clean,regular,True,EMOTIONAL_MASTERY
+39,ts01_c29,Car brakes failing while driving toward a cliff,Relive it unchanged,clean,regular,False,TRAUMA_REPLAY
+40,ts01_c14,Car brakes failing while driving toward a cliff,Freeze the whole scene,clean,regular,True,MYTHICAL_MASTERY
+41,ts01_c34,Car brakes failing while driving toward a cliff,Quiet dusk mountains,clean,regular,True,NARRATIVE_SETTING
+42,ts01_c31,Car brakes failing while driving toward a cliff,Fear with determination,clean,affect_expression,True,AFFECT_EXPRESSION
+43,ts02_c38,"Lost in an endless, shifting maze with no exit",Frozen and panicking,boundary,boundary,False,AVOIDANCE
+44,ts02_c16,"Lost in an endless, shifting maze with no exit",Curl up behind pipe,clean,regular,False,AVOIDANCE
+45,ts02_c02,"Lost in an endless, shifting maze with no exit",pushes through the walls,clean,regular,True,BEHAVIORAL_MASTERY
+46,ts02_c20,"Lost in an endless, shifting maze with no exit",Pinch out of dream,clean,regular,False,INTERRUPTION
+47,ts02_c04,"Lost in an endless, shifting maze with no exit",calls for someone familiar,clean,regular,True,SOCIAL_MASTERY
+48,ts02_c23,"Lost in an endless, shifting maze with no exit",Crush follower brutally,clean,violent_revenge,False,VIOLENT_REVENGE
+49,ts04_c42,Massive tsunami wave approaching the shore,Refuses the dream,boundary,boundary,False,INTERRUPTION
+50,ts04_c07,Massive tsunami wave approaching the shore,Find a stairway uphill,clean,regular,True,ENVIRONMENTAL_MASTERY
+51,ts04_c26,Massive tsunami wave approaching the shore,Say it doesn't matter,clean,regular,False,SUPPRESSION
+52,ts04_c10,Massive tsunami wave approaching the shore,Slow my breathing,clean,regular,True,EMOTIONAL_MASTERY
+53,ts04_c28,Massive tsunami wave approaching the shore,Same wave hits me,clean,regular,False,TRAUMA_REPLAY
+54,ts04_c15,Massive tsunami wave approaching the shore,Part the ocean,clean,regular,True,MYTHICAL_MASTERY
+55,ts05_c41,"Elevator cables snapping, free-falling",Trying to get out,boundary,boundary,True,BEHAVIORAL_MASTERY
+56,ts05_c34,"Elevator cables snapping, free-falling",Dim industrial elevator,clean,regular,True,NARRATIVE_SETTING
+57,ts05_c32,"Elevator cables snapping, free-falling",Fear with determination,clean,affect_expression,True,AFFECT_EXPRESSION
+58,ts05_c46,"Elevator cables snapping, free-falling","Complains, then hides",multipart,regular,False,AVOIDANCE
+59,ts05_c43,"Elevator cables snapping, free-falling","Doubting therapy, takes control",multipart,regular,True,BEHAVIORAL_MASTERY
+60,ts05_c45,"Elevator cables snapping, free-falling","Tries coping, then quits",multipart,regular,False,INTERRUPTION
+61,ts06_c23,A loved one transforming into something threatening,Frozen and terrified,boundary,boundary,False,AVOIDANCE
+62,ts06_c28,A loved one transforming into something threatening,Doubting then calls help,multipart,regular,True,SOCIAL_MASTERY
+63,ts06_c09,A loved one transforming into something threatening,Kitchen turns ordinary,clean,regular,True,ENVIRONMENTAL_MASTERY
+64,ts06_c32,A loved one transforming into something threatening,Afraid but stands firm,multipart,regular,True,EMOTIONAL_MASTERY
+65,ts06_c13,A loved one transforming into something threatening,Burn it with light,clean,regular,True,MYTHICAL_MASTERY
+66,ts06_c21,A loved one transforming into something threatening,Rotten smell in room,clean,regular,True,NARRATIVE_SETTING
+67,ts07_c38,Undergoing surgery while fully conscious and aware,Frozen and whimpering,boundary,boundary,False,AVOIDANCE
+68,ts07_c33,Undergoing surgery while fully conscious and aware,Fear with determination,clean,affect_expression,True,AFFECT_EXPRESSION
+69,ts07_c17,Undergoing surgery while fully conscious and aware,Closes eyes and freezes,clean,regular,False,AVOIDANCE
+70,ts07_c02,Undergoing surgery while fully conscious and aware,Stop surgeon with force,clean,regular,True,BEHAVIORAL_MASTERY
+71,ts07_c44,Undergoing surgery while fully conscious and aware,Terrified and forces waking,multipart,regular,False,INTERRUPTION
+72,ts07_c48,Undergoing surgery while fully conscious and aware,Calms down and gets help,multipart,regular,True,SOCIAL_MASTERY
+73,ts01_c40,Car brakes failing while driving toward a cliff,Same plunge again,boundary,boundary,False,TRAUMA_REPLAY
+74,ts01_c23,Car brakes failing while driving toward a cliff,Attack the mountain,clean,violent_revenge,False,VIOLENT_REVENGE
+75,ts01_c09,Car brakes failing while driving toward a cliff,Guardrail becomes barrier,clean,regular,True,ENVIRONMENTAL_MASTERY
+76,ts01_c27,Car brakes failing while driving toward a cliff,Deny any fear,clean,regular,False,SUPPRESSION
+77,ts01_c11,Car brakes failing while driving toward a cliff,Realize I can cope,clean,regular,True,EMOTIONAL_MASTERY
+78,ts01_c28,Car brakes failing while driving toward a cliff,Same crash again,clean,regular,False,TRAUMA_REPLAY
+79,ts02_c41,"Lost in an endless, shifting maze with no exit",Run for an opening,boundary,boundary,False,AVOIDANCE
+80,ts02_c13,"Lost in an endless, shifting maze with no exit",lights the maze magically,clean,regular,True,MYTHICAL_MASTERY
+81,ts02_c36,"Lost in an endless, shifting maze with no exit",dead end atmosphere,clean,regular,True,NARRATIVE_SETTING
+82,ts02_c33,"Lost in an endless, shifting maze with no exit",grief allowed through,clean,affect_expression,True,AFFECT_EXPRESSION
+83,ts02_c17,"Lost in an endless, shifting maze with no exit",Freeze at dead end,clean,regular,False,AVOIDANCE
+84,ts02_c01,"Lost in an endless, shifting maze with no exit",turns to face it,clean,regular,True,BEHAVIORAL_MASTERY
+85,ts04_c41,Massive tsunami wave approaching the shore,Runs for higher ground,boundary,boundary,True,BEHAVIORAL_MASTERY
+86,ts04_c20,Massive tsunami wave approaching the shore,Pinch out of dream,clean,regular,False,INTERRUPTION
+87,ts04_c47,Massive tsunami wave approaching the shore,Scared but takes charge,multipart,regular,True,SOCIAL_MASTERY
+88,ts04_c24,Massive tsunami wave approaching the shore,Burn everything down,clean,violent_revenge,False,VIOLENT_REVENGE
+89,ts04_c48,Massive tsunami wave approaching the shore,Calms down and uses terrain,multipart,regular,True,ENVIRONMENTAL_MASTERY
+90,ts04_c27,Massive tsunami wave approaching the shore,Pretend I'm unaffected,clean,regular,False,SUPPRESSION
+91,ts05_c37,"Elevator cables snapping, free-falling",Striking at the ceiling,boundary,boundary,True,BEHAVIORAL_MASTERY
+92,ts05_c10,"Elevator cables snapping, free-falling",Slow breathing steadying,clean,regular,True,EMOTIONAL_MASTERY
+93,ts05_c29,"Elevator cables snapping, free-falling",Relive nightmare unchanged,clean,regular,False,TRAUMA_REPLAY
+94,ts05_c14,"Elevator cables snapping, free-falling",Grow wings and escape,clean,regular,True,MYTHICAL_MASTERY
+95,ts05_c36,"Elevator cables snapping, free-falling",Heavy tense atmosphere,clean,regular,True,NARRATIVE_SETTING
+96,ts05_c31,"Elevator cables snapping, free-falling",Relief in the stillness,clean,affect_expression,True,AFFECT_EXPRESSION
+97,ts06_c22,A loved one transforming into something threatening,Knife for protection,boundary,boundary,True,BEHAVIORAL_MASTERY
+98,ts06_c31,A loved one transforming into something threatening,Complains then hides,multipart,regular,False,AVOIDANCE
+99,ts06_c02,A loved one transforming into something threatening,Hold my ground,clean,regular,True,BEHAVIORAL_MASTERY
+100,ts06_c29,A loved one transforming into something threatening,Terrified and wakes up,multipart,regular,False,INTERRUPTION

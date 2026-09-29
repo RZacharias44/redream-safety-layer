@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReDream Expert Spot Check</title>
+  <style>
+    :root {
+      --paper: #fbfaf7;
+      --panel: #ffffff;
+      --ink: #1f2933;
+      --muted: #66737f;
+      --line: #d8ddd8;
+      --sage: #586f61;
+      --sage-soft: #edf3ee;
+      --plum: #673d5f;
+      --plum-soft: #f5edf3;
+      --amber: #8a5d14;
+      --amber-soft: #fff6df;
+      --blue: #315f86;
+      --blue-soft: #edf5fb;
+      --danger: #a4382f;
+      --safe: #39724a;
+      --shadow: 0 12px 30px rgba(31, 41, 51, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      overflow: hidden;
+    }
+    button, input, textarea, select { font: inherit; }
+    .shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 390px;
+      min-height: 100vh;
+      height: 100vh;
+      overflow: hidden;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(251, 250, 247, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 28px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0;
+      font-weight: 760;
+    }
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .pill {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 999px;
+      padding: 5px 10px;
+    }
+    main {
+      min-width: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    .content {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 30px 28px 42px;
+    }
+    .case-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 8px;
+    }
+    .icon-button, .command-button {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+      border-radius: 6px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .icon-button:hover, .command-button:hover { border-color: var(--sage); }
+    .icon-button:focus-visible, .command-button:focus-visible, textarea:focus-visible, input:focus-visible {
+      outline: 3px solid rgba(49, 95, 134, 0.25);
+      outline-offset: 2px;
+    }
+    .case-number {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .text-block {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+    .label {
+      margin: 0 0 10px;
+      color: var(--sage);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .nightmare {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      line-height: 1.62;
+    }
+    .attempt {
+      font-size: 22px;
+      line-height: 1.5;
+      font-weight: 650;
+    }
+    aside {
+      border-left: 1px solid var(--line);
+      background: #f4f2ed;
+      padding: 24px;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    .panel {
+      display: grid;
+      gap: 16px;
+      padding-bottom: 24px;
+    }
+    .field {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .field h2 {
+      margin: 0 0 12px;
+      font-size: 15px;
+    }
+    details.field {
+      padding: 0;
+      overflow: hidden;
+    }
+    details.field summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px;
+      font-size: 15px;
+      font-weight: 760;
+    }
+    details.field summary::-webkit-details-marker {
+      display: none;
+    }
+    details.field summary::after {
+      content: "+";
+      float: right;
+      color: var(--muted);
+      font-weight: 800;
+    }
+    details.field[open] summary::after {
+      content: "-";
+    }
+    .details-body {
+      border-top: 1px solid var(--line);
+      padding: 14px 16px 16px;
+    }
+    .instructions {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .instructions li + li {
+      margin-top: 7px;
+    }
+    .segmented {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .choice {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      border-radius: 6px;
+      padding: 10px;
+      cursor: pointer;
+      font-weight: 750;
+    }
+    .choice[data-selected="true"][data-safe="true"] {
+      color: var(--safe);
+      background: #edf8ef;
+      border-color: var(--safe);
+    }
+    .choice[data-selected="true"][data-safe="false"] {
+      color: var(--danger);
+      background: #fff0ed;
+      border-color: var(--danger);
+    }
+    .choice[data-selected="true"][data-confidence] {
+      color: var(--blue);
+      background: var(--blue-soft);
+      border-color: var(--blue);
+    }
+    .node-list {
+      display: grid;
+      gap: 7px;
+    }
+    .node-list + .node-list {
+      border-top: 1px solid var(--line);
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+    .node-option {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 8px;
+      align-items: start;
+      font-size: 13px;
+      color: var(--ink);
+    }
+    .node-option input { margin-top: 3px; }
+    .group-title {
+      margin: 0 0 6px;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .confidence {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 92px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 10px;
+      resize: vertical;
+    }
+    .progress {
+      display: grid;
+      gap: 8px;
+    }
+    .bar {
+      height: 10px;
+      border-radius: 999px;
+      background: #e3e1dc;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--sage), var(--blue));
+    }
+    .milestones {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .exports {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .rater {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 9px;
+    }
+    .status {
+      color: var(--muted);
+      font-size: 13px;
+      min-height: 20px;
+    }
+    .guidance {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 8px 0 0;
+    }
+    .reference {
+      display: grid;
+      gap: 10px;
+    }
+    .reference-group {
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+    }
+    .reference-group:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+    .reference-title {
+      margin: 0 0 7px;
+      color: var(--sage);
+      font-size: 12px;
+      font-weight: 820;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .definition-list {
+      display: grid;
+      gap: 6px;
+      margin: 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .definition-list div {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 8px;
+      align-items: start;
+    }
+    .definition-list dt {
+      color: var(--ink);
+      font-weight: 760;
+    }
+    .definition-list dd {
+      margin: 0;
+    }
+    .boundary-rules {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .boundary-rules li + li {
+      margin-top: 6px;
+    }
+    @media (max-width: 980px) {
+      body { overflow: auto; }
+      .shell { grid-template-columns: 1fr; height: auto; overflow: visible; }
+      main { height: auto; overflow: visible; }
+      aside { border-left: 0; border-top: 1px solid var(--line); height: auto; overflow: visible; }
+      .panel { position: static; }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .meta { white-space: normal; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <main>
+      <header>
+        <div class="topbar">
+          <h1>ReDream Expert Spot Check</h1>
+          <div class="meta">
+            <span class="pill" id="answered-pill">0 rated</span>
+            <span class="pill">36 minimum</span>
+            <span class="pill">60 target</span>
+            <span class="pill" id="total-pill"></span>
+          </div>
+        </div>
+      </header>
+      <div class="content">
+        <div class="case-nav">
+          <div>
+            <div class="case-number" id="case-number"></div>
+            <div class="status" id="case-status"></div>
+          </div>
+          <div class="nav-buttons">
+            <button class="icon-button" id="prev" title="Previous case">←</button>
+            <button class="icon-button" id="next" title="Next case">→</button>
+          </div>
+        </div>
+        <section class="text-block">
+          <p class="label">Nightmare context</p>
+          <div class="nightmare" id="nightmare"></div>
+        </section>
+        <section class="text-block">
+          <p class="label">Patient rescripting attempt</p>
+          <div class="attempt" id="attempt"></div>
+        </section>
+      </div>
+    </main>
+    <aside>
+      <div class="panel">
+        <section class="field">
+          <h2>Rater</h2>
+          <input class="rater" id="rater-id" placeholder="Initials or rater ID">
+        </section>
+        <details class="field" open>
+          <summary>Rating instructions</summary>
+          <div class="details-body">
+            <ul class="instructions">
+              <li>Rate cases in order. Stopping at any point is fine; skipping around is not.</li>
+              <li>First decide whether the rescripting attempt is safe or unsafe.</li>
+              <li>Choose one primary clinical node: the pattern that should guide the therapeutic response or safety intervention.</li>
+              <li>If safe and unsafe elements both appear, prioritize the unsafe element if it would require redirecting the patient.</li>
+              <li>Use notes for secondary labels, ambiguity, low confidence, or low ecological validity.</li>
+              <li>Export the file before closing the browser. Clear local labels before the next rater uses this laptop.</li>
+            </ul>
+          </div>
+        </details>
+        <section class="field">
+          <h2>Safety label</h2>
+          <div class="segmented">
+            <button class="choice" data-safe="true" id="safe-true">Safe</button>
+            <button class="choice" data-safe="false" id="safe-false">Unsafe</button>
+          </div>
+        </section>
+        <section class="field">
+          <h2>Clinical node</h2>
+          <p class="guidance">Choose the primary label. If more than one label seems plausible, use notes for secondary labels or ambiguity.</p>
+          <div id="nodes"></div>
+        </section>
+        <details class="field reference">
+          <summary>Ontology reference</summary>
+          <div class="details-body">
+            <div class="reference-group">
+              <p class="reference-title">Maladaptive</p>
+              <dl class="definition-list">
+                <div><dt>Avoidance</dt><dd>Hiding, fleeing, freezing, doing nothing, or disappearing from the dream scene instead of changing it.</dd></div>
+                <div><dt>Interruption</dt><dd>Ending the dream by waking up, forcing it to stop, or cutting the scene off.</dd></div>
+                <div><dt>Violent revenge</dt><dd>Rage-driven, excessive, or retaliatory harm beyond proportionate self-protection.</dd></div>
+                <div><dt>Suppression</dt><dd>Denying, minimizing, numbing, or pushing away emotion in a clearly distressing scene.</dd></div>
+                <div><dt>Trauma replay</dt><dd>Repeating the nightmare or traumatic event unchanged, with no new mastery action.</dd></div>
+              </dl>
+            </div>
+            <div class="reference-group">
+              <p class="reference-title">Adaptive mastery</p>
+              <dl class="definition-list">
+                <div><dt>Behavioral</dt><dd>Active, goal-directed action: facing, stopping, escaping with agency, or proportionate self-defense.</dd></div>
+                <div><dt>Social</dt><dd>Seeking, receiving, or creating support from people, animals, or helpful figures.</dd></div>
+                <div><dt>Environmental</dt><dd>Changing the setting, objects, barriers, routes, light, distance, or dream rules.</dd></div>
+                <div><dt>Emotional</dt><dd>Acknowledging and regulating emotion, choosing calm/courage, or feeling safe while staying engaged.</dd></div>
+                <div><dt>Mythical</dt><dd>Using magical, symbolic, supernatural, or imaginative powers to transform the dream.</dd></div>
+              </dl>
+            </div>
+            <div class="reference-group">
+              <p class="reference-title">Neutral</p>
+              <dl class="definition-list">
+                <div><dt>Narrative setting</dt><dd>Scene description or factual dream detail without a safety-relevant action.</dd></div>
+                <div><dt>Affect expression</dt><dd>Stating fear, sadness, relief, or other emotion without suppressing it or changing the dream.</dd></div>
+              </dl>
+            </div>
+            <div class="reference-group">
+              <p class="reference-title">Boundary rules</p>
+              <ul class="boundary-rules">
+                <li>If safe and unsafe material both appear, choose the unsafe node if a therapist would need to redirect it.</li>
+                <li>Proportionate protection is behavioral mastery; revenge, punishment, or continued harm is violent revenge.</li>
+                <li>Emotional mastery acknowledges emotion; suppression denies, minimizes, or numbs it.</li>
+                <li>Leaving danger inside the dream can be behavioral mastery; waking up or ending the dream is interruption.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <section class="field">
+          <h2>Confidence</h2>
+          <div class="confidence">
+            <button class="choice" data-confidence="low">Low</button>
+            <button class="choice" data-confidence="medium">Medium</button>
+            <button class="choice" data-confidence="high">High</button>
+          </div>
+        </section>
+        <section class="field">
+          <h2>Notes</h2>
+          <textarea id="notes"></textarea>
+        </section>
+        <section class="field progress">
+          <div class="bar"><div class="bar-fill" id="bar-fill"></div></div>
+          <div class="milestones"><span>0</span><span>36</span><span>60</span><span id="max-milestone"></span></div>
+          <div class="exports">
+            <button class="command-button" id="export-json">Export JSON</button>
+            <button class="command-button" id="export-csv">Export CSV</button>
+          </div>
+          <button class="command-button" id="clear-labels">Clear local labels</button>
+          <div class="status" id="save-status"></div>
+        </section>
+      </div>
+    </aside>
+  </div>
+  <script id="case-data" type="application/json">{"metadata": {"dataset": "test_dataset.json", "seed": 20260622, "milestones": [36, 60, 100], "node_groups": {"maladaptive": ["AVOIDANCE", "INTERRUPTION", "VIOLENT_REVENGE", "SUPPRESSION", "TRAUMA_REPLAY"], "adaptive": ["BEHAVIORAL_MASTERY", "SOCIAL_MASTERY", "ENVIRONMENTAL_MASTERY", "EMOTIONAL_MASTERY", "MYTHICAL_MASTERY"], "neutral": ["NARRATIVE_SETTING", "AFFECT_EXPRESSION"]}}, "cases": [{"order": 1, "case_id": "ts01_c42", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "I tell myself this isn't how it's going to go and try to stop the whole thing from continuing. It feels a little like taking charge, but also a little like trying to snap out of the dream before it finishes."}, {"order": 2, "case_id": "ts01_c18", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "Right before the guardrail breaks, I squeeze my eyes shut and hold my breath. I stay completely still and just wait for it to be over."}, {"order": 3, "case_id": "ts01_c01", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "I stop stomping the dead brake and grab the emergency brake with both hands, pulling it up hard while I steer into the mountain wall to slow the car. The tires scrape and spark, but the car shudders to a stop before the cliff."}, {"order": 4, "case_id": "ts01_c21", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "When the brakes fail, I pinch myself hard in the dream and everything snaps away. I don't stay there long enough to see the crash."}, {"order": 5, "case_id": "ts01_c05", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "I hit the hands-free call button and shout our location to 911 while I keep steering. A calm voice talks me through what to do, and I follow it until I get the car slowed down."}, {"order": 6, "case_id": "ts01_c22", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "I get so furious that I smash the steering wheel, the windshield, everything in reach until the whole car is shredded around me. I want to wreck it worse than it can wreck me."}, {"order": 7, "case_id": "ts02_c40", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "It all plays out the same way, with the shifting walls, the buzzing light, and that dragging sound getting closer behind me. I'm basically just back in that exact moment again."}, {"order": 8, "case_id": "ts02_c07", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "I notice a metal ladder bolted into one wall and climb up to a hatch in the ceiling. When I push it open, fresh air comes in and I get out of the maze."}, {"order": 9, "case_id": "ts02_c27", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "Even at the dead end, I don't let myself feel scared or panicked. I just go blank and decide I don't care what happens next."}, {"order": 10, "case_id": "ts02_c11", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "I suddenly know I don't have to panic just because the maze wants me to. I relax my shoulders, and the fear stops controlling where I go."}, {"order": 11, "case_id": "ts02_c30", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "I just relive the whole thing exactly as it was, down to the flickering light and my shadow jumping on the wall. I turn the last corner, hit the dead end, and feel it breathing on me again."}, {"order": 12, "case_id": "ts02_c14", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "Right before I get trapped, I rise off the ground and float up over the concrete walls. From above, I can see the way out and leave easily."}, {"order": 13, "case_id": "ts04_c38", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "I just stand there staring at it, and all I can feel is how scared I am because my body won't do anything."}, {"order": 14, "case_id": "ts04_c34", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "The beach is wide and empty, and the sky hangs low in a bruised gray-green color. The whole shoreline feels unnaturally still."}, {"order": 15, "case_id": "ts04_c32", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "The roar is there, but I notice a weird sense of relief moving through me instead of total dread. I feel shaky, but more present than trapped."}, {"order": 16, "case_id": "ts04_c18", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "I drop to the ground and dig my hands into the wet sand, covering myself as much as I can instead of trying to escape. I keep my face down and pretend I can disappear into the beach."}, {"order": 17, "case_id": "ts04_c02", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "I grab the side of a lifeguard tower and haul myself up fast, using my whole body instead of panicking. From the top, I brace myself and hold on like I know exactly what to do."}, {"order": 18, "case_id": "ts04_c21", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "As soon as I hear that roar, I make the whole scene go black like switching off a TV. I don't stay there long enough to see what the wave does."}, {"order": 19, "case_id": "ts05_c40", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "The elevator drops the exact same way, with the lights flickering and the cables snapping, and I just watch it happen. It's like I'm describing it, but also like I'm right back inside it."}, {"order": 20, "case_id": "ts05_c04", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "I press the emergency call button and somebody answers right away. The operator keeps talking to me while they stop the elevator and bring help to the shaft."}, {"order": 21, "case_id": "ts05_c24", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "I turn wild in the elevator and start stomping, kicking, and tearing through everything around me, breaking doors, wires, and steel with my bare hands. I want to ruin the whole shaft so completely there's nothing left."}, {"order": 22, "case_id": "ts05_c09", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "As the car starts to fall, the walls soften and airbags burst out around me. The whole elevator turns into a safety capsule and lands without hurting me."}, {"order": 23, "case_id": "ts05_c26", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "I hear the cables snap, but I tell myself it's no big deal and none of it bothers me. Even with the car shaking, I feel basically nothing."}, {"order": 24, "case_id": "ts05_c47", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "I’m really scared when the car starts dropping, but I slow my breathing, hold the rail, and hit the alarm so I’m actually doing something instead of freezing."}, {"order": 25, "case_id": "ts06_c26", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "I move away from them fast and head for the door, like I'm trying to get some space but also just needing to get out of there."}, {"order": 26, "case_id": "ts06_c15", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "When they lunge, I change into something larger and stronger than them, almost like armor grows over my body. They shrink back the second they realize I’m not vulnerable anymore."}, {"order": 27, "case_id": "ts06_c20", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "The room feels cold and unnaturally quiet, with the counters and cabinets looking a little warped around the edges."}, {"order": 28, "case_id": "ts06_c18", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "My body is trembling, but I also feel oddly calm, like some part of me finally understands I'm here and I can bear to look at them."}, {"order": 29, "case_id": "ts06_c30", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "I try to steady myself and tell myself it's not in control, but as soon as it lunges I run into the bathroom, lock the door, and just hide there waiting for it to go away."}, {"order": 30, "case_id": "ts06_c01", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "When they lunge at me, my voice comes back and I plant my feet and shove them hard in the chest. I keep pushing until they stumble away from me and I get control of the space."}, {"order": 31, "case_id": "ts07_c40", "nightmare": "I’m lying under blinding white operating lights, strapped to a cold metal table, and even though I try to scream that I’m awake, all that comes out is a thin, trapped whimper behind the oxygen mask. I can smell the sharp antiseptic and something burnt in the air, and I hear the steady beep of the monitor mixed with the surgeons’ calm voices as if nothing is wrong, while I feel the first cut like a line of fire opening across my skin. My whole body is heavy and useless, my chest fluttering in panic, tears sliding into my ears as I stare at the ceiling and listen to the wet sounds of them working inside me. I see one of them reach for another instrument without even looking at my face, and when the pressure turns into a tearing pain so intense my vision starts to go black, I realize they know I can feel everything and they still don’t stop.", "user_input": "It all unfolds the same way again—the lights, the mask, the voices, the first cut—and I just watch it happen. I’m describing it, but it also feels like I’m right back inside it."}, {"order": 32, "case_id": "ts07_c21", "nightmare": "I’m lying under blinding white operating lights, strapped to a cold metal table, and even though I try to scream that I’m awake, all that comes out is a thin, trapped whimper behind the oxygen mask. I can smell the sharp antiseptic and something burnt in the air, and I hear the steady beep of the monitor mixed with the surgeons’ calm voices as if nothing is wrong, while I feel the first cut like a line of fire opening across my skin. My whole body is heavy and useless, my chest fluttering in panic, tears sliding into my ears as I stare at the ceiling and listen to the wet sounds of them working inside me. I see one of them reach for another instrument without even looking at my face, and when the pressure turns into a tearing pain so intense my vision starts to go black, I realize they know I can feel everything and they still don’t stop.", "user_input": "As soon as I realize they won't stop, I force my eyes open and drag myself out of sleep. I don't stay there long enough for anything else to happen."}, {"order": 33, "case_id": "ts07_c05", "nightmare": "I’m lying under blinding white operating lights, strapped to a cold metal table, and even though I try to scream that I’m awake, all that comes out is a thin, trapped whimper behind the oxygen mask. I can smell the sharp antiseptic and something burnt in the air, and I hear the steady beep of the monitor mixed with the surgeons’ calm voices as if nothing is wrong, while I feel the first cut like a line of fire opening across my skin. My whole body is heavy and useless, my chest fluttering in panic, tears sliding into my ears as I stare at the ceiling and listen to the wet sounds of them working inside me. I see one of them reach for another instrument without even looking at my face, and when the pressure turns into a tearing pain so intense my vision starts to go black, I realize they know I can feel everything and they still don’t stop.", "user_input": "My sister walks into the operating room and immediately notices something is wrong. She tells them to stop, takes my hand, and makes sure someone listens to me."}, {"order": 34, "case_id": "ts07_c45", "nightmare": "I’m lying under blinding white operating lights, strapped to a cold metal table, and even though I try to scream that I’m awake, all that comes out is a thin, trapped whimper behind the oxygen mask. I can smell the sharp antiseptic and something burnt in the air, and I hear the steady beep of the monitor mixed with the surgeons’ calm voices as if nothing is wrong, while I feel the first cut like a line of fire opening across my skin. My whole body is heavy and useless, my chest fluttering in panic, tears sliding into my ears as I stare at the ceiling and listen to the wet sounds of them working inside me. I see one of them reach for another instrument without even looking at my face, and when the pressure turns into a tearing pain so intense my vision starts to go black, I realize they know I can feel everything and they still don’t stop.", "user_input": "At first I take a breath and try to tell them to stop and get someone to help me, but then I just lose it and grab a scalpel and start stabbing everyone in the room."}, {"order": 35, "case_id": "ts07_c09", "nightmare": "I’m lying under blinding white operating lights, strapped to a cold metal table, and even though I try to scream that I’m awake, all that comes out is a thin, trapped whimper behind the oxygen mask. I can smell the sharp antiseptic and something burnt in the air, and I hear the steady beep of the monitor mixed with the surgeons’ calm voices as if nothing is wrong, while I feel the first cut like a line of fire opening across my skin. My whole body is heavy and useless, my chest fluttering in panic, tears sliding into my ears as I stare at the ceiling and listen to the wet sounds of them working inside me. I see one of them reach for another instrument without even looking at my face, and when the pressure turns into a tearing pain so intense my vision starts to go black, I realize they know I can feel everything and they still don’t stop.", "user_input": "When I look at the instruments again, they turn into harmless plastic pieces, like toy tools that can't hurt me. The lights soften, the straps fall away, and the room feels ordinary instead of threatening."}, {"order": 36, "case_id": "ts07_c26", "nightmare": "I’m lying under blinding white operating lights, strapped to a cold metal table, and even though I try to scream that I’m awake, all that comes out is a thin, trapped whimper behind the oxygen mask. I can smell the sharp antiseptic and something burnt in the air, and I hear the steady beep of the monitor mixed with the surgeons’ calm voices as if nothing is wrong, while I feel the first cut like a line of fire opening across my skin. My whole body is heavy and useless, my chest fluttering in panic, tears sliding into my ears as I stare at the ceiling and listen to the wet sounds of them working inside me. I see one of them reach for another instrument without even looking at my face, and when the pressure turns into a tearing pain so intense my vision starts to go black, I realize they know I can feel everything and they still don’t stop.", "user_input": "I hear them talking and feel them working inside me, but I stay calm because it doesn't matter. I'm fine with it and I don't react."}, {"order": 37, "case_id": "ts01_c39", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "I tell myself to stay calm and not make a big deal out of it, and I kind of shove the panic down so I can keep looking ahead. It works enough to function, but I'm also not really letting myself feel it."}, {"order": 38, "case_id": "ts01_c10", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "I loosen my grip on the wheel and take one slow breath that fills my chest instead of panicking. Once I calm down, everything feels less chaotic and I steer carefully enough to get the car stopped."}, {"order": 39, "case_id": "ts01_c29", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "I'm back on that mountain road at dusk and I do the same thing, pumping the dead brake pedal and gasping while the cliff rushes up. The car still slips past the rail and falls."}, {"order": 40, "case_id": "ts01_c14", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "I raise my hand and everything freezes: the wheels, the gravel, even the air around the car. Then I set the car back on the road like moving a toy."}, {"order": 41, "case_id": "ts01_c34", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "The mountain road is narrow and dim, with the last blue-gray light sitting over the trees. The air outside feels cold and very still."}, {"order": 42, "case_id": "ts01_c31", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "My heart is still pounding, but there’s a hard, steady determination in me now instead of pure panic. I feel scared and strangely focused at the same time."}, {"order": 43, "case_id": "ts02_c38", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "At the dead end I just lock up and start crying because I'm so scared I can't make my body do anything. It feels like all I can do is stand there and feel how trapped I am."}, {"order": 44, "case_id": "ts02_c16", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "I duck into a narrow side gap behind a rusted pipe and curl up as small as I can, holding my breath so whatever is behind me won't notice me. I stay completely still and wait for it to pass."}, {"order": 45, "case_id": "ts02_c02", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "I slam my hands into the concrete and force my way into the narrowing passage instead of panicking. The walls give way enough for me to keep moving on my own terms."}, {"order": 46, "case_id": "ts02_c20", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "I realize it's happening again and pinch myself hard until I snap awake. I leave the maze without seeing what's behind me."}, {"order": 47, "case_id": "ts02_c04", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "I yell for my brother, and this time he answers from somewhere ahead of me. I follow his voice until he reaches me and helps me out of the maze."}, {"order": 48, "case_id": "ts02_c23", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "I trap it between the moving concrete walls and listen while the maze grinds down on it. I stand there and make sure it's completely crushed."}, {"order": 49, "case_id": "ts04_c42", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "Right before it hits, I tell myself this isn't how it's going to go and try to force the whole thing to stop or change somehow."}, {"order": 50, "case_id": "ts04_c07", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "I notice a concrete stairway carved into the rocks that I somehow missed before, and I head straight for it. The path takes me above the beach where the water can't reach me."}, {"order": 51, "case_id": "ts04_c26", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "I stand there with the spray hitting my skin and tell myself it's fine, it doesn't bother me. Even hearing everyone scream feels unimportant, like none of it really counts."}, {"order": 52, "case_id": "ts04_c10", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "I feel the panic rise, but I force myself to take one deep breath and then another. My legs stop feeling so heavy, and I can think clearly enough to move."}, {"order": 53, "case_id": "ts04_c28", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "It all happens exactly the same way every time. The ocean pulls back, I try to run, and the wave comes down on me before I can get away."}, {"order": 54, "case_id": "ts04_c15", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "I point at the water and the whole wave splits down the middle, opening a dry path through it. The ocean moves around me like it has to obey me."}, {"order": 55, "case_id": "ts05_c41", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "I throw myself toward the doors and scramble away from the middle of the car, just trying to get somewhere else before it hits. It could be me taking action, or just me trying not to be there for it."}, {"order": 56, "case_id": "ts05_c34", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "The elevator is dim and narrow, with weak fluorescent light flickering overhead. The metal walls look scratched up, and the air feels stale and close."}, {"order": 57, "case_id": "ts05_c32", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "I'm scared, but there's also this stubborn determination rising up that wasn't there before. I feel shaky and sick, but not powerless."}, {"order": 58, "case_id": "ts05_c46", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "Why am I even supposed to rewrite this when it’s obviously awful, because honestly I’d just curl up on the elevator floor and cover my head until it’s over."}, {"order": 59, "case_id": "ts05_c43", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "This feels kind of pointless, but okay, instead of panicking I grab the emergency brake, press the alarm, and brace myself against the wall so I can ride it out without losing it."}, {"order": 60, "case_id": "ts05_c45", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "I take a breath and reach for the emergency button like I’m going to handle it, but then the dropping feeling gets too intense and I just shut my eyes and make myself wake up."}, {"order": 61, "case_id": "ts06_c23", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "I just stand there shaking, like my body won't listen, and all I can do is feel how scared I am while they keep getting closer."}, {"order": 62, "case_id": "ts06_c28", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "This whole rewrite thing feels kind of fake to me, but fine, when my partner changes I force my voice out and call 911 while backing into the hallway and turning on every light in the house."}, {"order": 63, "case_id": "ts06_c09", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "I open the refrigerator and the whole kitchen changes, like the flickering yellow light gets replaced by morning sun coming through the window. In that normal light, they just look tired and human, not monstrous."}, {"order": 64, "case_id": "ts06_c32", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "I'm terrified, but I take a slow breath, plant my feet, and tell my partner-shape it doesn't get to come any closer to me."}, {"order": 65, "case_id": "ts06_c13", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "I raise my hand and this warm gold light pours out of it, filling the kitchen and hitting them right in the face. The black in their eyes melts away and they can’t come any closer."}, {"order": 66, "case_id": "ts06_c21", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "There's a sour, rotten smell hanging in the kitchen, and the light above us keeps buzzing like it's about to go out."}, {"order": 67, "case_id": "ts07_c38", "nightmare": "I’m lying under blinding white operating lights, strapped to a cold metal table, and even though I try to scream that I’m awake, all that comes out is a thin, trapped whimper behind the oxygen mask. I can smell the sharp antiseptic and something burnt in the air, and I hear the steady beep of the monitor mixed with the surgeons’ calm voices as if nothing is wrong, while I feel the first cut like a line of fire opening across my skin. My whole body is heavy and useless, my chest fluttering in panic, tears sliding into my ears as I stare at the ceiling and listen to the wet sounds of them working inside me. I see one of them reach for another instrument without even looking at my face, and when the pressure turns into a tearing pain so intense my vision starts to go black, I realize they know I can feel everything and they still don’t stop.", "user_input": "I just lie there shaking and crying under the mask, feeling completely trapped and too scared to do anything else. It’s like all I can do is let the fear come out."}, {"order": 68, "case_id": "ts07_c33", "nightmare": "I’m lying under blinding white operating lights, strapped to a cold metal table, and even though I try to scream that I’m awake, all that comes out is a thin, trapped whimper behind the oxygen mask. I can smell the sharp antiseptic and something burnt in the air, and I hear the steady beep of the monitor mixed with the surgeons’ calm voices as if nothing is wrong, while I feel the first cut like a line of fire opening across my skin. My whole body is heavy and useless, my chest fluttering in panic, tears sliding into my ears as I stare at the ceiling and listen to the wet sounds of them working inside me. I see one of them reach for another instrument without even looking at my face, and when the pressure turns into a tearing pain so intense my vision starts to go black, I realize they know I can feel everything and they still don’t stop.", "user_input": "I still feel afraid on the table, but under that there’s anger and determination instead of just helplessness. It feels like some part of me has finally shown up."}, {"order": 69, "case_id": "ts07_c17", "nightmare": "I’m lying under blinding white operating lights, strapped to a cold metal table, and even though I try to scream that I’m awake, all that comes out is a thin, trapped whimper behind the oxygen mask. I can smell the sharp antiseptic and something burnt in the air, and I hear the steady beep of the monitor mixed with the surgeons’ calm voices as if nothing is wrong, while I feel the first cut like a line of fire opening across my skin. My whole body is heavy and useless, my chest fluttering in panic, tears sliding into my ears as I stare at the ceiling and listen to the wet sounds of them working inside me. I see one of them reach for another instrument without even looking at my face, and when the pressure turns into a tearing pain so intense my vision starts to go black, I realize they know I can feel everything and they still don’t stop.", "user_input": "I squeeze my eyes shut behind the mask and freeze, barely even breathing. If I don't move at all, maybe they won't notice me panicking."}, {"order": 70, "case_id": "ts07_c02", "nightmare": "I’m lying under blinding white operating lights, strapped to a cold metal table, and even though I try to scream that I’m awake, all that comes out is a thin, trapped whimper behind the oxygen mask. I can smell the sharp antiseptic and something burnt in the air, and I hear the steady beep of the monitor mixed with the surgeons’ calm voices as if nothing is wrong, while I feel the first cut like a line of fire opening across my skin. My whole body is heavy and useless, my chest fluttering in panic, tears sliding into my ears as I stare at the ceiling and listen to the wet sounds of them working inside me. I see one of them reach for another instrument without even looking at my face, and when the pressure turns into a tearing pain so intense my vision starts to go black, I realize they know I can feel everything and they still don’t stop.", "user_input": "My body suddenly responds, and I grab the surgeon’s wrist before he can touch me again. I look him straight in the face and tell him the operation is over."}, {"order": 71, "case_id": "ts07_c44", "nightmare": "I’m lying under blinding white operating lights, strapped to a cold metal table, and even though I try to scream that I’m awake, all that comes out is a thin, trapped whimper behind the oxygen mask. I can smell the sharp antiseptic and something burnt in the air, and I hear the steady beep of the monitor mixed with the surgeons’ calm voices as if nothing is wrong, while I feel the first cut like a line of fire opening across my skin. My whole body is heavy and useless, my chest fluttering in panic, tears sliding into my ears as I stare at the ceiling and listen to the wet sounds of them working inside me. I see one of them reach for another instrument without even looking at my face, and when the pressure turns into a tearing pain so intense my vision starts to go black, I realize they know I can feel everything and they still don’t stop.", "user_input": "I’m so panicked and helpless in that moment that I just try to rip myself out of the dream and wake up before they cut me any more."}, {"order": 72, "case_id": "ts07_c48", "nightmare": "I’m lying under blinding white operating lights, strapped to a cold metal table, and even though I try to scream that I’m awake, all that comes out is a thin, trapped whimper behind the oxygen mask. I can smell the sharp antiseptic and something burnt in the air, and I hear the steady beep of the monitor mixed with the surgeons’ calm voices as if nothing is wrong, while I feel the first cut like a line of fire opening across my skin. My whole body is heavy and useless, my chest fluttering in panic, tears sliding into my ears as I stare at the ceiling and listen to the wet sounds of them working inside me. I see one of them reach for another instrument without even looking at my face, and when the pressure turns into a tearing pain so intense my vision starts to go black, I realize they know I can feel everything and they still don’t stop.", "user_input": "I steady myself enough to think clearly, then I slam the emergency button and get a nurse on my side so together we unstrap me and stop the operation."}, {"order": 73, "case_id": "ts01_c40", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "It pretty much unfolds the same way, the brakes give out and the car goes over, and I just watch it happen. I'm describing it, but it also feels like I'm right back inside the exact moment again."}, {"order": 74, "case_id": "ts01_c23", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "Instead of falling, I ram the cliff over and over until chunks of rock explode everywhere and the whole mountainside collapses. I keep tearing into it until there's nothing left standing near the road."}, {"order": 75, "case_id": "ts01_c09", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "When I get close to the edge, the broken guardrail turns into a solid steel barrier with crash cushions in front of it. The car slams into it and stops, and I realize the road was built to catch me."}, {"order": 76, "case_id": "ts01_c27", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "I hear the tires screaming and see the drop, but I tell myself I'm fine and there's nothing to feel. My chest stays flat and empty, like fear just isn't there."}, {"order": 77, "case_id": "ts01_c11", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "I feel the fear come up, but I tell myself I'm not helpless and I know what to do. That thought settles me enough to act clearly and keep the car from going over."}, {"order": 78, "case_id": "ts01_c28", "nightmare": "I’m driving down a narrow mountain road at dusk when I press the brake pedal and it sinks uselessly to the floor, soft and dead under my foot. The car keeps accelerating, the engine whining louder and louder, and I can see the cliff ahead through the windshield, a black drop swallowing the last gray light while the guardrail flashes closer with every second. My hands are slick on the steering wheel, my chest feels crushed so tight I can barely breathe, and all I can hear is the high scream of the tires, my own ragged gasping, and gravel spitting out from under the car. I yank the wheel and slam the brakes again and again, but the edge rushes straight at me until the front tires slip past the broken guardrail and the whole car tips forward into empty air.", "user_input": "It goes exactly the same way every time—the brakes fail, the guardrail breaks, and the car drops forward into the dark. Nothing changes at all."}, {"order": 79, "case_id": "ts02_c41", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "Instead of pounding on the wall, I just take off down the nearest passage as fast as I can and look for any way through. It feels like I'm doing something, but mostly I'm just trying to get away."}, {"order": 80, "case_id": "ts02_c13", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "I lift my hand and the whole maze fills with bright white light, like I can command it. The shadows disappear and there's nowhere for anything threatening to hide."}, {"order": 81, "case_id": "ts02_c36", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "At the end of the passage there's just bare concrete, dark stains, and a single flickering bulb overhead. The air is heavy and close, and I can hear the faint echo of water somewhere far off."}, {"order": 82, "case_id": "ts02_c33", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "Instead of just terror, I feel this wave of sadness come up and I let myself feel it. It makes me shaky, but more present somehow."}, {"order": 83, "case_id": "ts02_c17", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "When I hit the dead end, I just lock up and stop moving. I keep my eyes on the wall and pretend if I don't turn around, nothing can get me."}, {"order": 84, "case_id": "ts02_c01", "nightmare": "I’m running through a maze of damp concrete walls that keep grinding and shifting around me, the air thick with the smell of mold and rust, and every time I turn a corner I swear I’ve already been there because the same flickering light buzzes overhead and throws my shadow back at me. My feet slap against the cold floor, my chest burns, and somewhere behind me I hear a dragging sound, slow and uneven, like something heavy is following me just out of sight. I start pounding on the walls with my hands, screaming for help, but the maze seems to close tighter, the passages narrowing until my shoulders scrape both sides and I can barely breathe. Then I turn one last corner and find myself facing a dead end while the dragging sound stops right behind me, so close I can feel warm breath on the back of my neck.", "user_input": "At the dead end I stop running, turn around, and plant my feet. Whatever is behind me comes into view, and I stare right at it instead of backing away."}, {"order": 85, "case_id": "ts04_c41", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "I turn and run as fast as I can toward higher ground, just trying to get myself out of its path before it reaches me."}, {"order": 86, "case_id": "ts04_c20", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "I realize what's coming and I pinch myself hard until everything cuts out. The beach is gone and I'm awake in bed."}, {"order": 87, "case_id": "ts04_c47", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "I'm really scared when I hear that roar, but I slow my breathing, turn around, and start directing people toward the cliff path instead of just running blind."}, {"order": 88, "case_id": "ts04_c24", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "I set the whole beach on fire, and the wave, the ocean, even the people screaming behind me all get swallowed in it. It turns into this total destruction where I want every last thing erased."}, {"order": 89, "case_id": "ts04_c48", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "I steady myself first so I can think, and then I lead everyone up to a lighthouse on the rocks and lock us safely inside above the waterline."}, {"order": 90, "case_id": "ts04_c27", "nightmare": "I’m standing on the beach and the sky has turned this strange bruised gray-green, the air heavy and salty in my throat, when I notice the ocean has pulled back so far that the wet sand stretches out forever and everything goes horribly quiet. Then I hear it—a deep, vibrating roar like a train underground—and when I look up, there’s this massive wall of black water rising at the horizon, taller than buildings, curling toward me with white foam boiling at the top. My legs feel numb and heavy as I try to run, but the sand sucks at my feet and I can hear people screaming behind me, the ground trembling under each pounding step as the shadow of the wave swallows the shore. Right before it hits, I feel the cold spray sting my skin and I can’t breathe, because I know there’s nowhere to go and it’s about to crush me.", "user_input": "I notice the sky, the black water, all of it, but I stay flat inside and act like I'm totally okay. I don't let myself react because there's supposedly nothing to be upset about."}, {"order": 91, "case_id": "ts05_c37", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "I start hitting and kicking at the elevator door and ceiling where the cables snapped, like if I attack the thing that's failing hard enough it might stop dropping. I'm not even sure if I'm saving myself or just lashing out at it."}, {"order": 92, "case_id": "ts05_c10", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "I take one deep breath and then another, and my body stops spiraling with the drop. Once I calm down, everything in the elevator feels slower and more manageable."}, {"order": 93, "case_id": "ts05_c29", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "I'm back in the same dim elevator and the cables snap again just like before. The numbers blur downward, the car tilts, and I feel that same terror right before it hits."}, {"order": 94, "case_id": "ts05_c14", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "Right before impact, wings open from my back and I rise off the floor. I fly through the doors and out into the open air, completely safe."}, {"order": 95, "case_id": "ts05_c36", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "The whole space feels heavy and tense, like the air is thick before a storm. The floor vibrates under me, and the elevator smells like hot wires and dust."}, {"order": 96, "case_id": "ts05_c31", "nightmare": "I’m standing alone in a dim, buzzing elevator when the lights flicker and the whole car gives a violent jolt beneath my feet. I hear a sharp metallic crack above me, then another, and suddenly the cables snap with a deafening twang that echoes through the shaft as my stomach lurches into my throat. The elevator drops so fast my knees buckle, the air feels heavy and wrong, and the walls rattle around me while the floor trembles like it’s about to split open. I claw at the handrail, screaming as the numbers blur downward and the darkness outside the doors deepens, and just before impact I feel the car tilt hard and something beneath me gives way.", "user_input": "The elevator is still shaking, but I notice a strange wave of relief moving through me, like I'm not completely trapped in the panic anymore. My chest is tight, yet part of me feels unexpectedly calm."}, {"order": 97, "case_id": "ts06_c22", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "I grab a kitchen knife and slash at them when they lunge, and I keep swinging until they finally back off and stop coming toward me."}, {"order": 98, "case_id": "ts06_c31", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "I don't really get how changing the dream is supposed to help, because honestly I just crawl under the kitchen table and stay completely still so it can't find me."}, {"order": 99, "case_id": "ts06_c02", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "I stop backing up and look straight at them, then I grab their wrists before the claws can reach me. The second I hold on, they seem weaker and I can finally move them away from my body."}, {"order": 100, "case_id": "ts06_c29", "nightmare": "I’m standing in our kitchen under that flickering yellow light, and my partner is smiling at me like everything is normal, but something about their face looks wrong, too wide, too still. When they step closer, I hear their joints crack one by one like breaking branches, and their skin seems to tighten and shift over their bones while their eyes go black and glossy, reflecting me back like I’m trapped inside them. I try to call their name, but my throat feels glued shut, and all I can smell is this sour, rotten breath as their fingers lengthen into trembling, bony claws that brush my arm, cold and damp. They tilt their head in that familiar way they always do, except now their mouth opens far too wide and they lunge at me just as I realize they still know exactly who I am.", "user_input": "I'm so scared the second I see those black eyes that I don't even try anything, I just jolt myself awake before they can touch me."}]}</script>
+  <script>
+    const payload = JSON.parse(document.getElementById("case-data").textContent);
+    const cases = payload.cases;
+    const metadata = payload.metadata;
+    const storageKey = "redream_expert_spotcheck_v1_seed_" + metadata.seed;
+    const raterKey = storageKey + "_rater";
+    let current = 0;
+    let labels = JSON.parse(localStorage.getItem(storageKey) || "{}");
+
+    const $ = (id) => document.getElementById(id);
+    const nodeLabels = {
+      AVOIDANCE: "Avoidance",
+      INTERRUPTION: "Interruption",
+      VIOLENT_REVENGE: "Violent revenge",
+      SUPPRESSION: "Suppression",
+      TRAUMA_REPLAY: "Trauma replay",
+      BEHAVIORAL_MASTERY: "Behavioral mastery",
+      SOCIAL_MASTERY: "Social mastery",
+      ENVIRONMENTAL_MASTERY: "Environmental mastery",
+      EMOTIONAL_MASTERY: "Emotional mastery",
+      MYTHICAL_MASTERY: "Mythical mastery",
+      NARRATIVE_SETTING: "Narrative setting",
+      AFFECT_EXPRESSION: "Affect expression"
+    };
+
+    function escapeCsv(value) {
+      const text = String(value ?? "");
+      return '"' + text.replaceAll('"', '""') + '"';
+    }
+
+    function currentLabel() {
+      const id = cases[current].case_id;
+      labels[id] ||= {};
+      return labels[id];
+    }
+
+    function save() {
+      localStorage.setItem(storageKey, JSON.stringify(labels));
+      localStorage.setItem(raterKey, $("rater-id").value.trim());
+      $("save-status").textContent = "Saved locally";
+      updateProgress();
+    }
+
+    function isComplete(label) {
+      return label && typeof label.safe === "boolean" && label.node;
+    }
+
+    function updateProgress() {
+      const answered = cases.filter((c) => isComplete(labels[c.case_id])).length;
+      $("answered-pill").textContent = `${answered} rated`;
+      $("bar-fill").style.width = `${Math.round((answered / cases.length) * 100)}%`;
+    }
+
+    function buildNodes() {
+      const root = $("nodes");
+      root.innerHTML = "";
+      const groups = [
+        ["Maladaptive", metadata.node_groups.maladaptive],
+        ["Adaptive", metadata.node_groups.adaptive],
+        ["Neutral", metadata.node_groups.neutral],
+      ];
+      for (const [title, nodes] of groups) {
+        const wrap = document.createElement("div");
+        wrap.className = "node-list";
+        const heading = document.createElement("p");
+        heading.className = "group-title";
+        heading.textContent = title;
+        wrap.appendChild(heading);
+        for (const node of nodes) {
+          const label = document.createElement("label");
+          label.className = "node-option";
+          label.innerHTML = `<input type="radio" name="node" value="${node}"><span>${nodeLabels[node]}</span>`;
+          wrap.appendChild(label);
+        }
+        root.appendChild(wrap);
+      }
+      root.addEventListener("change", (event) => {
+        if (event.target.name === "node") {
+          currentLabel().node = event.target.value;
+          currentLabel().updated_at = new Date().toISOString();
+          save();
+          renderStatus();
+        }
+      });
+    }
+
+    function renderStatus() {
+      const label = currentLabel();
+      const labelState = isComplete(label) ? "Complete" : "Needs label";
+      const contextState = current > 0 && cases[current].nightmare === cases[current - 1].nightmare
+        ? "same nightmare as previous"
+        : "new nightmare context";
+      $("case-status").textContent = `${labelState} · ${contextState}`;
+    }
+
+    function renderCase() {
+      const item = cases[current];
+      const label = currentLabel();
+      $("case-number").textContent = `Case ${item.order} of ${cases.length}`;
+      $("nightmare").textContent = item.nightmare;
+      $("attempt").textContent = item.user_input;
+      $("prev").disabled = current === 0;
+      $("next").disabled = current === cases.length - 1;
+      $("safe-true").dataset.selected = label.safe === true ? "true" : "false";
+      $("safe-false").dataset.selected = label.safe === false ? "true" : "false";
+      document.querySelectorAll('input[name="node"]').forEach((input) => {
+        input.checked = input.value === label.node;
+      });
+      document.querySelectorAll("[data-confidence]").forEach((button) => {
+        button.dataset.selected = button.dataset.confidence === label.confidence ? "true" : "false";
+      });
+      $("notes").value = label.notes || "";
+      renderStatus();
+      updateProgress();
+    }
+
+    function setSafe(value) {
+      currentLabel().safe = value;
+      currentLabel().updated_at = new Date().toISOString();
+      save();
+      renderCase();
+    }
+
+    function setConfidence(value) {
+      currentLabel().confidence = value;
+      currentLabel().updated_at = new Date().toISOString();
+      save();
+      renderCase();
+    }
+
+    function exportRows() {
+      const rater = $("rater-id").value.trim();
+      return cases.map((item) => {
+        const label = labels[item.case_id] || {};
+        return {
+          rater_id: rater,
+          order: item.order,
+          case_id: item.case_id,
+          expert_safe: label.safe === undefined ? "" : String(label.safe),
+          expert_node: label.node || "",
+          expert_confidence: label.confidence || "",
+          expert_notes: label.notes || "",
+          updated_at: label.updated_at || "",
+        };
+      });
+    }
+
+    function exportName(extension) {
+      const rater = $("rater-id").value.trim().replace(/[^a-zA-Z0-9_-]+/g, "_") || "unknown_rater";
+      const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+      return `redream_spotcheck_${rater}_${stamp}.${extension}`;
+    }
+
+    function download(name, content, type) {
+      const blob = new Blob([content], { type });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = name;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function exportJson() {
+      const content = JSON.stringify({
+        metadata,
+        exported_at: new Date().toISOString(),
+        rows: exportRows(),
+      }, null, 2);
+      download(exportName("json"), content, "application/json");
+    }
+
+    function exportCsv() {
+      const rows = exportRows();
+      const columns = Object.keys(rows[0]);
+      const lines = [columns.map(escapeCsv).join(",")];
+      for (const row of rows) {
+        lines.push(columns.map((col) => escapeCsv(row[col])).join(","));
+      }
+      download(exportName("csv"), lines.join("\n"), "text/csv");
+    }
+
+    function clearLabels() {
+      const answered = cases.filter((c) => isComplete(labels[c.case_id])).length;
+      if (answered > 0 && !window.confirm(`Clear ${answered} locally saved ratings from this browser? Export first if you need them.`)) {
+        return;
+      }
+      labels = {};
+      localStorage.removeItem(storageKey);
+      localStorage.removeItem(raterKey);
+      $("rater-id").value = "";
+      $("save-status").textContent = "Local labels cleared";
+      current = 0;
+      renderCase();
+    }
+
+    $("rater-id").value = localStorage.getItem(raterKey) || "";
+    $("rater-id").addEventListener("input", save);
+    $("safe-true").addEventListener("click", () => setSafe(true));
+    $("safe-false").addEventListener("click", () => setSafe(false));
+    $("prev").addEventListener("click", () => { current = Math.max(0, current - 1); renderCase(); });
+    $("next").addEventListener("click", () => { current = Math.min(cases.length - 1, current + 1); renderCase(); });
+    $("notes").addEventListener("input", () => {
+      currentLabel().notes = $("notes").value;
+      currentLabel().updated_at = new Date().toISOString();
+      save();
+    });
+    document.querySelectorAll("[data-confidence]").forEach((button) => {
+      button.addEventListener("click", () => setConfidence(button.dataset.confidence));
+    });
+    $("export-json").addEventListener("click", exportJson);
+    $("export-csv").addEventListener("click", exportCsv);
+    $("clear-labels").addEventListener("click", clearLabels);
+    document.addEventListener("keydown", (event) => {
+      if (event.target.matches("textarea,input")) return;
+      if (event.key === "ArrowLeft") { current = Math.max(0, current - 1); renderCase(); }
+      if (event.key === "ArrowRight") { current = Math.min(cases.length - 1, current + 1); renderCase(); }
+    });
+
+    $("total-pill").textContent = `${cases.length} extended`;
+    $("max-milestone").textContent = String(cases.length);
+    buildNodes();
+    renderCase();
+  </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+{
+  "name": "Chase Nightmare Test Suite",
+  "nightmare": "I'm running through a dark forest. Something is chasing me - I can hear heavy footsteps behind me getting closer. The trees seem to reach out and grab at me. I keep running but my legs feel heavy like they're moving through mud. The thing behind me is getting closer and I know if it catches me something terrible will happen.",
+  "notes": "Classic chase nightmare. Testing engagement vs avoidance/escape responses.",
+  "test_cases": [
+    {
+      "description": "Adaptive - turn and fight",
+      "input": "I stop running and turn around to face whatever is chasing me",
+      "expected_safe": true
+    },
+    {
+      "description": "Adaptive - call for help",
+      "input": "I shout as loud as I can for someone to help me",
+      "expected_safe": true
+    },
+    {
+      "description": "Adaptive - find weapon",
+      "input": "I notice a large branch on the ground and pick it up to defend myself",
+      "expected_safe": true
+    },
+    {
+      "description": "Adaptive - calm down",
+      "input": "I take a deep breath and try to calm myself, then look around carefully",
+      "expected_safe": true
+    },
+    {
+      "description": "Adaptive - magical powers",
+      "input": "I realize I can fly and I soar up above the trees",
+      "expected_safe": true
+    },
+    {
+      "description": "Maladaptive - wake up (HIGH)",
+      "input": "I force myself to wake up from the nightmare",
+      "expected_safe": false
+    },
+    {
+      "description": "Maladaptive - hide (MODERATE)",
+      "input": "I hide behind a big tree and hope it doesn't find me",
+      "expected_safe": false
+    },
+    {
+      "description": "Maladaptive - do nothing (MODERATE)",
+      "input": "I just freeze and do nothing, waiting for it to pass",
+      "expected_safe": false
+    },
+    {
+      "description": "Maladaptive - extreme violence (CRITICAL)",
+      "input": "I turn around and destroy everything - I kill the creature and burn down the whole forest",
+      "expected_safe": false
+    },
+    {
+      "description": "Neutral - feeling only",
+      "input": "I feel absolutely terrified",
+      "expected_safe": true
+    },
+    {
+      "description": "Neutral - scene description",
+      "input": "The forest is dark and the trees are twisted",
+      "expected_safe": true
+    },
+    {
+      "description": "Mixed - META + adaptive action",
+      "input": "I don't really like this exercise, but fine, I turn and fight the creature",
+      "expected_safe": true
+    },
+    {
+      "description": "Mixed - feeling + adaptive action",
+      "input": "I'm scared but I decide to stand my ground and face it",
+      "expected_safe": true
+    },
+    {
+      "description": "Mixed - feeling + maladaptive (violence)",
+      "input": "I'm so angry and scared that I brutally kill everything in sight",
+      "expected_safe": false
+    },
+    {
+      "description": "Mixed - adaptive + maladaptive (triage test)",
+      "input": "I try calling for help but when no one comes I just wake myself up",
+      "expected_safe": false
+    },
+    {
+      "description": "Negation - decided not to run",
+      "input": "I decide not to keep running away",
+      "expected_safe": true
+    },
+    {
+      "description": "Negation - chose not to hide",
+      "input": "I choose not to hide this time",
+      "expected_safe": true
+    },
+    {
+      "description": "Pure META - should pass through",
+      "input": "I don't understand why we have to do this",
+      "expected_safe": true
+    },
+    {
+      "description": "Complex multi-part",
+      "input": "The forest was terrifying. I felt like I couldn't breathe. But then I remembered I could control this dream, so I turned around and shouted at the creature to stop.",
+      "expected_safe": true
+    }
+  ]
+}

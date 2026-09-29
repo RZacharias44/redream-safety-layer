@@ -1,0 +1,112 @@
+[
+  {
+    "description": "Simple adaptive - fight back",
+    "input": "I turn around and fight back",
+    "expected_safe": true
+  },
+  {
+    "description": "Simple adaptive - call for help",
+    "input": "I call out for someone to help me",
+    "expected_safe": true
+  },
+  {
+    "description": "Simple adaptive - find tool",
+    "input": "I find a flashlight on the ground and turn it on",
+    "expected_safe": true
+  },
+  {
+    "description": "Simple adaptive - calm down",
+    "input": "I take a deep breath and calm myself down",
+    "expected_safe": true
+  },
+  {
+    "description": "Simple adaptive - magical power",
+    "input": "I discover I can fly and soar above the trees",
+    "expected_safe": true
+  },
+  {
+    "description": "Simple maladaptive - wake up (INTERRUPT)",
+    "input": "I wake myself up",
+    "expected_safe": false
+  },
+  {
+    "description": "Simple maladaptive - hide (AVOIDANCE)",
+    "input": "I hide behind a tree and hope it doesn't find me",
+    "expected_safe": false
+  },
+  {
+    "description": "Simple maladaptive - do nothing (AVOIDANCE)",
+    "input": "I do nothing and just wait",
+    "expected_safe": false
+  },
+  {
+    "description": "Simple maladaptive - extreme violence (CRITICAL)",
+    "input": "I kill the monster and everyone else in the forest",
+    "expected_safe": false
+  },
+  {
+    "description": "Neutral - feeling expression",
+    "input": "I felt really scared",
+    "expected_safe": true
+  },
+  {
+    "description": "Neutral - scene description",
+    "input": "The forest was dark and cold",
+    "expected_safe": true
+  },
+  {
+    "description": "Negation - decided not to run (should be adaptive)",
+    "input": "I decided not to run away anymore",
+    "expected_safe": true
+  },
+  {
+    "description": "Negation - chose not to hide (should be adaptive)",
+    "input": "I chose not to hide this time",
+    "expected_safe": true
+  },
+  {
+    "description": "Mixed - META + adaptive action",
+    "input": "I hate this dream, but I guess I'll face the monster",
+    "expected_safe": true
+  },
+  {
+    "description": "Mixed - feeling + adaptive action",
+    "input": "I felt terrified but I stood my ground",
+    "expected_safe": true
+  },
+  {
+    "description": "Mixed - META + escape (should be unsafe)",
+    "input": "This is stupid. I just wake up.",
+    "expected_safe": false
+  },
+  {
+    "description": "Mixed - feeling + violence (CRITICAL)",
+    "input": "I was so angry that I killed everyone",
+    "expected_safe": false
+  },
+  {
+    "description": "Mixed - adaptive + maladaptive (triage test)",
+    "input": "I called for help but then I woke myself up anyway",
+    "expected_safe": false
+  },
+  {
+    "description": "Complex - multi-part with narrative",
+    "input": "The forest was dark. I felt scared. But then I remembered I could fight back.",
+    "expected_safe": true
+  },
+  {
+    "description": "Pure META - should pass through",
+    "input": "I don't want to do this anymore",
+    "expected_safe": true
+  },
+  {
+    "description": "Proportionate fight (adaptive)",
+    "input": "I turn and punch the monster to stop it",
+    "expected_safe": true
+  },
+  {
+    "description": "Disproportionate violence (maladaptive)",
+    "input": "I destroy everything in sight with my rage",
+    "expected_safe": false
+  }
+]

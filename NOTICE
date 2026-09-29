@@ -1,0 +1,12 @@
+ReDream AI safety layer
+Copyright 2025-2026 Ramon Yassin Zacharias
+
+The source code in this repository is licensed under the Apache License,
+Version 2.0 (see LICENSE). The datasets, benchmark results, evaluation
+materials and documentation under data/ and docs/ are licensed under the
+Creative Commons Attribution 4.0 International License (see
+LICENSE-CC-BY-4.0).
+
+This software is a research prototype developed for a master's thesis at
+Osnabrück University. It is not a medical device and has not been validated
+for clinical use.

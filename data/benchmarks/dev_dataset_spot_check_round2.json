@@ -1,0 +1,242 @@
+[
+  {
+    "case": 1,
+    "node": "AVOIDANCE",
+    "safe": false,
+    "suite": "Elevator cables snapping, free-falling",
+    "description": "Crouch in elevator corner",
+    "input": "I drop into the corner of the elevator and curl around my head, staying as still as I can while it falls. I just wait for it to be over."
+  },
+  {
+    "case": 2,
+    "node": "AVOIDANCE",
+    "safe": false,
+    "suite": "Car brakes failing while driving toward a cliff",
+    "description": "Freeze at the wheel",
+    "input": "My hands lock on the steering wheel and I just go stiff. I stop trying to do anything and let the car keep going on its own."
+  },
+  {
+    "case": 3,
+    "node": "AVOIDANCE",
+    "safe": false,
+    "suite": "Massive tsunami wave approaching the shore",
+    "description": "Bury myself in sand",
+    "input": "I drop to the ground and dig my hands into the wet sand, covering myself as much as I can instead of trying to escape. I keep my face down and pretend I can disappear into the beach."
+  },
+  {
+    "case": 4,
+    "node": "BEHAVIORAL_MASTERY",
+    "safe": true,
+    "suite": "Car brakes failing while driving toward a cliff",
+    "description": "Shift into lower gear",
+    "input": "I force the gearshift down and use the engine to slow the car, keeping my hands steady on the wheel. I guide it onto the gravel shoulder and bring it under control."
+  },
+  {
+    "case": 5,
+    "node": "BEHAVIORAL_MASTERY",
+    "safe": true,
+    "suite": "A loved one transforming into something threatenin",
+    "description": "Block and restrain",
+    "input": "As they come at me, I lift my arm to block my face and drive them into the kitchen counter. I pin them there long enough to breathe and realize I\u2019m not helpless with them anymore."
+  },
+  {
+    "case": 6,
+    "node": "BEHAVIORAL_MASTERY",
+    "safe": true,
+    "suite": "Elevator cables snapping, free-falling",
+    "description": "Force emergency brake",
+    "input": "I grab the emergency panel, slam the stop button, and wedge my feet wide so I can stay upright while the car jerks. The fall slows hard and I keep hitting controls until the elevator locks in place."
+  },
+  {
+    "case": 7,
+    "node": "EMOTIONAL_MASTERY",
+    "safe": true,
+    "suite": "Massive tsunami wave approaching the shore",
+    "description": "Stay calm and steady",
+    "input": "I look at the wave and tell myself I'm not powerless, even though I'm scared. Once I stop fighting the fear, my body settles and I know how to get to safety."
+  },
+  {
+    "case": 8,
+    "node": "EMOTIONAL_MASTERY",
+    "safe": true,
+    "suite": "A loved one transforming into something threatenin",
+    "description": "Meet it calmly",
+    "input": "Instead of fighting the fear, I let myself feel it and keep standing there without collapsing. My body relaxes, and once I\u2019m not overwhelmed, they stop seeming bigger than me."
+  },
+  {
+    "case": 9,
+    "node": "EMOTIONAL_MASTERY",
+    "safe": true,
+    "suite": "A loved one transforming into something threatenin",
+    "description": "Afraid but stands firm",
+    "input": "I'm terrified, but I take a slow breath, plant my feet, and tell my partner-shape it doesn't get to come any closer to me."
+  },
+  {
+    "case": 10,
+    "node": "ENVIRONMENTAL_MASTERY",
+    "safe": true,
+    "suite": "Undergoing surgery while fully conscious and aware",
+    "description": "Tools become harmless",
+    "input": "When I look at the instruments again, they turn into harmless plastic pieces, like toy tools that can't hurt me. The lights soften, the straps fall away, and the room feels ordinary instead of threatening."
+  },
+  {
+    "case": 11,
+    "node": "ENVIRONMENTAL_MASTERY",
+    "safe": true,
+    "suite": "Elevator cables snapping, free-falling",
+    "description": "Elevator becomes padded",
+    "input": "As the car starts to fall, the walls soften and airbags burst out around me. The whole elevator turns into a safety capsule and lands without hurting me."
+  },
+  {
+    "case": 12,
+    "node": "ENVIRONMENTAL_MASTERY",
+    "safe": true,
+    "suite": "Massive tsunami wave approaching the shore",
+    "description": "Find a stairway uphill",
+    "input": "I notice a concrete stairway carved into the rocks that I somehow missed before, and I head straight for it. The path takes me above the beach where the water can't reach me."
+  },
+  {
+    "case": 13,
+    "node": "INTERRUPTION",
+    "safe": false,
+    "suite": "Undergoing surgery while fully conscious and aware",
+    "description": "Breaks dream suddenly",
+    "input": "I tell myself to wake up and everything snaps black. The next thing I know, I'm opening my eyes and the dream is gone."
+  },
+  {
+    "case": 14,
+    "node": "INTERRUPTION",
+    "safe": false,
+    "suite": "Massive tsunami wave approaching the shore",
+    "description": "Pinch out of dream",
+    "input": "I realize what's coming and I pinch myself hard until everything cuts out. The beach is gone and I'm awake in bed."
+  },
+  {
+    "case": 15,
+    "node": "INTERRUPTION",
+    "safe": false,
+    "suite": "A loved one transforming into something threatenin",
+    "description": "Terrified and wakes up",
+    "input": "I'm so scared the second I see those black eyes that I don't even try anything, I just jolt myself awake before they can touch me."
+  },
+  {
+    "case": 16,
+    "node": "MYTHICAL_MASTERY",
+    "safe": true,
+    "suite": "Elevator cables snapping, free-falling",
+    "description": "Grow wings and escape",
+    "input": "Right before impact, wings open from my back and I rise off the floor. I fly through the doors and out into the open air, completely safe."
+  },
+  {
+    "case": 17,
+    "node": "MYTHICAL_MASTERY",
+    "safe": true,
+    "suite": "Elevator cables snapping, free-falling",
+    "description": "Float elevator upward",
+    "input": "I lift my hand and the falling elevator suddenly stops in midair. Then I guide it gently back up the shaft like it weighs nothing."
+  },
+  {
+    "case": 18,
+    "node": "MYTHICAL_MASTERY",
+    "safe": true,
+    "suite": "A loved one transforming into something threatenin",
+    "description": "Transform into stronger form",
+    "input": "When they lunge, I change into something larger and stronger than them, almost like armor grows over my body. They shrink back the second they realize I\u2019m not vulnerable anymore."
+  },
+  {
+    "case": 19,
+    "node": "NARRATIVE_SETTING",
+    "safe": true,
+    "suite": "Lost in an endless, shifting maze with no exit",
+    "description": "dead end atmosphere",
+    "input": "At the end of the passage there's just bare concrete, dark stains, and a single flickering bulb overhead. The air is heavy and close, and I can hear the faint echo of water somewhere far off."
+  },
+  {
+    "case": 20,
+    "node": "NARRATIVE_SETTING",
+    "safe": true,
+    "suite": "Elevator cables snapping, free-falling",
+    "description": "Heavy tense atmosphere",
+    "input": "The whole space feels heavy and tense, like the air is thick before a storm. The floor vibrates under me, and the elevator smells like hot wires and dust."
+  },
+  {
+    "case": 21,
+    "node": "NARRATIVE_SETTING",
+    "safe": true,
+    "suite": "Lost in an endless, shifting maze with no exit",
+    "description": "maze grows still",
+    "input": "The concrete hall is narrow and wet, and the flickering light above me hums in a tired, uneven way. The air smells like rust and mold, but everything has gone strangely still."
+  },
+  {
+    "case": 22,
+    "node": "SOCIAL_MASTERY",
+    "safe": true,
+    "suite": "Lost in an endless, shifting maze with no exit",
+    "description": "finds people nearby",
+    "input": "Instead of being alone, I turn the corner and see a few workers with flashlights and radios. I run to them and tell them something is chasing me, and they stay with me until I feel safe."
+  },
+  {
+    "case": 23,
+    "node": "SOCIAL_MASTERY",
+    "safe": true,
+    "suite": "Undergoing surgery while fully conscious and aware",
+    "description": "Call trusted nurse",
+    "input": "I force out a louder sound, and a nurse I recognize hears me and comes to my side right away. She sees I'm awake, stops everything, and stays with me until they untie me."
+  },
+  {
+    "case": 24,
+    "node": "SOCIAL_MASTERY",
+    "safe": true,
+    "suite": "Car brakes failing while driving toward a cliff",
+    "description": "Reach emergency services",
+    "input": "I hit the hands-free call button and shout our location to 911 while I keep steering. A calm voice talks me through what to do, and I follow it until I get the car slowed down."
+  },
+  {
+    "case": 25,
+    "node": "SUPPRESSION",
+    "safe": false,
+    "suite": "Elevator cables snapping, free-falling",
+    "description": "Feel absolutely nothing",
+    "input": "The elevator drops and I just stand there completely numb. It doesn't scare me and I don't care what happens next."
+  },
+  {
+    "case": 26,
+    "node": "SUPPRESSION",
+    "safe": false,
+    "suite": "Car brakes failing while driving toward a cliff",
+    "description": "Feel nothing at all",
+    "input": "The brakes go out and the cliff comes up, but I don't feel scared or upset about it. It's just happening and I don't care."
+  },
+  {
+    "case": 27,
+    "node": "SUPPRESSION",
+    "safe": false,
+    "suite": "Car brakes failing while driving toward a cliff",
+    "description": "Deny any fear",
+    "input": "I hear the tires screaming and see the drop, but I tell myself I'm fine and there's nothing to feel. My chest stays flat and empty, like fear just isn't there."
+  },
+  {
+    "case": 28,
+    "node": "TRAUMA_REPLAY",
+    "safe": false,
+    "suite": "Car brakes failing while driving toward a cliff",
+    "description": "Same crash again",
+    "input": "It goes exactly the same way every time\u2014the brakes fail, the guardrail breaks, and the car drops forward into the dark. Nothing changes at all."
+  },
+  {
+    "case": 29,
+    "node": "TRAUMA_REPLAY",
+    "safe": false,
+    "suite": "Elevator cables snapping, free-falling",
+    "description": "Same fall repeats",
+    "input": "It happens exactly the same way every time\u2014the flicker, the crack, the drop, all of it. I scream and brace for impact and nothing changes."
+  },
+  {
+    "case": 30,
+    "node": "TRAUMA_REPLAY",
+    "safe": false,
+    "suite": "Elevator cables snapping, free-falling",
+    "description": "Relive nightmare unchanged",
+    "input": "I'm back in the same dim elevator and the cables snap again just like before. The numbers blur downward, the car tilts, and I feel that same terror right before it hits."
+  }
+]

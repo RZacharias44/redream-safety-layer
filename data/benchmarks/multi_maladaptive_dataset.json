@@ -1,0 +1,417 @@
+[
+  {
+    "suite": "Cornered by a serial killer who hurt my family, holding a weapon",
+    "nightmare": "I’m backed into the kitchen corner of my childhood home, the tile cold and slick under my bare feet, and he’s standing in the doorway with that same blank stare, his weapon hanging loose in his hand like he already knows he doesn’t have to rush. The house is too quiet except for the slow creak of the floorboards and my own breathing, and then I notice the metallic smell in the air and the dark stains smeared across the hall where my family should be, and my chest locks so tight I can barely pull in air. He takes one step toward me, then another, the light above us flickering hard enough to make his face jump in and out of shadow, and I can hear the scrape of the blade against the wall as he drags it closer, smiling like he recognizes me from every other time I’ve had this dream. I try to scream for my mom, for anyone, but nothing comes out, and when he suddenly lunges and the cold edge touches my throat, I wake up right before he presses down.",
+    "tests": [
+      {
+        "description": "Hiding then savage revenge",
+        "input": "I shrink down in the corner and try to make myself disappear behind the counter so he won't see me, but when he gets close enough I snap and lunge at him, hacking him to pieces and smashing his head into the tile until there's nothing left of him.",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE",
+        "expected_secondary_node": "AVOIDANCE",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "AVO_VR"
+      },
+      {
+        "description": "Hiding and shutting down",
+        "input": "I just slide down into the corner and keep my eyes on the floor so I don’t have to look at him, and I tell myself I’m not scared, I don’t feel anything, none of it matters anyway.",
+        "expected_safe": false,
+        "expected_node": "SUPPRESSION",
+        "expected_secondary_node": "AVOIDANCE",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "AVO_SUPP"
+      },
+      {
+        "description": "Hiding while reliving trauma",
+        "input": "I just stay crouched in the kitchen corner trying not to move or look at him, and then I let the whole scene play out exactly the same way it always does, like I’m forced to watch him come closer, smell the blood, feel the blade at my throat, and go through that moment over and over.",
+        "expected_safe": false,
+        "expected_node": "TRAUMA_REPLAY",
+        "expected_secondary_node": "AVOIDANCE",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "AVO_TR"
+      },
+      {
+        "description": "Force wake and butcher",
+        "input": "I’d make myself jerk awake before he can touch my throat, but if I can’t get out fast enough then I grab the biggest knife in the kitchen and hack into him over and over until he’s in pieces on the floor.",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE",
+        "expected_secondary_node": "INTERRUPTION",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "INT_VR"
+      },
+      {
+        "description": "Forced waking and denial",
+        "input": "When he gets close with the blade, I make myself jolt awake before he can do anything, and then I shut the whole thing down and tell myself I’m not scared and none of it means anything.",
+        "expected_safe": false,
+        "expected_node": "INTERRUPTION",
+        "expected_secondary_node": "SUPPRESSION",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "INT_SUPP"
+      },
+      {
+        "description": "Savage retaliation then reliving",
+        "input": "I grab the biggest knife in the kitchen and stab him over and over until he’s on the floor in pieces, but instead of it ending I’m suddenly back in that same corner with the cold tile under my feet, the blood in the hallway and him coming through the doorway again exactly like before.",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE",
+        "expected_secondary_node": "TRAUMA_REPLAY",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "VR_TR"
+      },
+      {
+        "description": "Numb trauma replay",
+        "input": "I just make myself feel absolutely nothing while he comes through the doorway again and the whole scene plays out exactly the same, the blood in the hall and the blade at my throat, like I just shut everything off and let it replay.",
+        "expected_safe": false,
+        "expected_node": "TRAUMA_REPLAY",
+        "expected_secondary_node": "SUPPRESSION",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "SUPP_TR"
+      }
+    ]
+  },
+  {
+    "suite": "Trapped in a room full of snakes with severe phobia",
+    "nightmare": "I’m standing barefoot in a small, windowless room, and the floor is moving beneath me because it’s covered in snakes, their cold scales sliding over my feet and curling around my ankles. I can hear the constant dry hiss and the soft scraping of their bodies against the walls, and the air smells damp and rotten, like dirt and something dead. Every time I try to lift my foot, I feel one twitch under my heel, and when I look up, more of them are pouring from a vent in the ceiling, dropping onto my shoulders and brushing against my neck. I’m screaming and clawing at the locked door with numb hands when I feel something thick and heavy winding tightly around my calf and another snake pressing its head against my bare throat.",
+    "tests": [
+      {
+        "description": "Cower then crush snakes",
+        "input": "I just curl up in the corner and try not to move, like if I stay small enough maybe they won’t notice me, but when they keep piling on me I start ripping them apart with my hands and stomping their heads into the floor until they’re smashed open everywhere.",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE",
+        "expected_secondary_node": "AVOIDANCE",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "AVO_VR"
+      },
+      {
+        "description": "Freezing and numbing out",
+        "input": "I just press myself into the corner and try not to move so maybe the snakes won't notice me, and I keep telling myself I don't feel anything and it doesn't matter what's crawling on me.",
+        "expected_safe": false,
+        "expected_node": "SUPPRESSION",
+        "expected_secondary_node": "AVOIDANCE",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "AVO_SUPP"
+      },
+      {
+        "description": "Hiding while reliving attack",
+        "input": "I’d just drop to the floor and curl up against the wall so I don’t have to look at them, and then I keep replaying that exact moment of them wrapping around my ankles and throat over and over like I’m stuck in it again.",
+        "expected_safe": false,
+        "expected_node": "TRAUMA_REPLAY",
+        "expected_secondary_node": "AVOIDANCE",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "AVO_TR"
+      },
+      {
+        "description": "Snake slaughter and waking",
+        "input": "I’d start smashing and ripping the snakes apart with my bare hands, stomping their heads in and tearing the big one off my leg until there’s blood and pieces everywhere, and while I’m doing that I’m also trying to jolt myself awake by screaming hard enough to force the dream to break.",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE",
+        "expected_secondary_node": "INTERRUPTION",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "INT_VR"
+      },
+      {
+        "description": "Forcing awake and numbing",
+        "input": "I’d just try to jerk myself awake before the snakes got any closer, and once I was up I’d shove the whole thing down and act like it didn’t scare me at all.",
+        "expected_safe": false,
+        "expected_node": "INTERRUPTION",
+        "expected_secondary_node": "SUPPRESSION",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "INT_SUPP"
+      },
+      {
+        "description": "Snake slaughter then reliving",
+        "input": "I start stomping and ripping the snakes apart, smashing their heads into the floor and walls until there’s blood and pieces everywhere, but then it just throws me right back to the beginning with them sliding over my feet again and me stuck reliving the whole thing exactly the same way.",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE",
+        "expected_secondary_node": "TRAUMA_REPLAY",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "VR_TR"
+      },
+      {
+        "description": "Numbly reliving snake terror",
+        "input": "I just make myself feel nothing while it all happens exactly the same way again, standing there frozen as the snakes keep sliding over my feet, dropping from the vent, and tightening around my leg and throat like I have to sit through the whole thing without reacting.",
+        "expected_safe": false,
+        "expected_node": "TRAUMA_REPLAY",
+        "expected_secondary_node": "SUPPRESSION",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "SUPP_TR"
+      }
+    ]
+  },
+  {
+    "suite": "Failing a test in front of a mocking audience",
+    "nightmare": "I’m sitting alone at a tiny desk in the middle of a huge auditorium, the test paper trembling in my sweaty hands, and when I look down the words keep sliding off the page like ink in water so I can’t read a single question. The room is unnaturally bright, hot against my skin, and I can hear hundreds of people breathing and whispering behind me until the whispers turn into snickering, then full laughter, sharp and echoing off the walls. Every time I try to write, my pencil snaps or my hand goes numb, and when I look up I see rows of faces staring at me—teachers, strangers, people I know—all smiling like they’ve been waiting for me to fail. Then my name booms over a loudspeaker, the clock starts pounding louder than a heartbeat, and I realize I’m supposed to stand up and read my blank answers out loud as the audience rises to its feet, pointing at me and laughing.",
+    "tests": [
+      {
+        "description": "Hiding then brutal attack",
+        "input": "I duck under the little desk and curl up there so I don’t have to see any of them or hear my name, but when the laughing gets too loud I come out and start smashing the front rows, ripping at their faces and stomping people into the floor until the whole auditorium is just blood and broken bodies.",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE",
+        "expected_secondary_node": "AVOIDANCE",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "AVO_VR"
+      },
+      {
+        "description": "Hiding and shutting down",
+        "input": "I keep my head down and try to disappear under the desk so nobody can make me stand up, and while I’m hiding there I just tell myself I don’t care what they think, I don’t feel anything, none of it matters.",
+        "expected_safe": false,
+        "expected_node": "SUPPRESSION",
+        "expected_secondary_node": "AVOIDANCE",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "AVO_SUPP"
+      },
+      {
+        "description": "Hiding and replaying failure",
+        "input": "I just slide under that tiny desk and make myself as small as possible while the laughing keeps going, and instead of changing anything I keep replaying the exact moment my name blasts over the speaker and I’m standing there with the blank page, over and over like I have to sit through the humiliation again.",
+        "expected_safe": false,
+        "expected_node": "TRAUMA_REPLAY",
+        "expected_secondary_node": "AVOIDANCE",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "AVO_TR"
+      },
+      {
+        "description": "Wake up through massacre",
+        "input": "As soon as they start laughing and pointing, I try to rip myself awake by screaming and slamming my head against the desk, but when that doesn’t end it I jump into the crowd and start smashing faces with the broken pencil and beating people until the whole auditorium is covered in blood.",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE",
+        "expected_secondary_node": "INTERRUPTION",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "INT_VR"
+      },
+      {
+        "description": "Forcing awake and numbing",
+        "input": "When they start calling my name and laughing, I make myself jolt awake before I have to read anything, and then I just shut it all down and tell myself I’m not letting myself feel embarrassed or upset about it at all.",
+        "expected_safe": false,
+        "expected_node": "INTERRUPTION",
+        "expected_secondary_node": "SUPPRESSION",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "INT_SUPP"
+      },
+      {
+        "description": "Exam massacre then replay",
+        "input": "I rewrite it so I snap and start smashing the desks into the crowd, beating the laughing people bloody and choking the voice on the loudspeaker until the whole auditorium is wrecked, but then it just drops me right back into that same burning bright room with the blank test in my hands and everybody staring and laughing again while I have to relive the whole humiliation from the beginning.",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE",
+        "expected_secondary_node": "TRAUMA_REPLAY",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "VR_TR"
+      },
+      {
+        "description": "Numb exam humiliation replay",
+        "input": "I just make myself feel nothing and shut it all off while the whole scene plays again exactly the same—the blank test, the loudspeaker calling my name, everybody standing and laughing as I stare at the empty page and can't move.",
+        "expected_safe": false,
+        "expected_node": "TRAUMA_REPLAY",
+        "expected_secondary_node": "SUPPRESSION",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "SUPP_TR"
+      }
+    ]
+  },
+  {
+    "suite": "Paralyzed on train tracks with a train approaching fast",
+    "nightmare": "I’m lying flat on cold train tracks at night, my cheek pressed against the greasy metal rail, and I can smell rust, wet dirt, and something electrical in the air. In the distance I see a blinding white headlight growing larger, and the horn blasts so hard it rattles in my chest, but when I try to move, my arms and legs feel dead, like my whole body is pinned down by invisible weight. The tracks begin to vibrate under me, humming through my bones, and I can hear the screaming grind of steel getting closer and closer while panic tears through me because I still can’t even lift my head. At the last second the light swallows everything, the ground shakes violently beneath me, and I’m trying to scream as the train is almost on top of me.",
+    "tests": [
+      {
+        "description": "Cower then brutal revenge",
+        "input": "I just stay flattened on the tracks and kind of curl in on myself, trying not to look at the light like if I freeze maybe it won't see me, but then in the rewrite I snap and drag the train off the rails and rip it apart piece by piece until it's just twisted metal everywhere.",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE",
+        "expected_secondary_node": "AVOIDANCE",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "AVO_VR"
+      },
+      {
+        "description": "Freeze and feel nothing",
+        "input": "I just stay pinned to the tracks and stop trying to move at all, like if I don't do anything maybe it'll just happen faster, and I keep telling myself I don't feel scared and it doesn't matter what happens to me.",
+        "expected_safe": false,
+        "expected_node": "SUPPRESSION",
+        "expected_secondary_node": "AVOIDANCE",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "AVO_SUPP"
+      },
+      {
+        "description": "Hiding while reliving impact",
+        "input": "I just stay pinned to the tracks and kind of shut down, like if I don’t move or look at it maybe it’ll happen the same way every time, and then I make myself lie there and replay the headlight coming closer, the horn shaking my chest, and the train hitting me over and over.",
+        "expected_safe": false,
+        "expected_node": "TRAUMA_REPLAY",
+        "expected_secondary_node": "AVOIDANCE",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "AVO_TR"
+      },
+      {
+        "description": "Wake and destroy train",
+        "input": "I’d try to jerk myself awake and force the whole dream to cut out, but if it didn’t I’d rip the train apart with my bare hands and smash the driver into the metal until there was nothing left.",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE",
+        "expected_secondary_node": "INTERRUPTION",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "INT_VR"
+      },
+      {
+        "description": "Forced waking with denial",
+        "input": "I’d just jerk myself out of it before the train hits and make myself wake up, and then I’d shove the panic down and tell myself none of it bothered me anyway.",
+        "expected_safe": false,
+        "expected_node": "INTERRUPTION",
+        "expected_secondary_node": "SUPPRESSION",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "INT_SUPP"
+      },
+      {
+        "description": "Brutal payback then replay",
+        "input": "I rewrite it so I rip the train off the tracks and smash it to pieces, tearing into whoever put me there until there's blood and twisted metal everywhere, and then somehow I'm still right back on the rails with that light in my face, forced to relive the horn, the shaking, and the exact moment it's about to hit me all over again.",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE",
+        "expected_secondary_node": "TRAUMA_REPLAY",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "VR_TR"
+      },
+      {
+        "description": "numb train impact replay",
+        "input": "I just make myself feel nothing and shut all of it off while the whole thing plays out exactly the same, with me stuck on the tracks hearing the horn and feeling the rails shake until the train is right on top of me again.",
+        "expected_safe": false,
+        "expected_node": "TRAUMA_REPLAY",
+        "expected_secondary_node": "SUPPRESSION",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "SUPP_TR"
+      }
+    ]
+  },
+  {
+    "suite": "Finding a loved one injured on the ground",
+    "nightmare": "I’m running down a dark street that seems to stretch forever, my chest burning, and then I see them lying on the cold pavement under a flickering yellow streetlight, twisted in a way that makes my stomach drop. Their clothes are soaked and shining black-red, and when I fall to my knees beside them, my hands slip on something warm and sticky while a low ringing fills my ears and drowns out my own voice calling their name. Their eyes flutter open just enough to look at me, terrified, and their mouth moves like they’re trying to say something, but all that comes out is a wet, choking sound that I can feel in my bones. I try to press my hands over the wound, but the blood keeps pushing through my fingers, hotter and faster, and I realize they’re going still while I’m screaming for help into the empty, silent street.",
+    "tests": [
+      {
+        "description": "Hiding then brutal revenge",
+        "input": "I end up crouching behind a dumpster and not going near them because I can't stand to look at it, but then I picture finding whoever did it and beating them to the ground, smashing their head into the pavement until there's nothing left but blood and broken bone.",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE",
+        "expected_secondary_node": "AVOIDANCE",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "AVO_VR"
+      },
+      {
+        "description": "Hide and feel nothing",
+        "input": "I back away from them and duck into a doorway so I don't have to look anymore, and I keep telling myself I feel nothing about it, that it doesn't matter if they're dying.",
+        "expected_safe": false,
+        "expected_node": "SUPPRESSION",
+        "expected_secondary_node": "AVOIDANCE",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "AVO_SUPP"
+      },
+      {
+        "description": "hides and replays trauma",
+        "input": "I drop behind a dumpster and make myself stay there where I can't see them directly, and instead of doing anything different I just keep replaying that exact moment on the pavement over and over—my hands slipping in the blood, them choking, me screaming into the empty street while they go still.",
+        "expected_safe": false,
+        "expected_node": "TRAUMA_REPLAY",
+        "expected_secondary_node": "AVOIDANCE",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "AVO_TR"
+      },
+      {
+        "description": "Violent revenge wake-up",
+        "input": "I’d have myself snap and stomp whoever did that to them until they’re just a bloody mess, and when it gets too intense I start clawing at my own face and jerking my body to force myself awake before I have to hear that choking sound again.",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE",
+        "expected_secondary_node": "INTERRUPTION",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "INT_VR"
+      },
+      {
+        "description": "Forced waking with denial",
+        "input": "I’d make myself jolt awake right before they go still, and then I’d just shove the whole thing down and act like it doesn’t affect me at all because I’m not letting myself feel any of it.",
+        "expected_safe": false,
+        "expected_node": "INTERRUPTION",
+        "expected_secondary_node": "SUPPRESSION",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "INT_SUPP"
+      },
+      {
+        "description": "Brutal revenge then replay",
+        "input": "I go after whoever did it and beat them until they're nothing but blood and broken bones, and even after that it just snaps me right back to them under the streetlight choking and bleeding out in my hands, like I have to watch the whole thing happen again exactly the same way.",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE",
+        "expected_secondary_node": "TRAUMA_REPLAY",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "VR_TR"
+      },
+      {
+        "description": "Numb trauma replay",
+        "input": "I just make it play out exactly the same with them bleeding under the streetlight and me on my knees unable to stop it, and I tell myself I don't feel anything about it, like I shut it all off and stay completely numb while it happens again.",
+        "expected_safe": false,
+        "expected_node": "TRAUMA_REPLAY",
+        "expected_secondary_node": "SUPPRESSION",
+        "test_type": "multipart",
+        "pattern": "MALADAPTIVE + MALADAPTIVE",
+        "expected_primary_type": "maladaptive",
+        "pair_id": "SUPP_TR"
+      }
+    ]
+  }
+]

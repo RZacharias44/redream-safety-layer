@@ -1,0 +1,111 @@
+{
+  "seed": 4729,
+  "tiers": {
+    "main_unsafe": {
+      "selected": 20,
+      "per_node": {
+        "AVOIDANCE": {
+          "vetted_pool": 3,
+          "gpt_only_pool": 17,
+          "selected_vetted": 3,
+          "selected_gpt_only": 1
+        },
+        "INTERRUPTION": {
+          "vetted_pool": 3,
+          "gpt_only_pool": 20,
+          "selected_vetted": 3,
+          "selected_gpt_only": 1
+        },
+        "SUPPRESSION": {
+          "vetted_pool": 2,
+          "gpt_only_pool": 11,
+          "selected_vetted": 2,
+          "selected_gpt_only": 2
+        },
+        "TRAUMA_REPLAY": {
+          "vetted_pool": 3,
+          "gpt_only_pool": 12,
+          "selected_vetted": 3,
+          "selected_gpt_only": 1
+        },
+        "VIOLENT_REVENGE": {
+          "person_pool_vetted": 4,
+          "object_pool_vetted": 11,
+          "selected_person": 2,
+          "selected_object": 2
+        }
+      }
+    },
+    "safe_regression": {
+      "selected": 10,
+      "per_node": {
+        "BEHAVIORAL_MASTERY": {
+          "vetted_pool": 3,
+          "gpt_only_pool": 15,
+          "selected_vetted": 2,
+          "selected_gpt_only": 0
+        },
+        "SOCIAL_MASTERY": {
+          "vetted_pool": 3,
+          "gpt_only_pool": 14,
+          "selected_vetted": 2,
+          "selected_gpt_only": 0
+        },
+        "ENVIRONMENTAL_MASTERY": {
+          "vetted_pool": 3,
+          "gpt_only_pool": 15,
+          "selected_vetted": 2,
+          "selected_gpt_only": 0
+        },
+        "EMOTIONAL_MASTERY": {
+          "vetted_pool": 2,
+          "gpt_only_pool": 16,
+          "selected_vetted": 2,
+          "selected_gpt_only": 0
+        },
+        "MYTHICAL_MASTERY": {
+          "vetted_pool": 3,
+          "gpt_only_pool": 15,
+          "selected_vetted": 2,
+          "selected_gpt_only": 0
+        }
+      }
+    },
+    "multipart": {
+      "selected": 6,
+      "details": {
+        "candidates": 15,
+        "selected": 6,
+        "by_node": {
+          "INTERRUPTION": 2,
+          "VIOLENT_REVENGE": 1,
+          "AVOIDANCE": 3
+        }
+      }
+    },
+    "robustness": {
+      "selected": 7,
+      "details": {
+        "false_positive": {
+          "pool": 3,
+          "selected": 3
+        },
+        "false_negative": {
+          "pool": 4,
+          "selected": 3
+        },
+        "wrong_node": {
+          "pool": 1,
+          "selected": 1
+        }
+      }
+    }
+  },
+  "totals": {
+    "scenarios": 43,
+    "main_unsafe": 20,
+    "safe_regression": 10,
+    "multipart": 6,
+    "robustness": 7
+  }
+}

@@ -1,0 +1,3376 @@
+{
+  "schema_version": 1,
+  "main_benchmark": {
+    "s1_baseline": {
+      "n_rows": 480,
+      "n_scored": 420,
+      "n_unscored": 60,
+      "n_safe": 240,
+      "n_unsafe": 180,
+      "safety_correct": 411,
+      "safety_accuracy": 0.978571,
+      "unsafe_true_positive": 179,
+      "unsafe_false_negative": 1,
+      "unsafe_false_positive": 8,
+      "safe_true_negative": 232,
+      "unsafe_recall": 0.994444,
+      "unsafe_precision": 0.957219,
+      "unsafe_f1": 0.975477,
+      "node_correct": 328,
+      "node_accuracy": 0.780952,
+      "affect_emotional_collapsed_node_correct": 345,
+      "affect_emotional_collapsed_node_accuracy": 0.821429,
+      "meta_only_outputs": 4,
+      "per_node": {
+        "AFFECT_EXPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 5,
+          "node_accuracy": 0.166667
+        },
+        "AVOIDANCE": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 40,
+          "node_accuracy": 0.930233
+        },
+        "BEHAVIORAL_MASTERY": {
+          "n": 36,
+          "safety_correct": 36,
+          "safety_accuracy": 1.0,
+          "node_correct": 27,
+          "node_accuracy": 0.75
+        },
+        "EMOTIONAL_MASTERY": {
+          "n": 39,
+          "safety_correct": 37,
+          "safety_accuracy": 0.948718,
+          "node_correct": 30,
+          "node_accuracy": 0.769231
+        },
+        "ENVIRONMENTAL_MASTERY": {
+          "n": 32,
+          "safety_correct": 30,
+          "safety_accuracy": 0.9375,
+          "node_correct": 28,
+          "node_accuracy": 0.875
+        },
+        "INTERRUPTION": {
+          "n": 46,
+          "safety_correct": 46,
+          "safety_accuracy": 1.0,
+          "node_correct": 42,
+          "node_accuracy": 0.913043
+        },
+        "MYTHICAL_MASTERY": {
+          "n": 30,
+          "safety_correct": 28,
+          "safety_accuracy": 0.933333,
+          "node_correct": 17,
+          "node_accuracy": 0.566667
+        },
+        "NARRATIVE_SETTING": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 25,
+          "node_accuracy": 0.833333
+        },
+        "SOCIAL_MASTERY": {
+          "n": 43,
+          "safety_correct": 41,
+          "safety_accuracy": 0.953488,
+          "node_correct": 28,
+          "node_accuracy": 0.651163
+        },
+        "SUPPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 27,
+          "node_accuracy": 0.9
+        },
+        "TRAUMA_REPLAY": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 30,
+          "node_accuracy": 1.0
+        },
+        "VIOLENT_REVENGE": {
+          "n": 31,
+          "safety_correct": 30,
+          "safety_accuracy": 0.967742,
+          "node_correct": 29,
+          "node_accuracy": 0.935484
+        }
+      }
+    },
+    "s1_consistency": {
+      "n_rows": 480,
+      "n_scored": 420,
+      "n_unscored": 60,
+      "n_safe": 240,
+      "n_unsafe": 180,
+      "safety_correct": 409,
+      "safety_accuracy": 0.97381,
+      "unsafe_true_positive": 177,
+      "unsafe_false_negative": 3,
+      "unsafe_false_positive": 8,
+      "safe_true_negative": 232,
+      "unsafe_recall": 0.983333,
+      "unsafe_precision": 0.956757,
+      "unsafe_f1": 0.969863,
+      "node_correct": 323,
+      "node_accuracy": 0.769048,
+      "affect_emotional_collapsed_node_correct": 339,
+      "affect_emotional_collapsed_node_accuracy": 0.807143,
+      "meta_only_outputs": 3,
+      "per_node": {
+        "AFFECT_EXPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 6,
+          "node_accuracy": 0.2
+        },
+        "AVOIDANCE": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 41,
+          "node_accuracy": 0.953488
+        },
+        "BEHAVIORAL_MASTERY": {
+          "n": 36,
+          "safety_correct": 36,
+          "safety_accuracy": 1.0,
+          "node_correct": 25,
+          "node_accuracy": 0.694444
+        },
+        "EMOTIONAL_MASTERY": {
+          "n": 39,
+          "safety_correct": 37,
+          "safety_accuracy": 0.948718,
+          "node_correct": 29,
+          "node_accuracy": 0.74359
+        },
+        "ENVIRONMENTAL_MASTERY": {
+          "n": 32,
+          "safety_correct": 30,
+          "safety_accuracy": 0.9375,
+          "node_correct": 28,
+          "node_accuracy": 0.875
+        },
+        "INTERRUPTION": {
+          "n": 46,
+          "safety_correct": 46,
+          "safety_accuracy": 1.0,
+          "node_correct": 41,
+          "node_accuracy": 0.891304
+        },
+        "MYTHICAL_MASTERY": {
+          "n": 30,
+          "safety_correct": 28,
+          "safety_accuracy": 0.933333,
+          "node_correct": 15,
+          "node_accuracy": 0.5
+        },
+        "NARRATIVE_SETTING": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 26,
+          "node_accuracy": 0.866667
+        },
+        "SOCIAL_MASTERY": {
+          "n": 43,
+          "safety_correct": 41,
+          "safety_accuracy": 0.953488,
+          "node_correct": 27,
+          "node_accuracy": 0.627907
+        },
+        "SUPPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 28,
+          "node_accuracy": 0.933333
+        },
+        "TRAUMA_REPLAY": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 30,
+          "node_accuracy": 1.0
+        },
+        "VIOLENT_REVENGE": {
+          "n": 31,
+          "safety_correct": 28,
+          "safety_accuracy": 0.903226,
+          "node_correct": 27,
+          "node_accuracy": 0.870968
+        }
+      }
+    },
+    "s2_baseline": {
+      "n_rows": 480,
+      "n_scored": 420,
+      "n_unscored": 60,
+      "n_safe": 240,
+      "n_unsafe": 180,
+      "safety_correct": 412,
+      "safety_accuracy": 0.980952,
+      "unsafe_true_positive": 179,
+      "unsafe_false_negative": 1,
+      "unsafe_false_positive": 7,
+      "safe_true_negative": 233,
+      "unsafe_recall": 0.994444,
+      "unsafe_precision": 0.962366,
+      "unsafe_f1": 0.978142,
+      "node_correct": 332,
+      "node_accuracy": 0.790476,
+      "affect_emotional_collapsed_node_correct": 357,
+      "affect_emotional_collapsed_node_accuracy": 0.85,
+      "meta_only_outputs": 3,
+      "per_node": {
+        "AFFECT_EXPRESSION": {
+          "n": 30,
+          "safety_correct": 29,
+          "safety_accuracy": 0.966667,
+          "node_correct": 1,
+          "node_accuracy": 0.033333
+        },
+        "AVOIDANCE": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 43,
+          "node_accuracy": 1.0
+        },
+        "BEHAVIORAL_MASTERY": {
+          "n": 36,
+          "safety_correct": 35,
+          "safety_accuracy": 0.972222,
+          "node_correct": 26,
+          "node_accuracy": 0.722222
+        },
+        "EMOTIONAL_MASTERY": {
+          "n": 39,
+          "safety_correct": 39,
+          "safety_accuracy": 1.0,
+          "node_correct": 34,
+          "node_accuracy": 0.871795
+        },
+        "ENVIRONMENTAL_MASTERY": {
+          "n": 32,
+          "safety_correct": 28,
+          "safety_accuracy": 0.875,
+          "node_correct": 27,
+          "node_accuracy": 0.84375
+        },
+        "INTERRUPTION": {
+          "n": 46,
+          "safety_correct": 46,
+          "safety_accuracy": 1.0,
+          "node_correct": 45,
+          "node_accuracy": 0.978261
+        },
+        "MYTHICAL_MASTERY": {
+          "n": 30,
+          "safety_correct": 29,
+          "safety_accuracy": 0.966667,
+          "node_correct": 12,
+          "node_accuracy": 0.4
+        },
+        "NARRATIVE_SETTING": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 25,
+          "node_accuracy": 0.833333
+        },
+        "SOCIAL_MASTERY": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 33,
+          "node_accuracy": 0.767442
+        },
+        "SUPPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 29,
+          "node_accuracy": 0.966667
+        },
+        "TRAUMA_REPLAY": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 29,
+          "node_accuracy": 0.966667
+        },
+        "VIOLENT_REVENGE": {
+          "n": 31,
+          "safety_correct": 30,
+          "safety_accuracy": 0.967742,
+          "node_correct": 28,
+          "node_accuracy": 0.903226
+        }
+      }
+    },
+    "s2_consistency": {
+      "n_rows": 480,
+      "n_scored": 420,
+      "n_unscored": 60,
+      "n_safe": 240,
+      "n_unsafe": 180,
+      "safety_correct": 413,
+      "safety_accuracy": 0.983333,
+      "unsafe_true_positive": 178,
+      "unsafe_false_negative": 2,
+      "unsafe_false_positive": 5,
+      "safe_true_negative": 235,
+      "unsafe_recall": 0.988889,
+      "unsafe_precision": 0.972678,
+      "unsafe_f1": 0.980716,
+      "node_correct": 336,
+      "node_accuracy": 0.8,
+      "affect_emotional_collapsed_node_correct": 361,
+      "affect_emotional_collapsed_node_accuracy": 0.859524,
+      "meta_only_outputs": 3,
+      "per_node": {
+        "AFFECT_EXPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 3,
+          "node_accuracy": 0.1
+        },
+        "AVOIDANCE": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 42,
+          "node_accuracy": 0.976744
+        },
+        "BEHAVIORAL_MASTERY": {
+          "n": 36,
+          "safety_correct": 36,
+          "safety_accuracy": 1.0,
+          "node_correct": 27,
+          "node_accuracy": 0.75
+        },
+        "EMOTIONAL_MASTERY": {
+          "n": 39,
+          "safety_correct": 38,
+          "safety_accuracy": 0.974359,
+          "node_correct": 32,
+          "node_accuracy": 0.820513
+        },
+        "ENVIRONMENTAL_MASTERY": {
+          "n": 32,
+          "safety_correct": 29,
+          "safety_accuracy": 0.90625,
+          "node_correct": 29,
+          "node_accuracy": 0.90625
+        },
+        "INTERRUPTION": {
+          "n": 46,
+          "safety_correct": 46,
+          "safety_accuracy": 1.0,
+          "node_correct": 44,
+          "node_accuracy": 0.956522
+        },
+        "MYTHICAL_MASTERY": {
+          "n": 30,
+          "safety_correct": 29,
+          "safety_accuracy": 0.966667,
+          "node_correct": 12,
+          "node_accuracy": 0.4
+        },
+        "NARRATIVE_SETTING": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 26,
+          "node_accuracy": 0.866667
+        },
+        "SOCIAL_MASTERY": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 35,
+          "node_accuracy": 0.813953
+        },
+        "SUPPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 29,
+          "node_accuracy": 0.966667
+        },
+        "TRAUMA_REPLAY": {
+          "n": 30,
+          "safety_correct": 29,
+          "safety_accuracy": 0.966667,
+          "node_correct": 28,
+          "node_accuracy": 0.933333
+        },
+        "VIOLENT_REVENGE": {
+          "n": 31,
+          "safety_correct": 30,
+          "safety_accuracy": 0.967742,
+          "node_correct": 29,
+          "node_accuracy": 0.935484
+        }
+      }
+    },
+    "s2_baseline_corrected": {
+      "n_rows": 480,
+      "n_scored": 420,
+      "n_unscored": 60,
+      "n_safe": 240,
+      "n_unsafe": 180,
+      "safety_correct": 410,
+      "safety_accuracy": 0.97619,
+      "unsafe_true_positive": 175,
+      "unsafe_false_negative": 5,
+      "unsafe_false_positive": 5,
+      "safe_true_negative": 235,
+      "unsafe_recall": 0.972222,
+      "unsafe_precision": 0.972222,
+      "unsafe_f1": 0.972222,
+      "node_correct": 331,
+      "node_accuracy": 0.788095,
+      "affect_emotional_collapsed_node_correct": 353,
+      "affect_emotional_collapsed_node_accuracy": 0.840476,
+      "meta_only_outputs": 3,
+      "per_node": {
+        "AFFECT_EXPRESSION": {
+          "n": 30,
+          "safety_correct": 29,
+          "safety_accuracy": 0.966667,
+          "node_correct": 3,
+          "node_accuracy": 0.1
+        },
+        "AVOIDANCE": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 43,
+          "node_accuracy": 1.0
+        },
+        "BEHAVIORAL_MASTERY": {
+          "n": 36,
+          "safety_correct": 36,
+          "safety_accuracy": 1.0,
+          "node_correct": 28,
+          "node_accuracy": 0.777778
+        },
+        "EMOTIONAL_MASTERY": {
+          "n": 39,
+          "safety_correct": 39,
+          "safety_accuracy": 1.0,
+          "node_correct": 34,
+          "node_accuracy": 0.871795
+        },
+        "ENVIRONMENTAL_MASTERY": {
+          "n": 32,
+          "safety_correct": 30,
+          "safety_accuracy": 0.9375,
+          "node_correct": 29,
+          "node_accuracy": 0.90625
+        },
+        "INTERRUPTION": {
+          "n": 46,
+          "safety_correct": 46,
+          "safety_accuracy": 1.0,
+          "node_correct": 45,
+          "node_accuracy": 0.978261
+        },
+        "MYTHICAL_MASTERY": {
+          "n": 30,
+          "safety_correct": 28,
+          "safety_accuracy": 0.933333,
+          "node_correct": 9,
+          "node_accuracy": 0.3
+        },
+        "NARRATIVE_SETTING": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 25,
+          "node_accuracy": 0.833333
+        },
+        "SOCIAL_MASTERY": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 34,
+          "node_accuracy": 0.790698
+        },
+        "SUPPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 29,
+          "node_accuracy": 0.966667
+        },
+        "TRAUMA_REPLAY": {
+          "n": 30,
+          "safety_correct": 28,
+          "safety_accuracy": 0.933333,
+          "node_correct": 27,
+          "node_accuracy": 0.9
+        },
+        "VIOLENT_REVENGE": {
+          "n": 31,
+          "safety_correct": 28,
+          "safety_accuracy": 0.903226,
+          "node_correct": 25,
+          "node_accuracy": 0.806452
+        }
+      }
+    }
+  },
+  "consistency_pipeline_rerun": {
+    "s1_consistency": {
+      "n_rows": 480,
+      "n_scored": 420,
+      "n_unscored": 60,
+      "n_safe": 240,
+      "n_unsafe": 180,
+      "safety_correct": 411,
+      "safety_accuracy": 0.978571,
+      "unsafe_true_positive": 179,
+      "unsafe_false_negative": 1,
+      "unsafe_false_positive": 8,
+      "safe_true_negative": 232,
+      "unsafe_recall": 0.994444,
+      "unsafe_precision": 0.957219,
+      "unsafe_f1": 0.975477,
+      "node_correct": 328,
+      "node_accuracy": 0.780952,
+      "affect_emotional_collapsed_node_correct": 345,
+      "affect_emotional_collapsed_node_accuracy": 0.821429,
+      "meta_only_outputs": 3,
+      "per_node": {
+        "AFFECT_EXPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 5,
+          "node_accuracy": 0.166667
+        },
+        "AVOIDANCE": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 42,
+          "node_accuracy": 0.976744
+        },
+        "BEHAVIORAL_MASTERY": {
+          "n": 36,
+          "safety_correct": 36,
+          "safety_accuracy": 1.0,
+          "node_correct": 26,
+          "node_accuracy": 0.722222
+        },
+        "EMOTIONAL_MASTERY": {
+          "n": 39,
+          "safety_correct": 37,
+          "safety_accuracy": 0.948718,
+          "node_correct": 30,
+          "node_accuracy": 0.769231
+        },
+        "ENVIRONMENTAL_MASTERY": {
+          "n": 32,
+          "safety_correct": 30,
+          "safety_accuracy": 0.9375,
+          "node_correct": 28,
+          "node_accuracy": 0.875
+        },
+        "INTERRUPTION": {
+          "n": 46,
+          "safety_correct": 46,
+          "safety_accuracy": 1.0,
+          "node_correct": 42,
+          "node_accuracy": 0.913043
+        },
+        "MYTHICAL_MASTERY": {
+          "n": 30,
+          "safety_correct": 28,
+          "safety_accuracy": 0.933333,
+          "node_correct": 16,
+          "node_accuracy": 0.533333
+        },
+        "NARRATIVE_SETTING": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 26,
+          "node_accuracy": 0.866667
+        },
+        "SOCIAL_MASTERY": {
+          "n": 43,
+          "safety_correct": 41,
+          "safety_accuracy": 0.953488,
+          "node_correct": 28,
+          "node_accuracy": 0.651163
+        },
+        "SUPPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 27,
+          "node_accuracy": 0.9
+        },
+        "TRAUMA_REPLAY": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 30,
+          "node_accuracy": 1.0
+        },
+        "VIOLENT_REVENGE": {
+          "n": 31,
+          "safety_correct": 30,
+          "safety_accuracy": 0.967742,
+          "node_correct": 28,
+          "node_accuracy": 0.903226
+        }
+      }
+    },
+    "s2_consistency": {
+      "n_rows": 480,
+      "n_scored": 420,
+      "n_unscored": 60,
+      "n_safe": 240,
+      "n_unsafe": 180,
+      "safety_correct": 415,
+      "safety_accuracy": 0.988095,
+      "unsafe_true_positive": 177,
+      "unsafe_false_negative": 3,
+      "unsafe_false_positive": 2,
+      "safe_true_negative": 238,
+      "unsafe_recall": 0.983333,
+      "unsafe_precision": 0.988827,
+      "unsafe_f1": 0.986072,
+      "node_correct": 336,
+      "node_accuracy": 0.8,
+      "affect_emotional_collapsed_node_correct": 361,
+      "affect_emotional_collapsed_node_accuracy": 0.859524,
+      "meta_only_outputs": 3,
+      "per_node": {
+        "AFFECT_EXPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 1,
+          "node_accuracy": 0.033333
+        },
+        "AVOIDANCE": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 43,
+          "node_accuracy": 1.0
+        },
+        "BEHAVIORAL_MASTERY": {
+          "n": 36,
+          "safety_correct": 36,
+          "safety_accuracy": 1.0,
+          "node_correct": 28,
+          "node_accuracy": 0.777778
+        },
+        "EMOTIONAL_MASTERY": {
+          "n": 39,
+          "safety_correct": 39,
+          "safety_accuracy": 1.0,
+          "node_correct": 35,
+          "node_accuracy": 0.897436
+        },
+        "ENVIRONMENTAL_MASTERY": {
+          "n": 32,
+          "safety_correct": 30,
+          "safety_accuracy": 0.9375,
+          "node_correct": 29,
+          "node_accuracy": 0.90625
+        },
+        "INTERRUPTION": {
+          "n": 46,
+          "safety_correct": 46,
+          "safety_accuracy": 1.0,
+          "node_correct": 45,
+          "node_accuracy": 0.978261
+        },
+        "MYTHICAL_MASTERY": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 9,
+          "node_accuracy": 0.3
+        },
+        "NARRATIVE_SETTING": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 26,
+          "node_accuracy": 0.866667
+        },
+        "SOCIAL_MASTERY": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 35,
+          "node_accuracy": 0.813953
+        },
+        "SUPPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 29,
+          "node_accuracy": 0.966667
+        },
+        "TRAUMA_REPLAY": {
+          "n": 30,
+          "safety_correct": 29,
+          "safety_accuracy": 0.966667,
+          "node_correct": 28,
+          "node_accuracy": 0.933333
+        },
+        "VIOLENT_REVENGE": {
+          "n": 31,
+          "safety_correct": 29,
+          "safety_accuracy": 0.935484,
+          "node_correct": 28,
+          "node_accuracy": 0.903226
+        }
+      }
+    }
+  },
+  "consistency_vote_derivation": {
+    "s1_consistency": {
+      "rows": 480,
+      "pipeline_fallback_rows": 3,
+      "verdict_flips_vs_pipeline": 3,
+      "roundtrip_matches": 477,
+      "roundtrip_checked": 477,
+      "scored_rows_with_agreement": 417,
+      "unanimous_rows": 266,
+      "unanimous_share": 0.63789,
+      "mean_agreement_ratio": 0.879137,
+      "min_agreement_ratio": 0.4,
+      "triage_reproduces_pipeline": 454,
+      "triage_rows_checked": 454,
+      "triage_rows_unparsed": 26
+    },
+    "s2_consistency": {
+      "rows": 480,
+      "pipeline_fallback_rows": 3,
+      "verdict_flips_vs_pipeline": 9,
+      "roundtrip_matches": 477,
+      "roundtrip_checked": 477,
+      "scored_rows_with_agreement": 417,
+      "unanimous_rows": 217,
+      "unanimous_share": 0.520384,
+      "mean_agreement_ratio": 0.840767,
+      "min_agreement_ratio": 0.4,
+      "triage_reproduces_pipeline": 477,
+      "triage_rows_checked": 477,
+      "triage_rows_unparsed": 3
+    }
+  },
+  "temp0_rerun_divergence": {
+    "s1": {
+      "n_matched": 420,
+      "safety_verdict_flips": 0,
+      "node_flips": 6
+    },
+    "s2": {
+      "n_matched": 420,
+      "safety_verdict_flips": 7,
+      "node_flips": 22
+    },
+    "s2_baseline_vs_corrected": {
+      "n_matched": 420,
+      "safety_verdict_flips": 10,
+      "node_flips": 33
+    },
+    "s2_consistency_vs_corrected": {
+      "n_matched": 420,
+      "safety_verdict_flips": 5,
+      "node_flips": 30
+    },
+    "s2_three_executions": {
+      "n_matched": 420,
+      "cases_with_safety_flip": 11,
+      "cases_stable": 409
+    },
+    "s2_segment_identity_on_flips": {
+      "safety_flips": 7,
+      "same_segment_boundaries": 6,
+      "same_boundaries_and_types": 5
+    }
+  },
+  "consistency_agreement_distribution": {
+    "s1_consistency": {
+      "n": 417,
+      "unanimous": 266,
+      "unanimous_share": 0.63789,
+      "mean": 0.879137,
+      "min": 0.4
+    },
+    "s2_consistency": {
+      "n": 417,
+      "unanimous": 217,
+      "unanimous_share": 0.520384,
+      "mean": 0.840767,
+      "min": 0.4
+    }
+  },
+  "consistency_vote_counts": {
+    "s1_consistency": {
+      "n_segments": 1066,
+      "rows_without_votes": 3,
+      "segments_with_five_votes": 1065,
+      "segments_below_nominal": 1,
+      "segments_with_zero_votes": 0,
+      "min_votes": 3,
+      "vote_count_distribution": {
+        "3": 1,
+        "5": 1065
+      }
+    },
+    "s2_consistency": {
+      "n_segments": 1058,
+      "rows_without_votes": 3,
+      "segments_with_five_votes": 1058,
+      "segments_below_nominal": 0,
+      "segments_with_zero_votes": 0,
+      "min_votes": 5,
+      "vote_count_distribution": {
+        "5": 1058
+      }
+    }
+  },
+  "ablations": {
+    "full_s1": {
+      "n_rows": 480,
+      "n_scored": 420,
+      "n_unscored": 60,
+      "n_safe": 240,
+      "n_unsafe": 180,
+      "safety_correct": 411,
+      "safety_accuracy": 0.978571,
+      "unsafe_true_positive": 179,
+      "unsafe_false_negative": 1,
+      "unsafe_false_positive": 8,
+      "safe_true_negative": 232,
+      "unsafe_recall": 0.994444,
+      "unsafe_precision": 0.957219,
+      "unsafe_f1": 0.975477,
+      "node_correct": 328,
+      "node_accuracy": 0.780952,
+      "affect_emotional_collapsed_node_correct": 345,
+      "affect_emotional_collapsed_node_accuracy": 0.821429,
+      "meta_only_outputs": 4,
+      "per_node": {
+        "AFFECT_EXPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 5,
+          "node_accuracy": 0.166667
+        },
+        "AVOIDANCE": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 40,
+          "node_accuracy": 0.930233
+        },
+        "BEHAVIORAL_MASTERY": {
+          "n": 36,
+          "safety_correct": 36,
+          "safety_accuracy": 1.0,
+          "node_correct": 27,
+          "node_accuracy": 0.75
+        },
+        "EMOTIONAL_MASTERY": {
+          "n": 39,
+          "safety_correct": 37,
+          "safety_accuracy": 0.948718,
+          "node_correct": 30,
+          "node_accuracy": 0.769231
+        },
+        "ENVIRONMENTAL_MASTERY": {
+          "n": 32,
+          "safety_correct": 30,
+          "safety_accuracy": 0.9375,
+          "node_correct": 28,
+          "node_accuracy": 0.875
+        },
+        "INTERRUPTION": {
+          "n": 46,
+          "safety_correct": 46,
+          "safety_accuracy": 1.0,
+          "node_correct": 42,
+          "node_accuracy": 0.913043
+        },
+        "MYTHICAL_MASTERY": {
+          "n": 30,
+          "safety_correct": 28,
+          "safety_accuracy": 0.933333,
+          "node_correct": 17,
+          "node_accuracy": 0.566667
+        },
+        "NARRATIVE_SETTING": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 25,
+          "node_accuracy": 0.833333
+        },
+        "SOCIAL_MASTERY": {
+          "n": 43,
+          "safety_correct": 41,
+          "safety_accuracy": 0.953488,
+          "node_correct": 28,
+          "node_accuracy": 0.651163
+        },
+        "SUPPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 27,
+          "node_accuracy": 0.9
+        },
+        "TRAUMA_REPLAY": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 30,
+          "node_accuracy": 1.0
+        },
+        "VIOLENT_REVENGE": {
+          "n": 31,
+          "safety_correct": 30,
+          "safety_accuracy": 0.967742,
+          "node_correct": 29,
+          "node_accuracy": 0.935484
+        }
+      }
+    },
+    "stage_merge": {
+      "n_rows": 480,
+      "n_scored": 420,
+      "n_unscored": 60,
+      "n_safe": 240,
+      "n_unsafe": 180,
+      "safety_correct": 413,
+      "safety_accuracy": 0.983333,
+      "unsafe_true_positive": 177,
+      "unsafe_false_negative": 3,
+      "unsafe_false_positive": 4,
+      "safe_true_negative": 236,
+      "unsafe_recall": 0.983333,
+      "unsafe_precision": 0.977901,
+      "unsafe_f1": 0.980609,
+      "node_correct": 365,
+      "node_accuracy": 0.869048,
+      "affect_emotional_collapsed_node_correct": 376,
+      "affect_emotional_collapsed_node_accuracy": 0.895238,
+      "meta_only_outputs": 0,
+      "per_node": {
+        "AFFECT_EXPRESSION": {
+          "n": 30,
+          "safety_correct": 29,
+          "safety_accuracy": 0.966667,
+          "node_correct": 25,
+          "node_accuracy": 0.833333
+        },
+        "AVOIDANCE": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 42,
+          "node_accuracy": 0.976744
+        },
+        "BEHAVIORAL_MASTERY": {
+          "n": 36,
+          "safety_correct": 36,
+          "safety_accuracy": 1.0,
+          "node_correct": 22,
+          "node_accuracy": 0.611111
+        },
+        "EMOTIONAL_MASTERY": {
+          "n": 39,
+          "safety_correct": 39,
+          "safety_accuracy": 1.0,
+          "node_correct": 30,
+          "node_accuracy": 0.769231
+        },
+        "ENVIRONMENTAL_MASTERY": {
+          "n": 32,
+          "safety_correct": 29,
+          "safety_accuracy": 0.90625,
+          "node_correct": 26,
+          "node_accuracy": 0.8125
+        },
+        "INTERRUPTION": {
+          "n": 46,
+          "safety_correct": 46,
+          "safety_accuracy": 1.0,
+          "node_correct": 46,
+          "node_accuracy": 1.0
+        },
+        "MYTHICAL_MASTERY": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 24,
+          "node_accuracy": 0.8
+        },
+        "NARRATIVE_SETTING": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 28,
+          "node_accuracy": 0.933333
+        },
+        "SOCIAL_MASTERY": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 35,
+          "node_accuracy": 0.813953
+        },
+        "SUPPRESSION": {
+          "n": 30,
+          "safety_correct": 29,
+          "safety_accuracy": 0.966667,
+          "node_correct": 29,
+          "node_accuracy": 0.966667
+        },
+        "TRAUMA_REPLAY": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 29,
+          "node_accuracy": 0.966667
+        },
+        "VIOLENT_REVENGE": {
+          "n": 31,
+          "safety_correct": 29,
+          "safety_accuracy": 0.935484,
+          "node_correct": 29,
+          "node_accuracy": 0.935484
+        }
+      }
+    },
+    "no_segmentation": {
+      "n_rows": 480,
+      "n_scored": 420,
+      "n_unscored": 60,
+      "n_safe": 240,
+      "n_unsafe": 180,
+      "safety_correct": 413,
+      "safety_accuracy": 0.983333,
+      "unsafe_true_positive": 173,
+      "unsafe_false_negative": 7,
+      "unsafe_false_positive": 0,
+      "safe_true_negative": 240,
+      "unsafe_recall": 0.961111,
+      "unsafe_precision": 1.0,
+      "unsafe_f1": 0.98017,
+      "node_correct": 352,
+      "node_accuracy": 0.838095,
+      "affect_emotional_collapsed_node_correct": 366,
+      "affect_emotional_collapsed_node_accuracy": 0.871429,
+      "meta_only_outputs": 0,
+      "per_node": {
+        "AFFECT_EXPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 15,
+          "node_accuracy": 0.5
+        },
+        "AVOIDANCE": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 42,
+          "node_accuracy": 0.976744
+        },
+        "BEHAVIORAL_MASTERY": {
+          "n": 36,
+          "safety_correct": 36,
+          "safety_accuracy": 1.0,
+          "node_correct": 26,
+          "node_accuracy": 0.722222
+        },
+        "EMOTIONAL_MASTERY": {
+          "n": 39,
+          "safety_correct": 39,
+          "safety_accuracy": 1.0,
+          "node_correct": 30,
+          "node_accuracy": 0.769231
+        },
+        "ENVIRONMENTAL_MASTERY": {
+          "n": 32,
+          "safety_correct": 32,
+          "safety_accuracy": 1.0,
+          "node_correct": 29,
+          "node_accuracy": 0.90625
+        },
+        "INTERRUPTION": {
+          "n": 46,
+          "safety_correct": 46,
+          "safety_accuracy": 1.0,
+          "node_correct": 46,
+          "node_accuracy": 1.0
+        },
+        "MYTHICAL_MASTERY": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 15,
+          "node_accuracy": 0.5
+        },
+        "NARRATIVE_SETTING": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 27,
+          "node_accuracy": 0.9
+        },
+        "SOCIAL_MASTERY": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 38,
+          "node_accuracy": 0.883721
+        },
+        "SUPPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 30,
+          "node_accuracy": 1.0
+        },
+        "TRAUMA_REPLAY": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 30,
+          "node_accuracy": 1.0
+        },
+        "VIOLENT_REVENGE": {
+          "n": 31,
+          "safety_correct": 24,
+          "safety_accuracy": 0.774194,
+          "node_correct": 24,
+          "node_accuracy": 0.774194
+        }
+      }
+    },
+    "meta_filtering_off": {
+      "n_rows": 480,
+      "n_scored": 420,
+      "n_unscored": 60,
+      "n_safe": 240,
+      "n_unsafe": 180,
+      "safety_correct": 401,
+      "safety_accuracy": 0.954762,
+      "unsafe_true_positive": 179,
+      "unsafe_false_negative": 1,
+      "unsafe_false_positive": 18,
+      "safe_true_negative": 222,
+      "unsafe_recall": 0.994444,
+      "unsafe_precision": 0.908629,
+      "unsafe_f1": 0.949602,
+      "node_correct": 318,
+      "node_accuracy": 0.757143,
+      "affect_emotional_collapsed_node_correct": 335,
+      "affect_emotional_collapsed_node_accuracy": 0.797619,
+      "meta_only_outputs": 0,
+      "per_node": {
+        "AFFECT_EXPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 6,
+          "node_accuracy": 0.2
+        },
+        "AVOIDANCE": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 34,
+          "node_accuracy": 0.790698
+        },
+        "BEHAVIORAL_MASTERY": {
+          "n": 36,
+          "safety_correct": 35,
+          "safety_accuracy": 0.972222,
+          "node_correct": 25,
+          "node_accuracy": 0.694444
+        },
+        "EMOTIONAL_MASTERY": {
+          "n": 39,
+          "safety_correct": 36,
+          "safety_accuracy": 0.923077,
+          "node_correct": 30,
+          "node_accuracy": 0.769231
+        },
+        "ENVIRONMENTAL_MASTERY": {
+          "n": 32,
+          "safety_correct": 29,
+          "safety_accuracy": 0.90625,
+          "node_correct": 27,
+          "node_accuracy": 0.84375
+        },
+        "INTERRUPTION": {
+          "n": 46,
+          "safety_correct": 46,
+          "safety_accuracy": 1.0,
+          "node_correct": 41,
+          "node_accuracy": 0.891304
+        },
+        "MYTHICAL_MASTERY": {
+          "n": 30,
+          "safety_correct": 29,
+          "safety_accuracy": 0.966667,
+          "node_correct": 17,
+          "node_accuracy": 0.566667
+        },
+        "NARRATIVE_SETTING": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 29,
+          "node_accuracy": 0.966667
+        },
+        "SOCIAL_MASTERY": {
+          "n": 43,
+          "safety_correct": 33,
+          "safety_accuracy": 0.767442,
+          "node_correct": 23,
+          "node_accuracy": 0.534884
+        },
+        "SUPPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 27,
+          "node_accuracy": 0.9
+        },
+        "TRAUMA_REPLAY": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 30,
+          "node_accuracy": 1.0
+        },
+        "VIOLENT_REVENGE": {
+          "n": 31,
+          "safety_correct": 30,
+          "safety_accuracy": 0.967742,
+          "node_correct": 29,
+          "node_accuracy": 0.935484
+        }
+      }
+    },
+    "naive_splitter": {
+      "n_rows": 480,
+      "n_scored": 420,
+      "n_unscored": 60,
+      "n_safe": 240,
+      "n_unsafe": 180,
+      "safety_correct": 409,
+      "safety_accuracy": 0.97381,
+      "unsafe_true_positive": 178,
+      "unsafe_false_negative": 2,
+      "unsafe_false_positive": 9,
+      "safe_true_negative": 231,
+      "unsafe_recall": 0.988889,
+      "unsafe_precision": 0.951872,
+      "unsafe_f1": 0.970027,
+      "node_correct": 332,
+      "node_accuracy": 0.790476,
+      "affect_emotional_collapsed_node_correct": 353,
+      "affect_emotional_collapsed_node_accuracy": 0.840476,
+      "meta_only_outputs": 0,
+      "per_node": {
+        "AFFECT_EXPRESSION": {
+          "n": 30,
+          "safety_correct": 28,
+          "safety_accuracy": 0.933333,
+          "node_correct": 5,
+          "node_accuracy": 0.166667
+        },
+        "AVOIDANCE": {
+          "n": 43,
+          "safety_correct": 43,
+          "safety_accuracy": 1.0,
+          "node_correct": 40,
+          "node_accuracy": 0.930233
+        },
+        "BEHAVIORAL_MASTERY": {
+          "n": 36,
+          "safety_correct": 35,
+          "safety_accuracy": 0.972222,
+          "node_correct": 26,
+          "node_accuracy": 0.722222
+        },
+        "EMOTIONAL_MASTERY": {
+          "n": 39,
+          "safety_correct": 34,
+          "safety_accuracy": 0.871795,
+          "node_correct": 25,
+          "node_accuracy": 0.641026
+        },
+        "ENVIRONMENTAL_MASTERY": {
+          "n": 32,
+          "safety_correct": 32,
+          "safety_accuracy": 1.0,
+          "node_correct": 30,
+          "node_accuracy": 0.9375
+        },
+        "INTERRUPTION": {
+          "n": 46,
+          "safety_correct": 46,
+          "safety_accuracy": 1.0,
+          "node_correct": 44,
+          "node_accuracy": 0.956522
+        },
+        "MYTHICAL_MASTERY": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 16,
+          "node_accuracy": 0.533333
+        },
+        "NARRATIVE_SETTING": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 27,
+          "node_accuracy": 0.9
+        },
+        "SOCIAL_MASTERY": {
+          "n": 43,
+          "safety_correct": 42,
+          "safety_accuracy": 0.976744,
+          "node_correct": 34,
+          "node_accuracy": 0.790698
+        },
+        "SUPPRESSION": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 30,
+          "node_accuracy": 1.0
+        },
+        "TRAUMA_REPLAY": {
+          "n": 30,
+          "safety_correct": 30,
+          "safety_accuracy": 1.0,
+          "node_correct": 30,
+          "node_accuracy": 1.0
+        },
+        "VIOLENT_REVENGE": {
+          "n": 31,
+          "safety_correct": 29,
+          "safety_accuracy": 0.935484,
+          "node_correct": 25,
+          "node_accuracy": 0.806452
+        }
+      }
+    }
+  },
+  "ablation_miss_overlap": {
+    "no_segmentation_vs_naive_splitter": {
+      "missed_a": 7,
+      "missed_b": 2,
+      "shared": 1,
+      "recovered_by_b": 6,
+      "introduced_by_b": 1
+    }
+  },
+  "segmentation_strata": {
+    "full_s1": {
+      "one_pattern_clean": {
+        "n_rows": 360,
+        "n_scored": 360,
+        "n_unscored": 0,
+        "n_safe": 210,
+        "n_unsafe": 150,
+        "safety_correct": 351,
+        "safety_accuracy": 0.975,
+        "unsafe_true_positive": 149,
+        "unsafe_false_negative": 1,
+        "unsafe_false_positive": 8,
+        "safe_true_negative": 202,
+        "unsafe_recall": 0.993333,
+        "unsafe_precision": 0.949045,
+        "unsafe_f1": 0.970684,
+        "node_correct": 286,
+        "node_accuracy": 0.794444,
+        "affect_emotional_collapsed_node_correct": 303,
+        "affect_emotional_collapsed_node_accuracy": 0.841667,
+        "meta_only_outputs": 4,
+        "per_node": {
+          "AFFECT_EXPRESSION": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 5,
+            "node_accuracy": 0.166667
+          },
+          "AVOIDANCE": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 28,
+            "node_accuracy": 0.933333
+          },
+          "BEHAVIORAL_MASTERY": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 24,
+            "node_accuracy": 0.8
+          },
+          "EMOTIONAL_MASTERY": {
+            "n": 30,
+            "safety_correct": 28,
+            "safety_accuracy": 0.933333,
+            "node_correct": 26,
+            "node_accuracy": 0.866667
+          },
+          "ENVIRONMENTAL_MASTERY": {
+            "n": 30,
+            "safety_correct": 28,
+            "safety_accuracy": 0.933333,
+            "node_correct": 27,
+            "node_accuracy": 0.9
+          },
+          "INTERRUPTION": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 26,
+            "node_accuracy": 0.866667
+          },
+          "MYTHICAL_MASTERY": {
+            "n": 30,
+            "safety_correct": 28,
+            "safety_accuracy": 0.933333,
+            "node_correct": 17,
+            "node_accuracy": 0.566667
+          },
+          "NARRATIVE_SETTING": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 25,
+            "node_accuracy": 0.833333
+          },
+          "SOCIAL_MASTERY": {
+            "n": 30,
+            "safety_correct": 28,
+            "safety_accuracy": 0.933333,
+            "node_correct": 23,
+            "node_accuracy": 0.766667
+          },
+          "SUPPRESSION": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 27,
+            "node_accuracy": 0.9
+          },
+          "TRAUMA_REPLAY": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 30,
+            "node_accuracy": 1.0
+          },
+          "VIOLENT_REVENGE": {
+            "n": 30,
+            "safety_correct": 29,
+            "safety_accuracy": 0.966667,
+            "node_correct": 28,
+            "node_accuracy": 0.933333
+          }
+        }
+      },
+      "multipart": {
+        "n_rows": 60,
+        "n_scored": 60,
+        "n_unscored": 0,
+        "n_safe": 30,
+        "n_unsafe": 30,
+        "safety_correct": 60,
+        "safety_accuracy": 1.0,
+        "unsafe_true_positive": 30,
+        "unsafe_false_negative": 0,
+        "unsafe_false_positive": 0,
+        "safe_true_negative": 30,
+        "unsafe_recall": 1.0,
+        "unsafe_precision": 1.0,
+        "unsafe_f1": 1.0,
+        "node_correct": 42,
+        "node_accuracy": 0.7,
+        "affect_emotional_collapsed_node_correct": 42,
+        "affect_emotional_collapsed_node_accuracy": 0.7,
+        "meta_only_outputs": 0,
+        "per_node": {
+          "AVOIDANCE": {
+            "n": 13,
+            "safety_correct": 13,
+            "safety_accuracy": 1.0,
+            "node_correct": 12,
+            "node_accuracy": 0.923077
+          },
+          "BEHAVIORAL_MASTERY": {
+            "n": 6,
+            "safety_correct": 6,
+            "safety_accuracy": 1.0,
+            "node_correct": 3,
+            "node_accuracy": 0.5
+          },
+          "EMOTIONAL_MASTERY": {
+            "n": 9,
+            "safety_correct": 9,
+            "safety_accuracy": 1.0,
+            "node_correct": 4,
+            "node_accuracy": 0.444444
+          },
+          "ENVIRONMENTAL_MASTERY": {
+            "n": 2,
+            "safety_correct": 2,
+            "safety_accuracy": 1.0,
+            "node_correct": 1,
+            "node_accuracy": 0.5
+          },
+          "INTERRUPTION": {
+            "n": 16,
+            "safety_correct": 16,
+            "safety_accuracy": 1.0,
+            "node_correct": 16,
+            "node_accuracy": 1.0
+          },
+          "SOCIAL_MASTERY": {
+            "n": 13,
+            "safety_correct": 13,
+            "safety_accuracy": 1.0,
+            "node_correct": 5,
+            "node_accuracy": 0.384615
+          },
+          "VIOLENT_REVENGE": {
+            "n": 1,
+            "safety_correct": 1,
+            "safety_accuracy": 1.0,
+            "node_correct": 1,
+            "node_accuracy": 1.0
+          }
+        }
+      }
+    },
+    "no_segmentation": {
+      "one_pattern_clean": {
+        "n_rows": 360,
+        "n_scored": 360,
+        "n_unscored": 0,
+        "n_safe": 210,
+        "n_unsafe": 150,
+        "safety_correct": 353,
+        "safety_accuracy": 0.980556,
+        "unsafe_true_positive": 143,
+        "unsafe_false_negative": 7,
+        "unsafe_false_positive": 0,
+        "safe_true_negative": 210,
+        "unsafe_recall": 0.953333,
+        "unsafe_precision": 1.0,
+        "unsafe_f1": 0.976109,
+        "node_correct": 310,
+        "node_accuracy": 0.861111,
+        "affect_emotional_collapsed_node_correct": 324,
+        "affect_emotional_collapsed_node_accuracy": 0.9,
+        "meta_only_outputs": 0,
+        "per_node": {
+          "AFFECT_EXPRESSION": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 15,
+            "node_accuracy": 0.5
+          },
+          "AVOIDANCE": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 30,
+            "node_accuracy": 1.0
+          },
+          "BEHAVIORAL_MASTERY": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 23,
+            "node_accuracy": 0.766667
+          },
+          "EMOTIONAL_MASTERY": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 29,
+            "node_accuracy": 0.966667
+          },
+          "ENVIRONMENTAL_MASTERY": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 28,
+            "node_accuracy": 0.933333
+          },
+          "INTERRUPTION": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 30,
+            "node_accuracy": 1.0
+          },
+          "MYTHICAL_MASTERY": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 15,
+            "node_accuracy": 0.5
+          },
+          "NARRATIVE_SETTING": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 27,
+            "node_accuracy": 0.9
+          },
+          "SOCIAL_MASTERY": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 30,
+            "node_accuracy": 1.0
+          },
+          "SUPPRESSION": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 30,
+            "node_accuracy": 1.0
+          },
+          "TRAUMA_REPLAY": {
+            "n": 30,
+            "safety_correct": 30,
+            "safety_accuracy": 1.0,
+            "node_correct": 30,
+            "node_accuracy": 1.0
+          },
+          "VIOLENT_REVENGE": {
+            "n": 30,
+            "safety_correct": 23,
+            "safety_accuracy": 0.766667,
+            "node_correct": 23,
+            "node_accuracy": 0.766667
+          }
+        }
+      },
+      "multipart": {
+        "n_rows": 60,
+        "n_scored": 60,
+        "n_unscored": 0,
+        "n_safe": 30,
+        "n_unsafe": 30,
+        "safety_correct": 60,
+        "safety_accuracy": 1.0,
+        "unsafe_true_positive": 30,
+        "unsafe_false_negative": 0,
+        "unsafe_false_positive": 0,
+        "safe_true_negative": 30,
+        "unsafe_recall": 1.0,
+        "unsafe_precision": 1.0,
+        "unsafe_f1": 1.0,
+        "node_correct": 42,
+        "node_accuracy": 0.7,
+        "affect_emotional_collapsed_node_correct": 42,
+        "affect_emotional_collapsed_node_accuracy": 0.7,
+        "meta_only_outputs": 0,
+        "per_node": {
+          "AVOIDANCE": {
+            "n": 13,
+            "safety_correct": 13,
+            "safety_accuracy": 1.0,
+            "node_correct": 12,
+            "node_accuracy": 0.923077
+          },
+          "BEHAVIORAL_MASTERY": {
+            "n": 6,
+            "safety_correct": 6,
+            "safety_accuracy": 1.0,
+            "node_correct": 3,
+            "node_accuracy": 0.5
+          },
+          "EMOTIONAL_MASTERY": {
+            "n": 9,
+            "safety_correct": 9,
+            "safety_accuracy": 1.0,
+            "node_correct": 1,
+            "node_accuracy": 0.111111
+          },
+          "ENVIRONMENTAL_MASTERY": {
+            "n": 2,
+            "safety_correct": 2,
+            "safety_accuracy": 1.0,
+            "node_correct": 1,
+            "node_accuracy": 0.5
+          },
+          "INTERRUPTION": {
+            "n": 16,
+            "safety_correct": 16,
+            "safety_accuracy": 1.0,
+            "node_correct": 16,
+            "node_accuracy": 1.0
+          },
+          "SOCIAL_MASTERY": {
+            "n": 13,
+            "safety_correct": 13,
+            "safety_accuracy": 1.0,
+            "node_correct": 8,
+            "node_accuracy": 0.615385
+          },
+          "VIOLENT_REVENGE": {
+            "n": 1,
+            "safety_correct": 1,
+            "safety_accuracy": 1.0,
+            "node_correct": 1,
+            "node_accuracy": 1.0
+          }
+        }
+      }
+    }
+  },
+  "multi_maladaptive": {
+    "full_s1": {
+      "n": 35,
+      "primary_node_correct": 35,
+      "primary_node_accuracy": 1.0,
+      "secondary_node_caught": 34,
+      "secondary_node_recall": 0.971429,
+      "any_maladaptive_caught": 35,
+      "any_maladaptive_recall": 1.0
+    },
+    "stage_merge": {
+      "n": 35,
+      "primary_node_correct": 35,
+      "primary_node_accuracy": 1.0,
+      "secondary_node_caught": 35,
+      "secondary_node_recall": 1.0,
+      "any_maladaptive_caught": 35,
+      "any_maladaptive_recall": 1.0
+    },
+    "no_segmentation": {
+      "n": 35,
+      "primary_node_correct": 25,
+      "primary_node_accuracy": 0.714286,
+      "secondary_node_caught": 6,
+      "secondary_node_recall": 0.171429,
+      "any_maladaptive_caught": 31,
+      "any_maladaptive_recall": 0.885714
+    },
+    "meta_filtering_off": {
+      "n": 35,
+      "primary_node_correct": 35,
+      "primary_node_accuracy": 1.0,
+      "secondary_node_caught": 34,
+      "secondary_node_recall": 0.971429,
+      "any_maladaptive_caught": 35,
+      "any_maladaptive_recall": 1.0
+    },
+    "naive_splitter": {
+      "n": 35,
+      "primary_node_correct": 25,
+      "primary_node_accuracy": 0.714286,
+      "secondary_node_caught": 6,
+      "secondary_node_recall": 0.171429,
+      "any_maladaptive_caught": 31,
+      "any_maladaptive_recall": 0.885714
+    }
+  },
+  "heldout_test_postfix": {
+    "n_rows": 231,
+    "n_scored": 231,
+    "n_unscored": 0,
+    "n_safe": 141,
+    "n_unsafe": 90,
+    "safety_correct": 229,
+    "safety_accuracy": 0.991342,
+    "unsafe_true_positive": 89,
+    "unsafe_false_negative": 1,
+    "unsafe_false_positive": 1,
+    "safe_true_negative": 140,
+    "unsafe_recall": 0.988889,
+    "unsafe_precision": 0.988889,
+    "unsafe_f1": 0.988889,
+    "node_correct": 186,
+    "node_accuracy": 0.805195,
+    "affect_emotional_collapsed_node_correct": 196,
+    "affect_emotional_collapsed_node_accuracy": 0.848485,
+    "meta_only_outputs": 2,
+    "per_node": {
+      "AFFECT_EXPRESSION": {
+        "n": 18,
+        "safety_correct": 18,
+        "safety_accuracy": 1.0,
+        "node_correct": 5,
+        "node_accuracy": 0.277778
+      },
+      "AVOIDANCE": {
+        "n": 20,
+        "safety_correct": 20,
+        "safety_accuracy": 1.0,
+        "node_correct": 20,
+        "node_accuracy": 1.0
+      },
+      "BEHAVIORAL_MASTERY": {
+        "n": 23,
+        "safety_correct": 23,
+        "safety_accuracy": 1.0,
+        "node_correct": 16,
+        "node_accuracy": 0.695652
+      },
+      "EMOTIONAL_MASTERY": {
+        "n": 22,
+        "safety_correct": 22,
+        "safety_accuracy": 1.0,
+        "node_correct": 17,
+        "node_accuracy": 0.772727
+      },
+      "ENVIRONMENTAL_MASTERY": {
+        "n": 21,
+        "safety_correct": 21,
+        "safety_accuracy": 1.0,
+        "node_correct": 18,
+        "node_accuracy": 0.857143
+      },
+      "INTERRUPTION": {
+        "n": 24,
+        "safety_correct": 24,
+        "safety_accuracy": 1.0,
+        "node_correct": 23,
+        "node_accuracy": 0.958333
+      },
+      "MYTHICAL_MASTERY": {
+        "n": 18,
+        "safety_correct": 18,
+        "safety_accuracy": 1.0,
+        "node_correct": 14,
+        "node_accuracy": 0.777778
+      },
+      "NARRATIVE_SETTING": {
+        "n": 18,
+        "safety_correct": 18,
+        "safety_accuracy": 1.0,
+        "node_correct": 16,
+        "node_accuracy": 0.888889
+      },
+      "SOCIAL_MASTERY": {
+        "n": 21,
+        "safety_correct": 20,
+        "safety_accuracy": 0.952381,
+        "node_correct": 14,
+        "node_accuracy": 0.666667
+      },
+      "SUPPRESSION": {
+        "n": 15,
+        "safety_correct": 15,
+        "safety_accuracy": 1.0,
+        "node_correct": 13,
+        "node_accuracy": 0.866667
+      },
+      "TRAUMA_REPLAY": {
+        "n": 15,
+        "safety_correct": 15,
+        "safety_accuracy": 1.0,
+        "node_correct": 15,
+        "node_accuracy": 1.0
+      },
+      "VIOLENT_REVENGE": {
+        "n": 16,
+        "safety_correct": 15,
+        "safety_accuracy": 0.9375,
+        "node_correct": 15,
+        "node_accuracy": 0.9375
+      }
+    }
+  },
+  "heldout_confusion_families": {
+    "node_errors": 45,
+    "non_maladaptive": 40,
+    "within_maladaptive": 3,
+    "cross_family": 2,
+    "pairs_involving_maladaptive": {
+      "SUPPRESSION -> TRAUMA_REPLAY": 2,
+      "INTERRUPTION -> TRAUMA_REPLAY": 1,
+      "SOCIAL_MASTERY -> AVOIDANCE": 1,
+      "VIOLENT_REVENGE -> BEHAVIORAL_MASTERY": 1
+    }
+  },
+  "s1_baseline_confusion_families": {
+    "node_errors": 92,
+    "non_maladaptive": 72,
+    "within_maladaptive": 11,
+    "cross_family": 9,
+    "pairs_involving_maladaptive": {
+      "INTERRUPTION -> TRAUMA_REPLAY": 4,
+      "SUPPRESSION -> TRAUMA_REPLAY": 3,
+      "AVOIDANCE -> TRAUMA_REPLAY": 2,
+      "ENVIRONMENTAL_MASTERY -> AVOIDANCE": 2,
+      "MYTHICAL_MASTERY -> TRAUMA_REPLAY": 2,
+      "SOCIAL_MASTERY -> TRAUMA_REPLAY": 2,
+      "AVOIDANCE -> SUPPRESSION": 1,
+      "EMOTIONAL_MASTERY -> AVOIDANCE": 1,
+      "EMOTIONAL_MASTERY -> SUPPRESSION": 1,
+      "VIOLENT_REVENGE -> BEHAVIORAL_MASTERY": 1,
+      "VIOLENT_REVENGE -> TRAUMA_REPLAY": 1
+    }
+  },
+  "s1_baseline_directional_confusions": {
+    "min_count": 6,
+    "pairs": {
+      "AFFECT_EXPRESSION -> EMOTIONAL_MASTERY": {
+        "count": 17,
+        "reverse": 0
+      },
+      "MYTHICAL_MASTERY -> ENVIRONMENTAL_MASTERY": {
+        "count": 9,
+        "reverse": 0
+      },
+      "SOCIAL_MASTERY -> EMOTIONAL_MASTERY": {
+        "count": 7,
+        "reverse": 0
+      },
+      "AFFECT_EXPRESSION -> BEHAVIORAL_MASTERY": {
+        "count": 6,
+        "reverse": 0
+      },
+      "BEHAVIORAL_MASTERY -> ENVIRONMENTAL_MASTERY": {
+        "count": 6,
+        "reverse": 1
+      }
+    },
+    "n_large": 5,
+    "n_one_directional": 4,
+    "one_directional": {
+      "AFFECT_EXPRESSION -> EMOTIONAL_MASTERY": {
+        "count": 17,
+        "reverse": 0
+      },
+      "MYTHICAL_MASTERY -> ENVIRONMENTAL_MASTERY": {
+        "count": 9,
+        "reverse": 0
+      },
+      "SOCIAL_MASTERY -> EMOTIONAL_MASTERY": {
+        "count": 7,
+        "reverse": 0
+      },
+      "AFFECT_EXPRESSION -> BEHAVIORAL_MASTERY": {
+        "count": 6,
+        "reverse": 0
+      }
+    },
+    "max_reverse": 1,
+    "shared_by_all_bidirectional_pairs": [
+      "BEHAVIORAL_MASTERY"
+    ]
+  },
+  "s1_baseline_node_flow": {
+    "AFFECT_EXPRESSION": {
+      "reference_cases": 30,
+      "correct": 5,
+      "lost": 25,
+      "gained": 0,
+      "net": -25,
+      "predicted": 5,
+      "recall": 0.166667,
+      "precision": 1.0,
+      "gained_from": {},
+      "lost_to": {
+        "EMOTIONAL_MASTERY": 17,
+        "BEHAVIORAL_MASTERY": 6,
+        "ENVIRONMENTAL_MASTERY": 1,
+        "NARRATIVE_SETTING": 1
+      }
+    },
+    "AVOIDANCE": {
+      "reference_cases": 43,
+      "correct": 40,
+      "lost": 3,
+      "gained": 3,
+      "net": 0,
+      "predicted": 43,
+      "recall": 0.930233,
+      "precision": 0.930233,
+      "gained_from": {
+        "ENVIRONMENTAL_MASTERY": 2,
+        "EMOTIONAL_MASTERY": 1
+      },
+      "lost_to": {
+        "TRAUMA_REPLAY": 2,
+        "SUPPRESSION": 1
+      }
+    },
+    "BEHAVIORAL_MASTERY": {
+      "reference_cases": 36,
+      "correct": 27,
+      "lost": 9,
+      "gained": 18,
+      "net": 9,
+      "predicted": 45,
+      "recall": 0.75,
+      "precision": 0.6,
+      "gained_from": {
+        "AFFECT_EXPRESSION": 6,
+        "EMOTIONAL_MASTERY": 5,
+        "SOCIAL_MASTERY": 4,
+        "ENVIRONMENTAL_MASTERY": 1,
+        "MYTHICAL_MASTERY": 1,
+        "VIOLENT_REVENGE": 1
+      },
+      "lost_to": {
+        "ENVIRONMENTAL_MASTERY": 6,
+        "EMOTIONAL_MASTERY": 2,
+        "SOCIAL_MASTERY": 1
+      }
+    },
+    "EMOTIONAL_MASTERY": {
+      "reference_cases": 39,
+      "correct": 30,
+      "lost": 9,
+      "gained": 27,
+      "net": 18,
+      "predicted": 57,
+      "recall": 0.769231,
+      "precision": 0.526316,
+      "gained_from": {
+        "AFFECT_EXPRESSION": 17,
+        "SOCIAL_MASTERY": 7,
+        "BEHAVIORAL_MASTERY": 2,
+        "ENVIRONMENTAL_MASTERY": 1
+      },
+      "lost_to": {
+        "BEHAVIORAL_MASTERY": 5,
+        "MYTHICAL_MASTERY": 2,
+        "AVOIDANCE": 1,
+        "SUPPRESSION": 1
+      }
+    },
+    "ENVIRONMENTAL_MASTERY": {
+      "reference_cases": 32,
+      "correct": 28,
+      "lost": 4,
+      "gained": 19,
+      "net": 15,
+      "predicted": 47,
+      "recall": 0.875,
+      "precision": 0.595745,
+      "gained_from": {
+        "MYTHICAL_MASTERY": 9,
+        "BEHAVIORAL_MASTERY": 6,
+        "SOCIAL_MASTERY": 2,
+        "AFFECT_EXPRESSION": 1,
+        "NARRATIVE_SETTING": 1
+      },
+      "lost_to": {
+        "AVOIDANCE": 2,
+        "BEHAVIORAL_MASTERY": 1,
+        "EMOTIONAL_MASTERY": 1
+      }
+    },
+    "INTERRUPTION": {
+      "reference_cases": 46,
+      "correct": 42,
+      "lost": 4,
+      "gained": 0,
+      "net": -4,
+      "predicted": 42,
+      "recall": 0.913043,
+      "precision": 1.0,
+      "gained_from": {},
+      "lost_to": {
+        "TRAUMA_REPLAY": 4
+      }
+    },
+    "META_ONLY": {
+      "reference_cases": 0,
+      "correct": 0,
+      "lost": 0,
+      "gained": 4,
+      "net": 4,
+      "predicted": 4,
+      "recall": null,
+      "precision": 0.0,
+      "gained_from": {
+        "NARRATIVE_SETTING": 4
+      },
+      "lost_to": {}
+    },
+    "MYTHICAL_MASTERY": {
+      "reference_cases": 30,
+      "correct": 17,
+      "lost": 13,
+      "gained": 2,
+      "net": -11,
+      "predicted": 19,
+      "recall": 0.566667,
+      "precision": 0.894737,
+      "gained_from": {
+        "EMOTIONAL_MASTERY": 2
+      },
+      "lost_to": {
+        "ENVIRONMENTAL_MASTERY": 9,
+        "TRAUMA_REPLAY": 2,
+        "BEHAVIORAL_MASTERY": 1,
+        "SOCIAL_MASTERY": 1
+      }
+    },
+    "NARRATIVE_SETTING": {
+      "reference_cases": 30,
+      "correct": 25,
+      "lost": 5,
+      "gained": 1,
+      "net": -4,
+      "predicted": 26,
+      "recall": 0.833333,
+      "precision": 0.961538,
+      "gained_from": {
+        "AFFECT_EXPRESSION": 1
+      },
+      "lost_to": {
+        "META_ONLY": 4,
+        "ENVIRONMENTAL_MASTERY": 1
+      }
+    },
+    "SOCIAL_MASTERY": {
+      "reference_cases": 43,
+      "correct": 28,
+      "lost": 15,
+      "gained": 2,
+      "net": -13,
+      "predicted": 30,
+      "recall": 0.651163,
+      "precision": 0.933333,
+      "gained_from": {
+        "BEHAVIORAL_MASTERY": 1,
+        "MYTHICAL_MASTERY": 1
+      },
+      "lost_to": {
+        "EMOTIONAL_MASTERY": 7,
+        "BEHAVIORAL_MASTERY": 4,
+        "ENVIRONMENTAL_MASTERY": 2,
+        "TRAUMA_REPLAY": 2
+      }
+    },
+    "SUPPRESSION": {
+      "reference_cases": 30,
+      "correct": 27,
+      "lost": 3,
+      "gained": 2,
+      "net": -1,
+      "predicted": 29,
+      "recall": 0.9,
+      "precision": 0.931034,
+      "gained_from": {
+        "AVOIDANCE": 1,
+        "EMOTIONAL_MASTERY": 1
+      },
+      "lost_to": {
+        "TRAUMA_REPLAY": 3
+      }
+    },
+    "TRAUMA_REPLAY": {
+      "reference_cases": 30,
+      "correct": 30,
+      "lost": 0,
+      "gained": 14,
+      "net": 14,
+      "predicted": 44,
+      "recall": 1.0,
+      "precision": 0.681818,
+      "gained_from": {
+        "INTERRUPTION": 4,
+        "SUPPRESSION": 3,
+        "AVOIDANCE": 2,
+        "MYTHICAL_MASTERY": 2,
+        "SOCIAL_MASTERY": 2,
+        "VIOLENT_REVENGE": 1
+      },
+      "lost_to": {}
+    },
+    "VIOLENT_REVENGE": {
+      "reference_cases": 31,
+      "correct": 29,
+      "lost": 2,
+      "gained": 0,
+      "net": -2,
+      "predicted": 29,
+      "recall": 0.935484,
+      "precision": 1.0,
+      "gained_from": {},
+      "lost_to": {
+        "BEHAVIORAL_MASTERY": 1,
+        "TRAUMA_REPLAY": 1
+      }
+    }
+  },
+  "verdict_partition": {
+    "s1_baseline": {
+      "errors_within_safe_side": 72,
+      "errors_within_unsafe_side": 11,
+      "errors_crossing": 9,
+      "n_safety_errors": 9,
+      "matches_safety_errors": true
+    },
+    "s1_consistency": {
+      "errors_within_safe_side": 73,
+      "errors_within_unsafe_side": 10,
+      "errors_crossing": 9,
+      "n_safety_errors": 9,
+      "matches_safety_errors": true
+    },
+    "s2_baseline": {
+      "errors_within_safe_side": 75,
+      "errors_within_unsafe_side": 5,
+      "errors_crossing": 8,
+      "n_safety_errors": 8,
+      "matches_safety_errors": true
+    },
+    "s2_consistency": {
+      "errors_within_safe_side": 75,
+      "errors_within_unsafe_side": 4,
+      "errors_crossing": 5,
+      "n_safety_errors": 5,
+      "matches_safety_errors": true
+    },
+    "s2_baseline_corrected": {
+      "errors_within_safe_side": 73,
+      "errors_within_unsafe_side": 6,
+      "errors_crossing": 10,
+      "n_safety_errors": 10,
+      "matches_safety_errors": true
+    },
+    "s1_consistency_votes": {
+      "errors_within_safe_side": 76,
+      "errors_within_unsafe_side": 10,
+      "errors_crossing": 11,
+      "n_safety_errors": 11,
+      "matches_safety_errors": true
+    },
+    "s2_consistency_votes": {
+      "errors_within_safe_side": 71,
+      "errors_within_unsafe_side": 6,
+      "errors_crossing": 7,
+      "n_safety_errors": 7,
+      "matches_safety_errors": true
+    },
+    "heldout_test_postfix": {
+      "errors_within_safe_side": 40,
+      "errors_within_unsafe_side": 3,
+      "errors_crossing": 2,
+      "n_safety_errors": 2,
+      "matches_safety_errors": true
+    }
+  },
+  "leading_confusions": {
+    "s1_baseline": {
+      "pair": "AFFECT_EXPRESSION -> EMOTIONAL_MASTERY",
+      "count": 17,
+      "runner_up": "MYTHICAL_MASTERY -> ENVIRONMENTAL_MASTERY",
+      "runner_up_count": 9,
+      "margin": 8
+    },
+    "s1_consistency_votes": {
+      "pair": "AFFECT_EXPRESSION -> EMOTIONAL_MASTERY",
+      "count": 16,
+      "runner_up": "MYTHICAL_MASTERY -> ENVIRONMENTAL_MASTERY",
+      "runner_up_count": 10,
+      "margin": 6
+    },
+    "s2_baseline": {
+      "pair": "AFFECT_EXPRESSION -> EMOTIONAL_MASTERY",
+      "count": 25,
+      "runner_up": "MYTHICAL_MASTERY -> ENVIRONMENTAL_MASTERY",
+      "runner_up_count": 12,
+      "margin": 13
+    },
+    "s2_baseline_corrected": {
+      "pair": "AFFECT_EXPRESSION -> EMOTIONAL_MASTERY",
+      "count": 22,
+      "runner_up": "MYTHICAL_MASTERY -> ENVIRONMENTAL_MASTERY",
+      "runner_up_count": 15,
+      "margin": 7
+    },
+    "s2_consistency_votes": {
+      "pair": "AFFECT_EXPRESSION -> EMOTIONAL_MASTERY",
+      "count": 25,
+      "runner_up": "MYTHICAL_MASTERY -> ENVIRONMENTAL_MASTERY",
+      "runner_up_count": 13,
+      "margin": 12
+    },
+    "heldout_test_postfix": {
+      "pair": "AFFECT_EXPRESSION -> EMOTIONAL_MASTERY",
+      "count": 10,
+      "runner_up": "BEHAVIORAL_MASTERY -> ENVIRONMENTAL_MASTERY",
+      "runner_up_count": 5,
+      "margin": 5
+    }
+  },
+  "dataset_composition": {
+    "dev": {
+      "n_cases": 480,
+      "test_types": {
+        "clean": 360,
+        "boundary": 60,
+        "multipart": 60
+      },
+      "safety_groups": {
+        "adaptive": 180,
+        "neutral": 60,
+        "maladaptive": 180
+      },
+      "node_case_min": 30,
+      "node_case_max": 46,
+      "node_counts": {
+        "AFFECT_EXPRESSION": 30,
+        "AVOIDANCE": 43,
+        "BEHAVIORAL_MASTERY": 36,
+        "EMOTIONAL_MASTERY": 39,
+        "ENVIRONMENTAL_MASTERY": 32,
+        "INTERRUPTION": 46,
+        "MYTHICAL_MASTERY": 30,
+        "NARRATIVE_SETTING": 30,
+        "SOCIAL_MASTERY": 43,
+        "SUPPRESSION": 30,
+        "TRAUMA_REPLAY": 30,
+        "VIOLENT_REVENGE": 31
+      }
+    },
+    "test_final": {
+      "n_cases": 267,
+      "test_types": {
+        "clean": 201,
+        "boundary": 36,
+        "multipart": 30
+      },
+      "safety_groups": {
+        "adaptive": 105,
+        "neutral": 36,
+        "maladaptive": 90
+      },
+      "node_case_min": 15,
+      "node_case_max": 24,
+      "node_counts": {
+        "AFFECT_EXPRESSION": 18,
+        "AVOIDANCE": 20,
+        "BEHAVIORAL_MASTERY": 23,
+        "EMOTIONAL_MASTERY": 22,
+        "ENVIRONMENTAL_MASTERY": 21,
+        "INTERRUPTION": 24,
+        "MYTHICAL_MASTERY": 18,
+        "NARRATIVE_SETTING": 18,
+        "SOCIAL_MASTERY": 21,
+        "SUPPRESSION": 15,
+        "TRAUMA_REPLAY": 15,
+        "VIOLENT_REVENGE": 16
+      }
+    },
+    "spotcheck_queue_test_types": {
+      "boundary": 17,
+      "clean": 69,
+      "multipart": 14
+    }
+  },
+  "uncertainty": {
+    "s1_baseline": {
+      "logprob": {
+        "signal": "conf",
+        "n": 416,
+        "n_scored": 420,
+        "n_missing_signal": 4,
+        "n_excluded_unclassified": 0,
+        "safety_correctness_auroc": 0.77,
+        "node_correctness_auroc": 0.853
+      }
+    },
+    "s1_consistency": {
+      "agreement_ratio": {
+        "signal": "agreement_ratio",
+        "n": 417,
+        "n_scored": 420,
+        "n_missing_signal": 3,
+        "n_excluded_unclassified": 0,
+        "safety_correctness_auroc": 0.682,
+        "node_correctness_auroc": 0.675
+      }
+    },
+    "s2_baseline": {
+      "logprob": {
+        "signal": "conf",
+        "n": 417,
+        "n_scored": 420,
+        "n_missing_signal": 3,
+        "n_excluded_unclassified": 0,
+        "safety_correctness_auroc": 0.619,
+        "node_correctness_auroc": 0.605
+      }
+    },
+    "s2_consistency": {
+      "agreement_ratio": {
+        "signal": "agreement_ratio",
+        "n": 417,
+        "n_scored": 420,
+        "n_missing_signal": 3,
+        "n_excluded_unclassified": 0,
+        "safety_correctness_auroc": 0.739,
+        "node_correctness_auroc": 0.712
+      }
+    },
+    "s2_baseline_corrected": {
+      "logprob": {
+        "signal": "conf",
+        "n": 416,
+        "n_scored": 420,
+        "n_missing_signal": 3,
+        "n_excluded_unclassified": 1,
+        "safety_correctness_auroc": 0.546,
+        "node_correctness_auroc": 0.689
+      }
+    },
+    "thresholds": {
+      "s1_conf_0_90": {
+        "signal": "conf",
+        "cutoff_exclusive": 0.9,
+        "n_usable": 416,
+        "n_safety_errors": 9,
+        "n_flagged": 43,
+        "n_safety_errors_caught": 1,
+        "n_correct_flagged": 42,
+        "n_node_errors": 88,
+        "n_node_errors_flagged": 30,
+        "n_correct_safety_flagged_node_errors": 29
+      },
+      "s1_conf_0_95": {
+        "signal": "conf",
+        "cutoff_exclusive": 0.95,
+        "n_usable": 416,
+        "n_safety_errors": 9,
+        "n_flagged": 71,
+        "n_safety_errors_caught": 4,
+        "n_correct_flagged": 67,
+        "n_node_errors": 88,
+        "n_node_errors_flagged": 44,
+        "n_correct_safety_flagged_node_errors": 40
+      },
+      "s2_conf_0_80": {
+        "signal": "conf",
+        "cutoff_exclusive": 0.8,
+        "n_usable": 417,
+        "n_safety_errors": 8,
+        "n_flagged": 160,
+        "n_safety_errors_caught": 5,
+        "n_correct_flagged": 155,
+        "n_node_errors": 85,
+        "n_node_errors_flagged": 44,
+        "n_correct_safety_flagged_node_errors": 39
+      },
+      "s2_corrected_conf_0_90": {
+        "signal": "conf",
+        "cutoff_exclusive": 0.9,
+        "n_usable": 416,
+        "n_safety_errors": 9,
+        "n_flagged": 0,
+        "n_safety_errors_caught": 0,
+        "n_correct_flagged": 0,
+        "n_node_errors": 85,
+        "n_node_errors_flagged": 0,
+        "n_correct_safety_flagged_node_errors": 0
+      },
+      "s2_corrected_conf_0_9999": {
+        "signal": "conf",
+        "cutoff_exclusive": 0.9999,
+        "n_usable": 416,
+        "n_safety_errors": 9,
+        "n_flagged": 149,
+        "n_safety_errors_caught": 4,
+        "n_correct_flagged": 145,
+        "n_node_errors": 85,
+        "n_node_errors_flagged": 54,
+        "n_correct_safety_flagged_node_errors": 50
+      },
+      "s2_cons_agreement_0_5": {
+        "signal": "agreement_ratio",
+        "cutoff_exclusive": 0.5,
+        "n_usable": 417,
+        "n_safety_errors": 7,
+        "n_flagged": 25,
+        "n_safety_errors_caught": 2,
+        "n_correct_flagged": 23,
+        "n_node_errors": 81,
+        "n_node_errors_flagged": 14,
+        "n_correct_safety_flagged_node_errors": 12
+      },
+      "s2_cons_agreement_0_7": {
+        "signal": "agreement_ratio",
+        "cutoff_exclusive": 0.7,
+        "n_usable": 417,
+        "n_safety_errors": 7,
+        "n_flagged": 107,
+        "n_safety_errors_caught": 4,
+        "n_correct_flagged": 103,
+        "n_node_errors": 81,
+        "n_node_errors_flagged": 40,
+        "n_correct_safety_flagged_node_errors": 36
+      },
+      "s2_cons_agreement_0_9": {
+        "signal": "agreement_ratio",
+        "cutoff_exclusive": 0.9,
+        "n_usable": 417,
+        "n_safety_errors": 7,
+        "n_flagged": 200,
+        "n_safety_errors_caught": 6,
+        "n_correct_flagged": 194,
+        "n_node_errors": 81,
+        "n_node_errors_flagged": 62,
+        "n_correct_safety_flagged_node_errors": 56
+      }
+    },
+    "heldout_confidence_by_node_correctness": {
+      "basis": "scored held-out cases (buried-alive suite and boundary cases excluded) with a confidence value",
+      "n_scored": 231,
+      "n_with_conf": 229,
+      "n_without_conf": 2,
+      "node_correct": {
+        "n": 186,
+        "mean_conf": 0.982
+      },
+      "node_wrong": {
+        "n": 43,
+        "mean_conf": 0.937
+      }
+    },
+    "kl_spotcheck_confidence": {
+      "basis": "KL complete non-boundary spot-check rows with a confidence value",
+      "n_complete_with_conf": 80,
+      "n_boundary_excluded": 17,
+      "classifier_reference_agree": {
+        "n": 67,
+        "mean_conf": 0.984
+      },
+      "classifier_reference_disagree": {
+        "n": 13,
+        "mean_conf": 0.939
+      },
+      "kl_reference_agree": {
+        "n": 57,
+        "mean_conf": 0.985
+      },
+      "kl_reference_disagree": {
+        "n": 23,
+        "mean_conf": 0.958
+      }
+    },
+    "s2_consistency_miss_agreement": {
+      "trauma_replay_agreement": 0.6,
+      "violent_revenge_agreement": 0.8,
+      "n_at_or_below_0_6": 107,
+      "n_at_or_below_0_8": 200,
+      "n_scored": 417
+    },
+    "s1_consistency_unanimous_errors": {
+      "n_node_errors": 94,
+      "n_unanimous_node_errors": 35,
+      "n_unanimous_total": 266,
+      "n_unanimous_node_correct": 231
+    }
+  },
+  "uncertainty_distributions": {
+    "s1_baseline_conf": {
+      "n": 416,
+      "bin_lo": 0.6,
+      "bin_hi": 1.0,
+      "bin_width": 0.02,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        4,
+        3,
+        7,
+        6,
+        7,
+        3,
+        10,
+        9,
+        14,
+        13,
+        30,
+        307
+      ],
+      "below_range_values": [],
+      "n_excluded_unclassified": 0,
+      "n_below_0_90": 43,
+      "node_correctness_split": {
+        "node_correct": {
+          "n": 328,
+          "mean": 0.985027,
+          "median": 0.996765,
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            3,
+            2,
+            1,
+            1,
+            4,
+            4,
+            8,
+            5,
+            18,
+            280
+          ]
+        },
+        "node_incorrect": {
+          "n": 88,
+          "mean": 0.921753,
+          "median": 0.950397,
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            4,
+            2,
+            4,
+            4,
+            6,
+            2,
+            6,
+            5,
+            6,
+            8,
+            12,
+            27
+          ]
+        }
+      }
+    },
+    "s2_corrected_conf": {
+      "n": 416,
+      "bin_lo": 0.6,
+      "bin_hi": 1.0,
+      "bin_width": 0.02,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        416
+      ],
+      "below_range_values": [],
+      "n_excluded_unclassified": 1,
+      "n_in_0_999_1": 408,
+      "n_below_0_90": 0,
+      "n_below_0_9999": 149,
+      "zoom": {
+        "n": 408,
+        "bin_lo": 0.999,
+        "bin_hi": 1.0,
+        "bin_width": 0.0001,
+        "counts": [
+          1,
+          1,
+          0,
+          3,
+          10,
+          23,
+          32,
+          39,
+          32,
+          267
+        ],
+        "below_range_values": []
+      },
+      "n_safety_errors": 9,
+      "n_safety_errors_in_0_999_1": 9,
+      "node_correctness_split": {
+        "node_correct": {
+          "n": 331,
+          "mean": 0.999791,
+          "median": 0.999948,
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            331
+          ]
+        },
+        "node_incorrect": {
+          "n": 85,
+          "mean": 0.999746,
+          "median": 0.999802,
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            85
+          ]
+        }
+      }
+    },
+    "s2_consistency_agreement": {
+      "n": 417,
+      "value_counts": {
+        "0.4": 25,
+        "0.6": 82,
+        "0.8": 93,
+        "1.0": 217
+      },
+      "node_correctness_split": {
+        "node_correct": {
+          "n": 336,
+          "value_counts": {
+            "0.4": 11,
+            "0.6": 56,
+            "0.8": 71,
+            "1.0": 198
+          }
+        },
+        "node_incorrect": {
+          "n": 81,
+          "value_counts": {
+            "0.4": 14,
+            "0.6": 26,
+            "0.8": 22,
+            "1.0": 19
+          }
+        }
+      }
+    },
+    "s2_confidence_run_jitter": {
+      "n_matched_segments": 91,
+      "median_abs_delta": 1.091e-05,
+      "p90_abs_delta": 0.00012805,
+      "max_abs_delta": 0.00200982,
+      "n_delta_ge_1e_4": 13,
+      "n_delta_ge_1e_5": 47
+    }
+  },
+  "expert_spotcheck": {
+    "kl": {
+      "all": {
+        "n_total": 100,
+        "n_complete": 98,
+        "raw_safety_agree": 76,
+        "ontology_safety_agree": 76,
+        "primary_node_agree": 60,
+        "classifier_reference_safety_agree": 94,
+        "classifier_reference_node_agree": 81,
+        "classifier_expert_raw_safety_agree": 76,
+        "classifier_expert_ontology_safety_agree": 78,
+        "classifier_expert_node_agree": 59,
+        "adequacy_penalties": 12,
+        "raw_safety_kappa": 0.5646203554119548,
+        "ontology_safety_kappa": 0.5424448217317487,
+        "primary_node_kappa": 0.5751283513976041,
+        "classifier_expert_raw_safety_kappa": 0.5698324022346368,
+        "classifier_expert_ontology_safety_kappa": 0.5808383233532934,
+        "classifier_expert_node_kappa": 0.5636488183582601,
+        "raw_safety_agreement_rate": 0.77551,
+        "node_derived_safety_agreement_rate": 0.77551,
+        "strict_node_agreement_rate": 0.612245,
+        "adequacy_penalty_rate": 0.122449,
+        "classifier_expert_raw_safety_rate": 0.77551,
+        "classifier_expert_ontology_safety_rate": 0.795918,
+        "classifier_expert_node_rate": 0.602041
+      },
+      "primary_non_boundary": {
+        "n_total": 83,
+        "n_complete": 81,
+        "raw_safety_agree": 64,
+        "ontology_safety_agree": 70,
+        "primary_node_agree": 58,
+        "classifier_reference_safety_agree": 80,
+        "classifier_reference_node_agree": 67,
+        "classifier_expert_raw_safety_agree": 65,
+        "classifier_expert_ontology_safety_agree": 71,
+        "classifier_expert_node_agree": 56,
+        "adequacy_penalties": 12,
+        "raw_safety_kappa": 0.5939250958419344,
+        "ontology_safety_kappa": 0.7111831442463532,
+        "primary_node_kappa": 0.6895,
+        "classifier_expert_raw_safety_kappa": 0.619271445358402,
+        "classifier_expert_ontology_safety_kappa": 0.7354670150228609,
+        "classifier_expert_node_kappa": 0.6609743847312908,
+        "raw_safety_agreement_rate": 0.790123,
+        "node_derived_safety_agreement_rate": 0.864198,
+        "strict_node_agreement_rate": 0.716049,
+        "adequacy_penalty_rate": 0.148148,
+        "classifier_expert_raw_safety_rate": 0.802469,
+        "classifier_expert_ontology_safety_rate": 0.876543,
+        "classifier_expert_node_rate": 0.691358
+      },
+      "boundary": {
+        "n_total": 17,
+        "n_complete": 17,
+        "raw_safety_agree": 12,
+        "ontology_safety_agree": 6,
+        "primary_node_agree": 2,
+        "classifier_reference_safety_agree": 14,
+        "classifier_reference_node_agree": 14,
+        "classifier_expert_raw_safety_agree": 11,
+        "classifier_expert_ontology_safety_agree": 7,
+        "classifier_expert_node_agree": 3,
+        "adequacy_penalties": 0,
+        "raw_safety_kappa": 0.0,
+        "ontology_safety_kappa": -0.47244094488188987,
+        "primary_node_kappa": -0.015936254980079702,
+        "classifier_expert_raw_safety_kappa": 0.0,
+        "classifier_expert_ontology_safety_kappa": -0.28787878787878823,
+        "classifier_expert_node_kappa": 0.048,
+        "raw_safety_agreement_rate": 0.705882,
+        "node_derived_safety_agreement_rate": 0.352941,
+        "strict_node_agreement_rate": 0.117647,
+        "adequacy_penalty_rate": 0.0,
+        "classifier_expert_raw_safety_rate": 0.647059,
+        "classifier_expert_ontology_safety_rate": 0.411765,
+        "classifier_expert_node_rate": 0.176471
+      }
+    },
+    "ag": {
+      "all": {
+        "n_total": 100,
+        "n_complete": 37,
+        "raw_safety_agree": 31,
+        "ontology_safety_agree": 31,
+        "primary_node_agree": 15,
+        "classifier_reference_safety_agree": 37,
+        "classifier_reference_node_agree": 34,
+        "classifier_expert_raw_safety_agree": 31,
+        "classifier_expert_ontology_safety_agree": 31,
+        "classifier_expert_node_agree": 16,
+        "adequacy_penalties": 3,
+        "raw_safety_kappa": 0.6763848396501457,
+        "ontology_safety_kappa": 0.6735294117647058,
+        "primary_node_kappa": 0.347233360064154,
+        "classifier_expert_raw_safety_kappa": 0.6763848396501457,
+        "classifier_expert_ontology_safety_kappa": 0.6735294117647058,
+        "classifier_expert_node_kappa": 0.3754019292604502,
+        "raw_safety_agreement_rate": 0.837838,
+        "node_derived_safety_agreement_rate": 0.837838,
+        "strict_node_agreement_rate": 0.405405,
+        "adequacy_penalty_rate": 0.081081,
+        "classifier_expert_raw_safety_rate": 0.837838,
+        "classifier_expert_ontology_safety_rate": 0.837838,
+        "classifier_expert_node_rate": 0.432432
+      },
+      "primary_non_boundary": {
+        "n_total": 83,
+        "n_complete": 30,
+        "raw_safety_agree": 26,
+        "ontology_safety_agree": 26,
+        "primary_node_agree": 12,
+        "classifier_reference_safety_agree": 30,
+        "classifier_reference_node_agree": 27,
+        "classifier_expert_raw_safety_agree": 26,
+        "classifier_expert_ontology_safety_agree": 26,
+        "classifier_expert_node_agree": 13,
+        "adequacy_penalties": 2,
+        "raw_safety_kappa": 0.7297297297297297,
+        "ontology_safety_kappa": 0.7142857142857143,
+        "primary_node_kappa": 0.34306569343065696,
+        "classifier_expert_raw_safety_kappa": 0.7297297297297297,
+        "classifier_expert_ontology_safety_kappa": 0.7142857142857143,
+        "classifier_expert_node_kappa": 0.37728937728937734,
+        "raw_safety_agreement_rate": 0.866667,
+        "node_derived_safety_agreement_rate": 0.866667,
+        "strict_node_agreement_rate": 0.4,
+        "adequacy_penalty_rate": 0.066667,
+        "classifier_expert_raw_safety_rate": 0.866667,
+        "classifier_expert_ontology_safety_rate": 0.866667,
+        "classifier_expert_node_rate": 0.433333
+      },
+      "boundary": {
+        "n_total": 17,
+        "n_complete": 7,
+        "raw_safety_agree": 5,
+        "ontology_safety_agree": 5,
+        "primary_node_agree": 3,
+        "classifier_reference_safety_agree": 7,
+        "classifier_reference_node_agree": 7,
+        "classifier_expert_raw_safety_agree": 5,
+        "classifier_expert_ontology_safety_agree": 5,
+        "classifier_expert_node_agree": 3,
+        "adequacy_penalties": 1,
+        "raw_safety_kappa": -0.16666666666666635,
+        "ontology_safety_kappa": 0.36363636363636376,
+        "primary_node_kappa": 0.28205128205128205,
+        "classifier_expert_raw_safety_kappa": -0.16666666666666635,
+        "classifier_expert_ontology_safety_kappa": 0.36363636363636376,
+        "classifier_expert_node_kappa": 0.28205128205128205,
+        "raw_safety_agreement_rate": 0.714286,
+        "node_derived_safety_agreement_rate": 0.714286,
+        "strict_node_agreement_rate": 0.428571,
+        "adequacy_penalty_rate": 0.142857,
+        "classifier_expert_raw_safety_rate": 0.714286,
+        "classifier_expert_ontology_safety_rate": 0.714286,
+        "classifier_expert_node_rate": 0.428571
+      }
+    },
+    "ag_kl_pairwise": {
+      "n_shared_complete": 35,
+      "raw_safety_agree": 32,
+      "raw_safety_agreement_rate": 0.914286,
+      "raw_safety_kappa": 0.825,
+      "node_derived_safety_agree": 25,
+      "node_derived_safety_agreement_rate": 0.714286,
+      "node_derived_safety_kappa": 0.388,
+      "strict_node_agree": 13,
+      "strict_node_agreement_rate": 0.371429,
+      "strict_node_kappa": 0.317
+    }
+  },
+  "system_expert_evaluation": {
+    "kl": {
+      "n_rows": 86,
+      "n_complete": 85,
+      "n_pairs": 42,
+      "conditions": {
+        "control": {
+          "n": 43,
+          "clinical_acceptability": {
+            "no": 5,
+            "uncertain": 9,
+            "yes": 29
+          },
+          "mean_clinical_acceptability_score": 1.558,
+          "redirect_quality": {
+            "absent": 11,
+            "partial": 16,
+            "strong": 16
+          },
+          "maladaptive_endorsement": {
+            "n/a": 4,
+            "none": 39
+          }
+        },
+        "treatment": {
+          "n": 42,
+          "clinical_acceptability": {
+            "no": 9,
+            "uncertain": 12,
+            "yes": 21
+          },
+          "mean_clinical_acceptability_score": 1.286,
+          "redirect_quality": {
+            "absent": 15,
+            "n/a": 1,
+            "partial": 8,
+            "strong": 18
+          },
+          "maladaptive_endorsement": {
+            "clear": 3,
+            "minor": 2,
+            "n/a": 5,
+            "none": 32
+          }
+        }
+      }
+    },
+    "ag": {
+      "n_rows": 86,
+      "n_complete": 41,
+      "n_pairs": 19,
+      "conditions": {
+        "control": {
+          "n": 21,
+          "clinical_acceptability": {
+            "no": 1,
+            "uncertain": 1,
+            "yes": 19
+          },
+          "mean_clinical_acceptability_score": 1.857,
+          "redirect_quality": {
+            "absent": 1,
+            "partial": 2,
+            "strong": 18
+          },
+          "maladaptive_endorsement": {
+            "clear": 2,
+            "minor": 5,
+            "none": 14
+          }
+        },
+        "treatment": {
+          "n": 20,
+          "clinical_acceptability": {
+            "no": 3,
+            "uncertain": 2,
+            "yes": 15
+          },
+          "mean_clinical_acceptability_score": 1.6,
+          "redirect_quality": {
+            "absent": 2,
+            "partial": 2,
+            "strong": 16
+          },
+          "maladaptive_endorsement": {
+            "clear": 1,
+            "minor": 2,
+            "n/a": 2,
+            "none": 15
+          }
+        }
+      }
+    },
+    "interexpert_shared": {
+      "n_shared_complete": 41,
+      "dimensions": {
+        "clinical_acceptability": {
+          "n": 41,
+          "exact_agree": 33,
+          "agreement_rate": 0.805,
+          "chance_agreement": 0.666,
+          "kappa": 0.416
+        },
+        "redirect_quality": {
+          "n": 41,
+          "exact_agree": 19,
+          "agreement_rate": 0.463,
+          "chance_agreement": 0.451,
+          "kappa": 0.023
+        },
+        "maladaptive_endorsement": {
+          "n": 41,
+          "exact_agree": 28,
+          "agreement_rate": 0.683,
+          "chance_agreement": 0.648,
+          "kappa": 0.1
+        },
+        "distress_validation": {
+          "n": 41,
+          "exact_agree": 12,
+          "agreement_rate": 0.293,
+          "chance_agreement": 0.267,
+          "kappa": 0.036
+        }
+      }
+    },
+    "shared_paired_deltas": {
+      "n_shared_pairs": 19,
+      "dimensions": {
+        "clinical_acceptability": {
+          "kl": {
+            "n_valid_pairs": 19,
+            "mean_change": -0.579
+          },
+          "ag": {
+            "n_valid_pairs": 19,
+            "mean_change": -0.368
+          }
+        },
+        "redirect_quality": {
+          "kl": {
+            "n_valid_pairs": 19,
+            "mean_change": -0.053
+          },
+          "ag": {
+            "n_valid_pairs": 19,
+            "mean_change": -0.158
+          }
+        },
+        "maladaptive_endorsement": {
+          "kl": {
+            "n_valid_pairs": 19,
+            "mean_change": -0.368
+          },
+          "ag": {
+            "n_valid_pairs": 17,
+            "mean_change": 0.118
+          }
+        },
+        "distress_validation": {
+          "kl": {
+            "n_valid_pairs": 19,
+            "mean_change": 0.158
+          },
+          "ag": {
+            "n_valid_pairs": 19,
+            "mean_change": -0.158
+          }
+        }
+      }
+    },
+    "rating_distributions": {
+      "kl": {
+        "control": {
+          "n": 43,
+          "clinical_acceptability": {
+            "levels": {
+              "no": 5,
+              "uncertain": 9,
+              "yes": 29
+            },
+            "n_na": 0
+          },
+          "redirect_quality": {
+            "levels": {
+              "absent": 11,
+              "partial": 16,
+              "strong": 16
+            },
+            "n_na": 0
+          },
+          "maladaptive_endorsement": {
+            "levels": {
+              "clear": 0,
+              "minor": 0,
+              "none": 39
+            },
+            "n_na": 4
+          },
+          "distress_validation": {
+            "levels": {
+              "no": 9,
+              "partial": 27,
+              "yes": 0
+            },
+            "n_na": 7
+          }
+        },
+        "treatment": {
+          "n": 42,
+          "clinical_acceptability": {
+            "levels": {
+              "no": 9,
+              "uncertain": 12,
+              "yes": 21
+            },
+            "n_na": 0
+          },
+          "redirect_quality": {
+            "levels": {
+              "absent": 15,
+              "partial": 8,
+              "strong": 18
+            },
+            "n_na": 1
+          },
+          "maladaptive_endorsement": {
+            "levels": {
+              "clear": 3,
+              "minor": 2,
+              "none": 32
+            },
+            "n_na": 5
+          },
+          "distress_validation": {
+            "levels": {
+              "no": 14,
+              "partial": 12,
+              "yes": 9
+            },
+            "n_na": 7
+          }
+        }
+      },
+      "ag": {
+        "control": {
+          "n": 21,
+          "clinical_acceptability": {
+            "levels": {
+              "no": 1,
+              "uncertain": 1,
+              "yes": 19
+            },
+            "n_na": 0
+          },
+          "redirect_quality": {
+            "levels": {
+              "absent": 1,
+              "partial": 2,
+              "strong": 18
+            },
+            "n_na": 0
+          },
+          "maladaptive_endorsement": {
+            "levels": {
+              "clear": 2,
+              "minor": 5,
+              "none": 14
+            },
+            "n_na": 0
+          },
+          "distress_validation": {
+            "levels": {
+              "no": 3,
+              "partial": 3,
+              "yes": 15
+            },
+            "n_na": 0
+          }
+        },
+        "treatment": {
+          "n": 20,
+          "clinical_acceptability": {
+            "levels": {
+              "no": 3,
+              "uncertain": 2,
+              "yes": 15
+            },
+            "n_na": 0
+          },
+          "redirect_quality": {
+            "levels": {
+              "absent": 2,
+              "partial": 2,
+              "strong": 16
+            },
+            "n_na": 0
+          },
+          "maladaptive_endorsement": {
+            "levels": {
+              "clear": 1,
+              "minor": 2,
+              "none": 15
+            },
+            "n_na": 2
+          },
+          "distress_validation": {
+            "levels": {
+              "no": 0,
+              "partial": 8,
+              "yes": 12
+            },
+            "n_na": 0
+          }
+        }
+      }
+    }
+  },
+  "internal_constraint_redirect_pilot": {
+    "n_scenarios": 33,
+    "main": {
+      "control": {
+        "n": 25,
+        "redirect_quality": {
+          "partial": 24,
+          "strong": 1
+        }
+      },
+      "treatment": {
+        "n": 25,
+        "redirect_quality": {
+          "partial": 17,
+          "strong": 8
+        }
+      }
+    },
+    "multipart": {
+      "control": {
+        "n": 8,
+        "redirect_quality": {
+          "partial": 8
+        }
+      },
+      "treatment": {
+        "n": 8,
+        "redirect_quality": {
+          "partial": 1,
+          "strong": 7
+        }
+      }
+    }
+  }
+}

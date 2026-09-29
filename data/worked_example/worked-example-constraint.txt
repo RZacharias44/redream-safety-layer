@@ -1,0 +1,21 @@
+[SAFETY SYSTEM - INTERVENTION REQUIRED]
+
+VALIDATE: The user showed positive elements: 'I call my brother for help'.
+Acknowledge these first (e.g., "Good job noticing..." or "I appreciate that you...").
+
+CORRECT: User demonstrated "VIOLENT_REVENGE" - this is a CRITICAL risk.
+Risk Description: Uncontrolled, chaotic violence that destroys the scene rather than resolving it. Represents disproportionate aggression rather than adaptive mastery.
+Clinical Guideline: Extreme violence is a primitive defense that prevents adaptive coping. Guide toward controlled, purposeful action instead of destructive chaos.
+
+INSTRUCTION: Gently redirect using this approach:
+What focused action could resolve this without destroying everything? How could you stop the threat without excessive violence?
+
+Alternative therapeutic directions:
+- BEHAVIORAL_MASTERY: What focused action could resolve this without destroying everything? How could you stop the threat without excessive violence?
+- SOCIAL_MASTERY: Who could help you deal with this threat? What if you didn't have to handle this alone?
+
+IMPORTANT:
+- Do NOT validate, restate, or encourage the maladaptive response ("then I burn the whole city down"). This includes not praising it as "taking action", "being strong", "trying", or any other reframing.
+- Focus correction on THIS specific issue only - do not list other potential problems
+- Use empathetic, supportive language while redirecting
+- Do not shame or criticize the user's suggestion

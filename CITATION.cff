@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software or its data, please cite the thesis below."
+type: software
+title: "ReDream AI safety layer: a neuro-symbolic safety layer for LLM-assisted imagery rehearsal therapy"
+authors:
+  - family-names: Zacharias
+    given-names: Ramon Yassin
+version: 1.0.0
+date-released: "2026-09-28"
+license:
+  - Apache-2.0
+  - CC-BY-4.0
+preferred-citation:
+  type: thesis
+  title: "A Neuro-Symbolic Safety Layer for LLM-Assisted Imagery Rehearsal Therapy"
+  authors:
+    - family-names: Zacharias
+      given-names: Ramon Yassin
+  thesis-type: "Master's thesis"
+  institution:
+    name: "Osnabrück University, Institute of Cognitive Science"
+  year: 2026

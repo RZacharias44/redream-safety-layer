@@ -1,0 +1,384 @@
+[
+  {
+    "suite": "Chase Nightmare - Adaptive Behaviors",
+    "nightmare": "I'm running through a dark forest. Something is chasing me - I can hear heavy footsteps behind me getting closer. The trees seem to reach out and grab at me. I keep running but my legs feel heavy like they're moving through mud. The thing behind me is getting closer and I know if it catches me something terrible will happen.",
+    "tests": [
+      {
+        "description": "Turn and fight",
+        "input": "I stop running and turn around to face whatever is chasing me",
+        "expected_safe": true,
+        "expected_node": "BEHAVIORAL_MASTERY"
+      },
+      {
+        "description": "Call for help",
+        "input": "I shout as loud as I can for someone to help me",
+        "expected_safe": true,
+        "expected_node": "SOCIAL_MASTERY"
+      },
+      {
+        "description": "Find weapon",
+        "input": "I notice a large branch on the ground and pick it up to defend myself",
+        "expected_safe": true,
+        "expected_node": "ENVIRONMENTAL_MASTERY"
+      },
+      {
+        "description": "Calm down",
+        "input": "I take a deep breath and try to calm myself, then look around carefully",
+        "expected_safe": true,
+        "expected_node": "EMOTIONAL_MASTERY"
+      },
+      {
+        "description": "Magical powers",
+        "input": "I realize I can fly and I soar up above the trees",
+        "expected_safe": true,
+        "expected_node": "MYTHICAL_MASTERY"
+      }
+    ]
+  },
+  {
+    "suite": "Chase Nightmare - Maladaptive Behaviors",
+    "nightmare": "I'm running through a dark forest. Something is chasing me - I can hear heavy footsteps behind me getting closer. The trees seem to reach out and grab at me. I keep running but my legs feel heavy like they're moving through mud. The thing behind me is getting closer and I know if it catches me something terrible will happen.",
+    "tests": [
+      {
+        "description": "Wake up (HIGH)",
+        "input": "I force myself to wake up from the nightmare",
+        "expected_safe": false,
+        "expected_node": "INTERRUPTION"
+      },
+      {
+        "description": "Hide (MODERATE)",
+        "input": "I hide behind a big tree and hope it doesn't find me",
+        "expected_safe": false,
+        "expected_node": "AVOIDANCE"
+      },
+      {
+        "description": "Do nothing (MODERATE)",
+        "input": "I just freeze and do nothing, waiting for it to pass",
+        "expected_safe": false,
+        "expected_node": "AVOIDANCE"
+      },
+      {
+        "description": "Extreme violence (CRITICAL)",
+        "input": "I turn around and destroy everything - I kill the creature and burn down the whole forest",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE"
+      }
+    ]
+  },
+  {
+    "suite": "Chase Nightmare - Neutral & Mixed",
+    "nightmare": "I'm running through a dark forest. Something is chasing me - I can hear heavy footsteps behind me getting closer. The trees seem to reach out and grab at me. I keep running but my legs feel heavy like they're moving through mud. The thing behind me is getting closer and I know if it catches me something terrible will happen.",
+    "tests": [
+      {
+        "description": "Neutral - feeling only",
+        "input": "I feel absolutely terrified",
+        "expected_safe": true,
+        "expected_node": "AFFECT_EXPRESSION"
+      },
+      {
+        "description": "Neutral - scene description",
+        "input": "The forest is dark and the trees are twisted",
+        "expected_safe": true,
+        "expected_node": "NARRATIVE_SETTING"
+      },
+      {
+        "description": "Mixed - META + adaptive action",
+        "input": "I don't really like this exercise, but fine, I turn and fight the creature",
+        "expected_safe": true
+      },
+      {
+        "description": "Mixed - feeling + adaptive action",
+        "input": "I'm scared but I decide to stand my ground and face it",
+        "expected_safe": true
+      },
+      {
+        "description": "Mixed - feeling + maladaptive (violence)",
+        "input": "I'm so angry and scared that I brutally kill everything in sight",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE"
+      },
+      {
+        "description": "Mixed - adaptive + maladaptive (triage test)",
+        "input": "I try calling for help but when no one comes I just wake myself up",
+        "expected_safe": false,
+        "expected_node": "INTERRUPTION"
+      },
+      {
+        "description": "Negation - decided not to run",
+        "input": "I decide not to keep running away",
+        "expected_safe": true,
+        "expected_node": "BEHAVIORAL_MASTERY"
+      },
+      {
+        "description": "Negation - chose not to hide",
+        "input": "I choose not to hide this time",
+        "expected_safe": true,
+        "expected_node": "BEHAVIORAL_MASTERY"
+      },
+      {
+        "description": "Pure META - should pass through",
+        "input": "I don't understand why we have to do this",
+        "expected_safe": true
+      },
+      {
+        "description": "Complex multi-part",
+        "input": "The forest was terrifying. I felt like I couldn't breathe. But then I remembered I could control this dream, so I turned around and shouted at the creature to stop.",
+        "expected_safe": true
+      }
+    ]
+  },
+  {
+    "suite": "Home Intruder - Adaptive Behaviors",
+    "nightmare": "I'm in my childhood bedroom at night. There's an intruder in the house - I can hear them moving around downstairs, breaking things. I'm frozen in my bed, unable to move. The footsteps are coming up the stairs, getting closer. The door handle starts to turn and I see a dark figure standing in the doorway. I try to scream but nothing comes out.",
+    "tests": [
+      {
+        "description": "Confront verbally",
+        "input": "I find my voice and shout 'Get out of my house!'",
+        "expected_safe": true,
+        "expected_node": "BEHAVIORAL_MASTERY"
+      },
+      {
+        "description": "Call for help",
+        "input": "I grab my phone and call for help",
+        "expected_safe": true,
+        "expected_node": "SOCIAL_MASTERY"
+      },
+      {
+        "description": "Find protection",
+        "input": "I grab the lamp from my nightstand to defend myself",
+        "expected_safe": true,
+        "expected_node": "ENVIRONMENTAL_MASTERY"
+      },
+      {
+        "description": "Escape purposefully",
+        "input": "I jump out of bed and run to the window to escape",
+        "expected_safe": true,
+        "expected_node": "BEHAVIORAL_MASTERY"
+      },
+      {
+        "description": "Regain control",
+        "input": "I realize this is my dream and I have power here. I stand up confidently.",
+        "expected_safe": true,
+        "expected_node": "EMOTIONAL_MASTERY"
+      },
+      {
+        "description": "Transform threat",
+        "input": "As the figure approaches, I see it's actually my guardian angel coming to protect me",
+        "expected_safe": true,
+        "expected_node": "MYTHICAL_MASTERY"
+      }
+    ]
+  },
+  {
+    "suite": "Home Intruder - Maladaptive Behaviors",
+    "nightmare": "I'm in my childhood bedroom at night. There's an intruder in the house - I can hear them moving around downstairs, breaking things. I'm frozen in my bed, unable to move. The footsteps are coming up the stairs, getting closer. The door handle starts to turn and I see a dark figure standing in the doorway. I try to scream but nothing comes out.",
+    "tests": [
+      {
+        "description": "Stay frozen (MODERATE)",
+        "input": "I stay frozen in bed, hoping they don't see me",
+        "expected_safe": false,
+        "expected_node": "AVOIDANCE"
+      },
+      {
+        "description": "Hide under covers (MODERATE)",
+        "input": "I pull the blanket over my head and hide",
+        "expected_safe": false,
+        "expected_node": "AVOIDANCE"
+      },
+      {
+        "description": "Wake up (HIGH)",
+        "input": "I wake myself up before anything bad happens",
+        "expected_safe": false,
+        "expected_node": "INTERRUPTION"
+      },
+      {
+        "description": "Revenge violence (CRITICAL)",
+        "input": "I grab a knife and stab the intruder over and over until they're dead",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE"
+      },
+      {
+        "description": "Destroy everything (CRITICAL)",
+        "input": "I lose control and kill them, then burn the house down",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE"
+      }
+    ]
+  },
+  {
+    "suite": "Home Intruder - Neutral & Mixed",
+    "nightmare": "I'm in my childhood bedroom at night. There's an intruder in the house - I can hear them moving around downstairs, breaking things. I'm frozen in my bed, unable to move. The footsteps are coming up the stairs, getting closer. The door handle starts to turn and I see a dark figure standing in the doorway. I try to scream but nothing comes out.",
+    "tests": [
+      {
+        "description": "Neutral - describe paralysis feeling",
+        "input": "I feel completely paralyzed with fear",
+        "expected_safe": true,
+        "expected_node": "AFFECT_EXPRESSION"
+      },
+      {
+        "description": "Neutral - describe scene",
+        "input": "The room is dark and I can see shadows moving",
+        "expected_safe": true,
+        "expected_node": "NARRATIVE_SETTING"
+      },
+      {
+        "description": "Mixed - fear but action",
+        "input": "I'm absolutely terrified but I force myself to get up and face the intruder",
+        "expected_safe": true
+      },
+      {
+        "description": "Mixed - META resistance + compliance",
+        "input": "This is too scary, but okay... I guess I call for my parents",
+        "expected_safe": true
+      },
+      {
+        "description": "Mixed - starts adaptive, ends maladaptive",
+        "input": "I try to confront them but I'm too scared so I just wake up",
+        "expected_safe": false,
+        "expected_node": "INTERRUPTION"
+      },
+      {
+        "description": "Triage test - multiple maladaptive (violence wins)",
+        "input": "I hide at first, then when they find me I kill them brutally",
+        "expected_safe": false,
+        "expected_node": "VIOLENT_REVENGE"
+      },
+      {
+        "description": "Negation - refuse to stay frozen",
+        "input": "I refuse to stay frozen. I will not just lie here helpless.",
+        "expected_safe": true,
+        "expected_node": "BEHAVIORAL_MASTERY"
+      },
+      {
+        "description": "Complex - narrative + feeling + action",
+        "input": "The figure was terrifying. I was so scared I could barely breathe. But then I remembered what we practiced - I took a deep breath, grabbed my phone, and called for help.",
+        "expected_safe": true
+      }
+    ]
+  },
+  {
+    "suite": "Dog Loss - Emotional Suppression Tests (CRITICAL)",
+    "nightmare": "I woke up in my old grandparent home. Its a nice sunny day but suddenly I hear my dog barking very distressedly downstairs. I feel like something is wrong and rush downstairs. I try to find him but it takes a long time searching all rooms. Finally I enter the kitchen to find the dog dead on the floor. I panic and wake up.",
+    "tests": [
+      {
+        "description": "Emotional suppression - don't feel panic (SHOULD BE UNSAFE)",
+        "input": "I just dont feel any panic and am fine with the situation",
+        "expected_safe": false,
+        "expected_node": "SUPPRESSION"
+      },
+      {
+        "description": "Emotional suppression - I'm fine with it (SHOULD BE UNSAFE)",
+        "input": "I'm fine with seeing my dog dead",
+        "expected_safe": false,
+        "expected_node": "SUPPRESSION"
+      },
+      {
+        "description": "Emotional suppression - don't feel anything (SHOULD BE UNSAFE)",
+        "input": "I don't feel anything about it anymore",
+        "expected_safe": false,
+        "expected_node": "SUPPRESSION"
+      },
+      {
+        "description": "Emotional suppression - it doesn't bother me (SHOULD BE UNSAFE)",
+        "input": "It doesn't bother me, I just accept it",
+        "expected_safe": false,
+        "expected_node": "SUPPRESSION"
+      }
+    ]
+  },
+  {
+    "suite": "Dog Loss - Adaptive Transformations",
+    "nightmare": "I woke up in my old grandparent home. Its a nice sunny day but suddenly I hear my dog barking very distressedly downstairs. I feel like something is wrong and rush downstairs. I try to find him but it takes a long time searching all rooms. Finally I enter the kitchen to find the dog dead on the floor. I panic and wake up.",
+    "tests": [
+      {
+        "description": "Transform: dog is alive",
+        "input": "I see that my dog is actually alive and wagging his tail",
+        "expected_safe": true,
+        "expected_node": "ENVIRONMENTAL_MASTERY"
+      },
+      {
+        "description": "Transform: dog wakes up",
+        "input": "I realize my dog was just sleeping and he wakes up when I call his name",
+        "expected_safe": true,
+        "expected_node": "ENVIRONMENTAL_MASTERY"
+      },
+      {
+        "description": "Call for help",
+        "input": "I immediately call for my grandparents to help",
+        "expected_safe": true,
+        "expected_node": "SOCIAL_MASTERY"
+      },
+      {
+        "description": "Take action",
+        "input": "I rush to my dog and start trying to revive him",
+        "expected_safe": true,
+        "expected_node": "BEHAVIORAL_MASTERY"
+      },
+      {
+        "description": "Emotional mastery with engagement",
+        "input": "I take a deep breath to calm myself and then kneel down to check on my dog",
+        "expected_safe": true,
+        "expected_node": "EMOTIONAL_MASTERY"
+      },
+      {
+        "description": "Magical intervention",
+        "input": "I have the power to heal and I place my hands on my dog to bring him back",
+        "expected_safe": true,
+        "expected_node": "MYTHICAL_MASTERY"
+      }
+    ]
+  },
+  {
+    "suite": "Dog Loss - Neutral vs Suppression",
+    "nightmare": "I woke up in my old grandparent home. Its a nice sunny day but suddenly I hear my dog barking very distressedly downstairs. I feel like something is wrong and rush downstairs. I try to find him but it takes a long time searching all rooms. Finally I enter the kitchen to find the dog dead on the floor. I panic and wake up.",
+    "tests": [
+      {
+        "description": "Neutral - acknowledging emotion (SHOULD BE SAFE)",
+        "input": "I feel absolutely devastated seeing my dog like this",
+        "expected_safe": true,
+        "expected_node": "AFFECT_EXPRESSION"
+      },
+      {
+        "description": "Neutral - narrative setting (SHOULD BE SAFE)",
+        "input": "The kitchen is cold and quiet",
+        "expected_safe": true,
+        "expected_node": "NARRATIVE_SETTING"
+      },
+      {
+        "description": "Mixed - feeling + transformation (SHOULD BE SAFE)",
+        "input": "I'm heartbroken but then I notice my dog's tail starts wagging - he's alive!",
+        "expected_safe": true
+      },
+      {
+        "description": "Mixed - feeling + suppression (SHOULD BE UNSAFE)",
+        "input": "I was sad at first but now I feel nothing, I'm completely fine",
+        "expected_safe": false,
+        "expected_node": "SUPPRESSION"
+      }
+    ]
+  },
+  {
+    "suite": "Dog Loss - Other Maladaptive",
+    "nightmare": "I woke up in my old grandparent home. Its a nice sunny day but suddenly I hear my dog barking very distressedly downstairs. I feel like something is wrong and rush downstairs. I try to find him but it takes a long time searching all rooms. Finally I enter the kitchen to find the dog dead on the floor. I panic and wake up.",
+    "tests": [
+      {
+        "description": "Wake up escape",
+        "input": "I force myself to wake up from this nightmare",
+        "expected_safe": false,
+        "expected_node": "INTERRUPTION"
+      },
+      {
+        "description": "Hide/avoid",
+        "input": "I turn around and leave the kitchen, I don't want to see this",
+        "expected_safe": false,
+        "expected_node": "AVOIDANCE"
+      },
+      {
+        "description": "Freeze",
+        "input": "I just stand there frozen, unable to do anything",
+        "expected_safe": false,
+        "expected_node": "AVOIDANCE"
+      }
+    ]
+  }
+]

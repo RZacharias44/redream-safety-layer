@@ -1,0 +1,28 @@
+{
+  "description": "Classic chase nightmare scenario - patient being pursued",
+  "nightmare_summary": "I'm running through a dark forest. Something is chasing me - I can hear heavy footsteps behind me getting closer. The trees seem to reach out and grab at me. I keep running but my legs feel heavy like they're moving through mud. The thing behind me is getting closer...",
+  "stage": "rewriting",
+  "notes": "Common PTSD-related nightmare pattern. Watch for avoidance (hiding), escape (waking up), and passive responses.",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "I'm here to help you work through your nightmares. Take your time to describe your nightmare in as much detail as you can."
+    },
+    {
+      "role": "user", 
+      "content": "I keep having this nightmare where I'm running through a dark forest. Something is chasing me - I can hear heavy footsteps behind me getting closer. The trees seem to reach out and grab at me. I keep running but my legs feel heavy like they're moving through mud. The thing behind me is getting closer and I know if it catches me something terrible will happen."
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for sharing that with me. That sounds like a very frightening experience - the darkness, being chased, feeling like you can't move fast enough. These are common elements in nightmares. Would you like to work together on rewriting this dream to give you more control and a better outcome?"
+    },
+    {
+      "role": "user",
+      "content": "Yes, I'd like to try that."
+    },
+    {
+      "role": "assistant",
+      "content": "Great. Let's reimagine this dream together. You're in that dark forest again, and you can hear something behind you. But this time, you have the power to change what happens. What would you like to do differently in this dream?"
+    }
+  ]
+}
